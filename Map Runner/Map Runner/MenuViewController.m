@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "HomeViewController.h"
+#import "UIColor+Expanded.h"
 @interface MenuViewController ()
 
 @end
@@ -30,28 +31,42 @@
     [mainimageView setImage:[UIImage imageNamed:@"menubackimage.png"]];
     [self.view addSubview:mainimageView];
 
-    playBtn=[[UIButton alloc]initWithFrame:CGRectMake(screenRect.size.width*0.42,screenRect.size.height*0.65,80,50)];
-    [playBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:35]];
+    playBtn=[[UIButton alloc]initWithFrame:CGRectMake(0,screenRect.size.height*0.65,screenRect.size.width,50)];
     [playBtn setTitle:@"Play" forState:UIControlStateNormal];
     [playBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [playBtn addTarget:self action:@selector(playAction) forControlEvents:UIControlEventTouchUpInside];
     playBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-    //[playBtn setBackgroundImage:[UIImage imageNamed:@"backBtn2.png"] forState:UIControlStateNormal];
-    [playBtn setBackgroundColor:[UIColor clearColor]];
-    
-    
+    [playBtn.titleLabel setFont:[UIFont fontWithName:@"Hobo" size:35.0]];
     [self.view addSubview:playBtn];
     
-    shareBtn=[[UIButton alloc]initWithFrame:CGRectMake(screenRect.size.width*0.37,screenRect.size.height*0.75,100,50)];
-    [shareBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:35]];
+    playBtn.alpha = 0.0f;
+    [playBtn setTitleColor:[UIColor colorWithHexString:@"0041b2"] forState:UIControlStateNormal];
+    playBtn.transform = CGAffineTransformMakeScale(1.5,1.5);
+    [UIView beginAnimations:@"fadeInNewView" context:NULL];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationRepeatCount:5000];
+    playBtn.transform = CGAffineTransformMakeScale(0.5,0.5);
+    playBtn.alpha = 1.0f;
+    [UIView commitAnimations];
+    
+    shareBtn=[[UIButton alloc]initWithFrame:CGRectMake(0,screenRect.size.height*0.75,screenRect.size.width,50)];
+    [shareBtn.titleLabel setFont:[UIFont fontWithName:@"Hobo" size:35.0]];
     [shareBtn setTitle:@"Share" forState:UIControlStateNormal];
     [shareBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [shareBtn addTarget:self action:@selector(playAction) forControlEvents:UIControlEventTouchUpInside];
     shareBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-    //[playBtn setBackgroundImage:[UIImage imageNamed:@"backBtn2.png"] forState:UIControlStateNormal];
-    [shareBtn setBackgroundColor:[UIColor clearColor]];
     [self.view addSubview:shareBtn];
     
+    shareBtn.alpha = 0.0f;
+    [shareBtn setTitleColor:[UIColor colorWithHexString:@"0041b2"] forState:UIControlStateNormal];
+    shareBtn.transform = CGAffineTransformMakeScale(1.0,1.0);
+    [UIView beginAnimations:@"fadeInNewView" context:NULL];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationRepeatCount:5000];
+    shareBtn.transform = CGAffineTransformMakeScale(0.5,0.5);
+    shareBtn.alpha = 1.0f;
+    [UIView commitAnimations];
+
      ywidthbob = screenRect.size.height*0.90;
      ywidthsim = screenRect.size.height*0.10;
     leftposition=YES;
@@ -137,7 +152,7 @@
         }
     }
       [bobImg setImage:[UIImage imageNamed:@"bobimage.png"]];
-    //[self.view addSubview:bobImg];
+    [self.view addSubview:bobImg];
     marginVO=[[MarginVO alloc]init];
     marginVO.simLeftRight=[NSString stringWithFormat: @"%.4f", ywidthsim];
     marginVO.simTopDown=[NSString stringWithFormat: @"%.4f", ywidthbob];
@@ -155,7 +170,7 @@
 
         simamImg=[[UIImageView alloc]initWithFrame:CGRectMake(simLeft,simTop, screenRect.size.height*0.07,screenRect.size.height*0.07)];
         [simamImg setImage:[UIImage imageNamed:@"simamimage.png"]];
-//[self.view addSubview:simamImg];
+        [self.view addSubview:simamImg];
         
         indexvalue=indexvalue+1;
     }

@@ -10,4 +10,5 @@
 
 @interface MarginVO : NSObject
 @property(nonatomic,retain) NSString *simLeftRight,*simTopDown;
+@property(nonatomic,readwrite) BOOL isMovingUp,isMovingRight;
 @end

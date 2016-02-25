@@ -44,6 +44,16 @@
 		A46A115D1C6D9D61000CFA58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A46A115B1C6D9D61000CFA58 /* LaunchScreen.storyboard */; };
 		A46A11671C6D9F31000CFA58 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A46A11651C6D9F31000CFA58 /* HomeViewController.m */; };
 		A46A11681C6D9F31000CFA58 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46A11661C6D9F31000CFA58 /* HomeViewController.xib */; };
+		A46BB6481C72EA9C001CE95F /* Hobo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A46BB6471C72EA9C001CE95F /* Hobo.ttf */; };
+		A46FF81F1C71D20C00786CC7 /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A46FF81E1C71D20C00786CC7 /* CustomIOS7AlertView.m */; };
+		A46FF8221C71D2E900786CC7 /* CameraAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A46FF8211C71D2E900786CC7 /* CameraAlertView.m */; };
+		A471767F1C76F343003332CA /* underground-symbol-small.gif in Resources */ = {isa = PBXBuildFile; fileRef = A471767E1C76F343003332CA /* underground-symbol-small.gif */; };
+		A4A48D261C7C4256000DB90B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A48D251C7C4256000DB90B /* AudioToolbox.framework */; };
+		A4A48D2B1C7C9F84000DB90B /* icon_76.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A48D271C7C9F84000DB90B /* icon_76.png */; };
+		A4A48D2C1C7C9F84000DB90B /* icon_120.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A48D281C7C9F84000DB90B /* icon_120.png */; };
+		A4A48D2D1C7C9F84000DB90B /* icon_152.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A48D291C7C9F84000DB90B /* icon_152.png */; };
+		A4A48D2E1C7C9F84000DB90B /* icon_180.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A48D2A1C7C9F84000DB90B /* icon_180.png */; };
+		A4F8252A1C7B3DF000640F56 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F825291C7B3DF000640F56 /* pause.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +105,18 @@
 		A46A11641C6D9F31000CFA58 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ../HomeViewController.h; sourceTree = "<group>"; };
 		A46A11651C6D9F31000CFA58 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = ../HomeViewController.m; sourceTree = "<group>"; };
 		A46A11661C6D9F31000CFA58 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeViewController.xib; path = ../HomeViewController.xib; sourceTree = "<group>"; };
+		A46BB6471C72EA9C001CE95F /* Hobo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Hobo.ttf; path = font/Hobo.ttf; sourceTree = "<group>"; };
+		A46FF81D1C71D20C00786CC7 /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomIOS7AlertView.h; path = AlertView/CustomIOS7AlertView.h; sourceTree = "<group>"; };
+		A46FF81E1C71D20C00786CC7 /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomIOS7AlertView.m; path = AlertView/CustomIOS7AlertView.m; sourceTree = "<group>"; };
+		A46FF8201C71D2E900786CC7 /* CameraAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraAlertView.h; path = AlertView/CameraAlertView.h; sourceTree = "<group>"; };
+		A46FF8211C71D2E900786CC7 /* CameraAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraAlertView.m; path = AlertView/CameraAlertView.m; sourceTree = "<group>"; };
+		A471767E1C76F343003332CA /* underground-symbol-small.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "underground-symbol-small.gif"; path = "images/underground-symbol-small.gif"; sourceTree = "<group>"; };
+		A4A48D251C7C4256000DB90B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A4A48D271C7C9F84000DB90B /* icon_76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_76.png; path = images/icon_76.png; sourceTree = "<group>"; };
+		A4A48D281C7C9F84000DB90B /* icon_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_120.png; path = images/icon_120.png; sourceTree = "<group>"; };
+		A4A48D291C7C9F84000DB90B /* icon_152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_152.png; path = images/icon_152.png; sourceTree = "<group>"; };
+		A4A48D2A1C7C9F84000DB90B /* icon_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_180.png; path = images/icon_180.png; sourceTree = "<group>"; };
+		A4F825291C7B3DF000640F56 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause.png; path = images/pause.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4A48D261C7C4256000DB90B /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +134,12 @@
 		A40A57571C6DA8CF001F8DD4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A4A48D271C7C9F84000DB90B /* icon_76.png */,
+				A4A48D281C7C9F84000DB90B /* icon_120.png */,
+				A4A48D291C7C9F84000DB90B /* icon_152.png */,
+				A4A48D2A1C7C9F84000DB90B /* icon_180.png */,
+				A4F825291C7B3DF000640F56 /* pause.png */,
+				A471767E1C76F343003332CA /* underground-symbol-small.gif */,
 				A40A578A1C6E05DF001F8DD4 /* applogo.png */,
 				A40A578B1C6E05DF001F8DD4 /* background.png */,
 				A40A578C1C6E05DF001F8DD4 /* bobimage.png */,
@@ -138,6 +167,7 @@
 		A40A57741C6DF013001F8DD4 /* font */ = {
 			isa = PBXGroup;
 			children = (
+				A46BB6471C72EA9C001CE95F /* Hobo.ttf */,
 				A40A57751C6DF020001F8DD4 /* fontawesome-webfont.ttf */,
 				A40A57761C6DF020001F8DD4 /* HelveticaNeue_Bold_Font.ttf */,
 				A40A57771C6DF020001F8DD4 /* NSString+FontAwesome.h */,
@@ -164,6 +194,7 @@
 		A46A11411C6D9D61000CFA58 = {
 			isa = PBXGroup;
 			children = (
+				A4A48D251C7C4256000DB90B /* AudioToolbox.framework */,
 				A46A114C1C6D9D61000CFA58 /* Map Runner */,
 				A46A114B1C6D9D61000CFA58 /* Products */,
 			);
@@ -180,6 +211,7 @@
 		A46A114C1C6D9D61000CFA58 /* Map Runner */ = {
 			isa = PBXGroup;
 			children = (
+				A46FF81C1C71D1FA00786CC7 /* AlertView */,
 				A466AAFA1C6EF2AC007ADC25 /* VO */,
 				A40A57741C6DF013001F8DD4 /* font */,
 				A40A57571C6DA8CF001F8DD4 /* Images */,
@@ -208,6 +240,17 @@
 				A46A114E1C6D9D61000CFA58 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A46FF81C1C71D1FA00786CC7 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				A46FF8201C71D2E900786CC7 /* CameraAlertView.h */,
+				A46FF8211C71D2E900786CC7 /* CameraAlertView.m */,
+				A46FF81D1C71D20C00786CC7 /* CustomIOS7AlertView.h */,
+				A46FF81E1C71D20C00786CC7 /* CustomIOS7AlertView.m */,
+			);
+			name = AlertView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,7 +312,10 @@
 			files = (
 				A46A115D1C6D9D61000CFA58 /* LaunchScreen.storyboard in Resources */,
 				A40A57671C6DA952001F8DD4 /* Default-667h@2x.png in Resources */,
+				A4F8252A1C7B3DF000640F56 /* pause.png in Resources */,
 				A46A115A1C6D9D61000CFA58 /* Assets.xcassets in Resources */,
+				A471767F1C76F343003332CA /* underground-symbol-small.gif in Resources */,
+				A4A48D2B1C7C9F84000DB90B /* icon_76.png in Resources */,
 				A40A576B1C6DA952001F8DD4 /* Default-Landscape@3x.png in Resources */,
 				A46A11581C6D9D61000CFA58 /* Main.storyboard in Resources */,
 				A40A57921C6E05DF001F8DD4 /* bobimage.png in Resources */,
@@ -277,18 +323,22 @@
 				A40A57661C6DA952001F8DD4 /* Default-568h@2x.png in Resources */,
 				A40A57691C6DA952001F8DD4 /* Default-Landscape.png in Resources */,
 				A46A11681C6D9F31000CFA58 /* HomeViewController.xib in Resources */,
+				A4A48D2D1C7C9F84000DB90B /* icon_152.png in Resources */,
 				A40A57951C6E05DF001F8DD4 /* simamimage.png in Resources */,
 				A40A576F1C6DA952001F8DD4 /* Default768x1024.png in Resources */,
 				A40A57701C6DA952001F8DD4 /* Default768x1024@2x.png in Resources */,
 				A40A57801C6DF020001F8DD4 /* HelveticaNeue_Bold_Font.ttf in Resources */,
 				A40A57941C6E05DF001F8DD4 /* menubackimage.png in Resources */,
 				A40A576E1C6DA952001F8DD4 /* Default~Landscape@2x.png in Resources */,
+				A46BB6481C72EA9C001CE95F /* Hobo.ttf in Resources */,
 				A40A57731C6DA952001F8DD4 /* Defaults-1136h@2x.png in Resources */,
+				A4A48D2E1C7C9F84000DB90B /* icon_180.png in Resources */,
 				A40A57681C6DA952001F8DD4 /* Default-736h@3x.png in Resources */,
 				A40A576C1C6DA952001F8DD4 /* Default.png in Resources */,
 				A40A57901C6E05DF001F8DD4 /* applogo.png in Resources */,
 				A40A57711C6DA952001F8DD4 /* Default1536x2048@2x.png in Resources */,
 				A40A57721C6DA952001F8DD4 /* Defaults-568h@2x.png in Resources */,
+				A4A48D2C1C7C9F84000DB90B /* icon_120.png in Resources */,
 				A40A577F1C6DF020001F8DD4 /* fontawesome-webfont.ttf in Resources */,
 				A40A57891C6E035C001F8DD4 /* MenuViewController.xib in Resources */,
 				A40A576D1C6DA952001F8DD4 /* Default~iphone.png in Resources */,
@@ -312,7 +362,9 @@
 				A46A11521C6D9D61000CFA58 /* AppDelegate.m in Sources */,
 				A40A57841C6DF020001F8DD4 /* UIImage+FontAwesome.m in Sources */,
 				A40A57831C6DF020001F8DD4 /* UIFont+FontAwesome.m in Sources */,
+				A46FF8221C71D2E900786CC7 /* CameraAlertView.m in Sources */,
 				A46A114F1C6D9D61000CFA58 /* main.m in Sources */,
+				A46FF81F1C71D20C00786CC7 /* CustomIOS7AlertView.m in Sources */,
 				A46A11671C6D9F31000CFA58 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,7 +408,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Derek Carr (GC4T5BSWJL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Derek Carr (GC4T5BSWJL)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -378,6 +431,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "8f5b20f2-c94c-486f-bedd-6e3b2e2a7a2c";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -400,7 +454,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Derek Carr (GC4T5BSWJL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Derek Carr (GC4T5BSWJL)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -415,6 +470,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "8f5b20f2-c94c-486f-bedd-6e3b2e2a7a2c";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -425,10 +481,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Derek Carr (GC4T5BSWJL)";
 				INFOPLIST_FILE = "Map Runner/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mobiwebcode.chatapp.Map-Runner";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiwebcode.bscpro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8f5b20f2-c94c-486f-bedd-6e3b2e2a7a2c";
 			};
 			name = Debug;
 		};
@@ -436,10 +494,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Derek Carr (GC4T5BSWJL)";
 				INFOPLIST_FILE = "Map Runner/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mobiwebcode.chatapp.Map-Runner";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiwebcode.bscpro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8f5b20f2-c94c-486f-bedd-6e3b2e2a7a2c";
 			};
 			name = Release;
 		};
