@@ -11,20 +11,39 @@
 #import "MenuViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import <AudioToolbox/AudioServices.h>
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
+@import GoogleMobileAds;
 @interface HomeViewController ()
+
+
+@property(nonatomic, strong) GADInterstitial *interstitial;
 
 @end
 
 @implementation HomeViewController
-@synthesize roadView,mainscrollview,leftgreenImg,topgreenImg,rightwaterImg,downwaterImg,insideFirstImg,insideFirstImg1,insideFirstImg2,insideFirstImg3,insideFirstImg4,bobImg,simamImg,simonArray,marginVO,timer,ywidthbobTop,ywidthsimLeft,BOB_LEFT_MARGIN,BOB_T0P_MARGIN,isMovingUp,isMovingDown,isMovingLeft,isMovingRight,indexvalue,position,startPosition,SIMAN_LEFT_MARGIN,SIMAN_T0P_MARGIN,hor_1_top ,hor_2_top ,hor_3_top,hor_4_top,hor_5_top,hor_6_top,hor_7_top,hor_8_top,ver_1_left,ver_2_left,ver_3_left,ver_4_left,ver_5_left,ver_6_left,isValidMove,isGAMEOVER,isMaproad1_1,isMaproad1_2,isMaproad1_3,isMaproad1_4,isMaproad2_1,isMaproad2_2,isMaproad2_3,isMaproad2_4,isMaproad3_1,isMaproad3_2,isMaproad3_3,isMaproad3_4,isMaproad4_1,isMaproad4_2,isMaproad4_3,isMaproad4_4,isPause,isSimanMove,isWait,isBottom_to_Top,isTop_to_Bottom,isLeft_to_Right,isRight_to_Left,ywidth,yheights,alert,cav,alertView,bgImage,ywidthbob,ywidthsim,simTop,simLeft,timer2,scoreLbl,highScoreLbl,titleName,maryNameLbl,hydeparkNameLbl1,hydeparkNameLbl,mayfairNameLbl,greenparkNameLbl,southNameLbl,maryroadNameLbl,paddingNameLbl,edgwareNameLbl,bakerNameLbl,gioucesterNameLbl,marleboneyNameLbl,bondstreetNameLbl,grosvenorstreetNameLbl,newbondNameLbl,berkeleyNameLbl,stratonstreetNameLbl,berkeleystreetNameLbl,piccadillyNameLbl,knighsNameLbl,queenNameLbl,bromptNameLbl,slonneNameLbl,thurloeNameLbl,gloucesterNameLbl,gloucester1NameLbl,kingsNameLbl,chelseaNameLbl,eustonNameLbl,gowerNameLbl,bloomsburyNameLbl,goodgeNameLbl,russelNameLbl,tottennamNameLbl,bloomsburyStreetNameLbl,oxfordNameLbl,sohoNameLbl,regentNameLbl,shaffesburyNameLbl,piccadilly1NameLbl,belgraviaNameLbl,cadoganNameLbl,eatonNameLbl,grosvenerNameLbl,ecclestenNameLbl,buckinghamNameLbl,belgraveNameLbl,gowersNameLbl,juddNameLbl,graysNameLbl,theobaldsNameLbl,southampNameLbl,highholbornNameLbl,holbornNameLbl,longNameLbl,kingswayNameLbl,stNameLbl,coventNameLbl,aldwychNameLbl,whiteNameLbl,victoryaNameLbl,parliamentNameLbl,victoriaNameLbl,westNameLbl,buckkingNameLbl,marshamNameLbl,millbankNameLbl,greatNameLbl,horebwrryNameLbl,rochNameLbl,vauxhallNameLbl,redcolor,indexvlaueRedimg,indexvalueRedimgCompa,score,redimageArray,imageIndex,signalBtn1,signalBtn2,signalBtn3,signalBtn4,signalBtn5,signalBtn6,signalBtn7,signalBtn8,signalBtn9,signalBtn10,signalBtn11,signalBtn12,signalBtn13,signalBtn14,signalBtn15,signalBtn16,signalBtn17,signalBtn18,signalBtn19,signalBtn20,signalBtn21,signalBtn22,signalBtn23,signalBtn24,signalBtn25,signalBtn26,signalBtn27,signalBtn28,CURRENT_SCORE,Updatescoretime,Score_startTime,Score_timeInMilliseconds,Score_timeSwapBuff,Score_updatedTime,STARTSEC , CURRENTSEC,redline,updatemint,scoreDisplyayLbl,highScoreDisplayLbl,scoreValuess,bobleftmargin,bobtopmargin,pauseBtn,timeSwapBuff,bobrightmargin,bobdownmarign;
+@synthesize roadView,mainscrollview,leftgreenImg,topgreenImg,rightwaterImg,downwaterImg,insideFirstImg,insideFirstImg1,insideFirstImg2,insideFirstImg3,insideFirstImg4,bobImg,simamImg,simonArray,marginVO,timer,ywidthbobTop,ywidthsimLeft,BOB_LEFT_MARGIN,BOB_T0P_MARGIN,isMovingUp,isMovingDown,isMovingLeft,isMovingRight,indexvalue,position,startPosition,SIMAN_LEFT_MARGIN,SIMAN_T0P_MARGIN,hor_1_top ,hor_2_top ,hor_3_top,hor_4_top,hor_5_top,hor_6_top,hor_7_top,hor_8_top,ver_1_left,ver_2_left,ver_3_left,ver_4_left,ver_5_left,ver_6_left,isValidMove,isGAMEOVER,isMaproad1_1,isMaproad1_2,isMaproad1_3,isMaproad1_4,isMaproad2_1,isMaproad2_2,isMaproad2_3,isMaproad2_4,isMaproad3_1,isMaproad3_2,isMaproad3_3,isMaproad3_4,isMaproad4_1,isMaproad4_2,isMaproad4_3,isMaproad4_4,isPause,isSimanMove,isWait,isBottom_to_Top,isTop_to_Bottom,isLeft_to_Right,isRight_to_Left,ywidth,yheights,alert,cav,alertView,bgImage,ywidthbob,ywidthsim,simTop,simLeft,timer2,scoreLbl,highScoreLbl,titleName,maryNameLbl,hydeparkNameLbl1,hydeparkNameLbl,mayfairNameLbl,greenparkNameLbl,southNameLbl,maryroadNameLbl,paddingNameLbl,edgwareNameLbl,bakerNameLbl,gioucesterNameLbl,marleboneyNameLbl,bondstreetNameLbl,grosvenorstreetNameLbl,newbondNameLbl,berkeleyNameLbl,stratonstreetNameLbl,berkeleystreetNameLbl,piccadillyNameLbl,knighsNameLbl,queenNameLbl,bromptNameLbl,slonneNameLbl,thurloeNameLbl,gloucesterNameLbl,gloucester1NameLbl,kingsNameLbl,chelseaNameLbl,eustonNameLbl,gowerNameLbl,bloomsburyNameLbl,goodgeNameLbl,russelNameLbl,tottennamNameLbl,bloomsburyStreetNameLbl,oxfordNameLbl,sohoNameLbl,regentNameLbl,shaffesburyNameLbl,piccadilly1NameLbl,belgraviaNameLbl,cadoganNameLbl,eatonNameLbl,grosvenerNameLbl,ecclestenNameLbl,buckinghamNameLbl,belgraveNameLbl,gowersNameLbl,juddNameLbl,graysNameLbl,theobaldsNameLbl,southampNameLbl,highholbornNameLbl,holbornNameLbl,longNameLbl,kingswayNameLbl,stNameLbl,coventNameLbl,aldwychNameLbl,whiteNameLbl,victoryaNameLbl,parliamentNameLbl,victoriaNameLbl,westNameLbl,buckkingNameLbl,marshamNameLbl,millbankNameLbl,greatNameLbl,horebwrryNameLbl,rochNameLbl,vauxhallNameLbl,redcolor,indexvlaueRedimg,indexvalueRedimgCompa,score,redimageArray,imageIndex,signalBtn1,signalBtn2,signalBtn3,signalBtn4,signalBtn5,signalBtn6,signalBtn7,signalBtn8,signalBtn9,signalBtn10,signalBtn11,signalBtn12,signalBtn13,signalBtn14,signalBtn15,signalBtn16,signalBtn17,signalBtn18,signalBtn19,signalBtn20,signalBtn21,signalBtn22,signalBtn23,signalBtn24,signalBtn25,signalBtn26,signalBtn27,signalBtn28,CURRENT_SCORE,Updatescoretime,Score_startTime,Score_timeInMilliseconds,Score_timeSwapBuff,Score_updatedTime,STARTSEC , CURRENTSEC,redline,updatemint,scoreDisplyayLbl,highScoreDisplayLbl,scoreValuess,bobleftmargin,bobtopmargin,pauseBtn,timeSwapBuff,bobrightmargin,bobdownmarign,vibrateCount,vibrateTimer,admobCount,bobSpeed,yheightsim;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.navigationController.navigationBarHidden=YES;
-    
+[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:YES];
+    self.interstitial = [[GADInterstitial alloc] init ];
+                         
+           self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
+    self.interstitial.delegate = self;
+
+    GADRequest *request = [GADRequest request];
+    // Requests test ads on test devices.
+    request.testDevices = @[@"2077ef9a63d2b398840261c8221a0c9b"];
+    [self.interstitial loadRequest:request];
+
     simonArray=[[NSMutableArray alloc]init];
     redimageArray=[[NSMutableArray alloc]init];
     scoreValuess=0;
+    admobCount=0;
+    bobSpeed=0;
+    vibrateCount = 0;
     isMovingDown=NO;
     isMovingLeft=NO;
     isMovingRight=NO;
@@ -39,7 +58,7 @@
     hor_8_top = 0.885;
     ver_1_left = 0.08;
     ver_2_left = 0.23;
-    ver_3_left = 0.33,
+    ver_3_left = 0.33;
     ver_4_left = 0.48;
     ver_5_left = 0.73;
     ver_6_left = 0.88;
@@ -59,7 +78,7 @@
     isMaproad4_3 = false; isMaproad4_4= false;
     STARTSEC = 0, CURRENTSEC = 0;
     CURRENT_SCORE = 0;
-     score = 0, redline = 500,Updatescoretime=2;
+     score = 0, redline = 500,Updatescoretime=0;
     Score_startTime = 0L;
      Score_timeInMilliseconds = 0L;
      Score_timeSwapBuff = 0L;
@@ -69,7 +88,21 @@
     //map road 1 row 1 column
     //horizontally map design code
     self.view.backgroundColor=[UIColor colorWithHexString:@"d2be96"];
+    NSUserDefaults *prefscore = [NSUserDefaults standardUserDefaults];
+    [highScoreDisplayLbl removeFromSuperview];
+    highScoreDisplayLbl=[[UILabel alloc]initWithFrame:CGRectMake(85,35, 100,30)];
+    highScoreDisplayLbl.font=[UIFont fontWithName:@"Hobo" size:15.0];
+    highScoreDisplayLbl.textColor=[UIColor blackColor];
+    if ([prefscore objectForKey:@"score"]==nil) {
+        highScoreDisplayLbl.text=@"0";
 
+    }else{
+        highScoreDisplayLbl.text=[prefscore objectForKey:@"score"];
+
+    }
+    [self.view addSubview:highScoreDisplayLbl];
+    [self.view bringSubviewToFront:highScoreDisplayLbl];
+    
     [self AllViewDisplay];
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipe:)];
     swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
@@ -88,6 +121,29 @@
     [self.view addGestureRecognizer:swipeDown];
     // Do any additional setup after loading the view from its nib.
 }
+-(BOOL)prefersStatusBarHidden{
+    return YES;
+}
+- (void)interstitial:(GADInterstitial *)interstitial
+didFailToReceiveAdWithError:(GADRequestError *)error {
+    NSLog(@"interstitialDidFailToReceiveAdWithError: %@", [error localizedDescription]);
+}
+
+- (void)interstitialDidDismissScreen:(GADInterstitial *)interstitial {
+    NSLog(@"interstitialDidDismissScreen");
+    [self dialogAction];
+
+    self.interstitial = [[GADInterstitial alloc] init];
+                          
+self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
+                         self.interstitial.delegate = self;
+
+    GADRequest *request = [GADRequest request];
+    // Requests test ads on test devices.
+    request.testDevices = @[@"2077ef9a63d2b398840261c8221a0c9b"];
+    [self.interstitial loadRequest:request];
+
+}
 -(void)AllViewDisplay{
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     ywidth = screenRect.size.width;
@@ -105,11 +161,11 @@
     [self.view addSubview:scoreLbl];
     [self.view bringSubviewToFront:scoreLbl];
     
-    scoreDisplyayLbl=[[UILabel alloc]initWithFrame:CGRectMake(50,10, 80,30)];
-    scoreDisplyayLbl.font=[UIFont fontWithName:@"Hobo" size:15.0];
-    scoreDisplyayLbl.textColor=[UIColor blackColor];
-    [self.view addSubview:scoreDisplyayLbl];
-    [self.view bringSubviewToFront:scoreDisplyayLbl];
+    //scoreDisplyayLbl=[[UILabel alloc]initWithFrame:CGRectMake(60,10, 80,30)];
+   // scoreDisplyayLbl.font=[UIFont fontWithName:@"Hobo" size:15.0];
+    //scoreDisplyayLbl.textColor=[UIColor blackColor];
+    //[self.view addSubview:scoreDisplyayLbl];
+    //[self.view bringSubviewToFront:scoreDisplyayLbl];
     
     highScoreLbl=[[UILabel alloc]initWithFrame:CGRectMake(5,35, 100,30)];
     highScoreLbl.font=[UIFont fontWithName:@"Hobo" size:15.0];
@@ -118,16 +174,18 @@
     [self.view addSubview:highScoreLbl];
     [self.view bringSubviewToFront:highScoreLbl];
     
-    highScoreDisplayLbl=[[UILabel alloc]initWithFrame:CGRectMake(75,35, 100,30)];
-    highScoreDisplayLbl.font=[UIFont fontWithName:@"Hobo" size:15.0];
-    highScoreDisplayLbl.textColor=[UIColor blackColor];
-    NSUserDefaults *prefscore = [NSUserDefaults standardUserDefaults];
-    highScoreDisplayLbl.text=[prefscore objectForKey:@"score"];
-    [self.view addSubview:highScoreDisplayLbl];
-    [self.view bringSubviewToFront:highScoreDisplayLbl];
+    //highScoreDisplayLbl=[[UILabel alloc]initWithFrame:CGRectMake(85,35, 100,30)];
+    //highScoreDisplayLbl.font=[UIFont fontWithName:@"Hobo" size:15.0];
+   // highScoreDisplayLbl.textColor=[UIColor blackColor];
+   // NSUserDefaults *prefscore = [NSUserDefaults standardUserDefaults];
+   // highScoreDisplayLbl.text=[prefscore objectForKey:@"score"];
+   // [self.view addSubview:highScoreDisplayLbl];
+   // [self.view bringSubviewToFront:highScoreDisplayLbl];
     
     pauseBtn=[[UIButton alloc]initWithFrame:CGRectMake((screenRect.size.width*0.85),13, 25,50)];
-    [pauseBtn setImage:[UIImage imageNamed:@"pause.png"] forState:UIControlStateNormal];
+    //[pauseBtn setImage:[UIImage imageNamed:@"pause.png"] forState:UIControlStateNormal];
+    [pauseBtn setBackgroundImage:[UIImage imageNamed:@"pause.png"]
+                        forState:UIControlStateNormal];
     [pauseBtn addTarget:self action:@selector(pauseView) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:pauseBtn];
     //water and green image set in background of map
@@ -998,57 +1056,62 @@
         [roadView setBackgroundColor:[UIColor whiteColor]];
         [self.mainscrollview addSubview:roadView];
     }
-    UIFont *customFont = [UIFont fontWithName:@"Hobo" size:12];
-    
-    titleName=[[UILabel alloc]initWithFrame:CGRectMake(screenRect.size.width*0.35,10, 150,35)];
-    titleName.font=[UIFont fontWithName:@"Hobo" size:18.0];
+    UIFont *customFont = [UIFont fontWithName:@"Hobo" size:screenRect.size.width*0.035];
+    UIFont *customFontd = [UIFont fontWithName:@"Hobo" size:screenRect.size.width*0.03];
+
+    UIFont *customFontbig = [UIFont fontWithName:@"Hobo" size:screenRect.size.width*0.09];
+    CGFloat namewidth=screenRect.size.width*0.08;
+    CGFloat namewidth1=screenRect.size.height*0.20;
+    CGFloat namewidth2=screenRect.size.height*0.55;
+
+    titleName=[[UILabel alloc]initWithFrame:CGRectMake(screenRect.size.width*0.35,11, 200,35)];
+    titleName.font=[UIFont fontWithName:@"Hobo" size:30.0];
     titleName.text=@"REGENTS PARK";
     titleName.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:titleName];
     
     
-    maryNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*0.40), 130,20)];
-    maryNameLbl.font = [UIFont fontWithName:@"Hobo" size:20];
+    maryNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*0.41), 300,namewidth)];
+    maryNameLbl.font = customFontbig;
     maryNameLbl.text=@"MARYLEBONE";
     maryNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:maryNameLbl];
     
-    maryroadNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.23),(screenRect.size.height*0.21), 120,23)];
+    maryroadNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.23),(screenRect.size.height*0.21), 120,namewidth)];
     maryroadNameLbl.font = customFont;
-    maryroadNameLbl.text=@"Marylebone Road";
+    maryroadNameLbl.text=@"Marylebone  Road";
     maryroadNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:maryroadNameLbl];
     
-    paddingNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.16),(screenRect.size.height*0.29), 150,23)];
+    paddingNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.16),(screenRect.size.height*0.29), 150,namewidth)];
     paddingNameLbl.font = customFont;
-    paddingNameLbl.text=@"Paddington Street";
+    paddingNameLbl.text=@"Paddington  Street";
     paddingNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:paddingNameLbl];
     
-    edgwareNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*0.49), 120,23)];
+    edgwareNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*0.49), 120,namewidth)];
     edgwareNameLbl.font = customFont;
-    edgwareNameLbl.text=@"Edgware Road";
+    edgwareNameLbl.text=@"Edgware  Road";
     edgwareNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:edgwareNameLbl];
     
-    bakerNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.76),(screenRect.size.height*0.25), 20,180)];
-    bakerNameLbl.font = customFont;
-    bakerNameLbl.text=@"B\na\nk\ne\nr\nS\nt\nr\ne\ne";
+    bakerNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.76),(screenRect.size.height*0.20), 20,namewidth2)];
+    bakerNameLbl.font = customFontd;
+    bakerNameLbl.text=@"B\na\nk\ne\nr\n\nS\nt\nr\ne\ne\nt";
     bakerNameLbl.lineBreakMode = UILineBreakModeWordWrap;
     bakerNameLbl.numberOfLines = 0;
     bakerNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:bakerNameLbl];
     
-    gioucesterNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.51),(screenRect.size.height*0.53), 20,230)];
-    gioucesterNameLbl.font = [UIFont fontWithName:@"Hobo" size:12];
-    gioucesterNameLbl.text=@"G\nl\no\nu\nc\ne\ns\nt\ne\nr\np\nl\na\nc\ne";
+    gioucesterNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.51),(screenRect.size.height*0.46), 20,namewidth2)];
+    gioucesterNameLbl.font = customFontd;
+    gioucesterNameLbl.text=@"G\nl\no\nu\nc\ne\ns\nt\ne\nr\n\nP\nl\na\nc\ne";
     gioucesterNameLbl.numberOfLines = 0;
     gioucesterNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:gioucesterNameLbl];
     
-    
-    hydeparkNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.15),(screenRect.size.height*0.90), 80,60)];
-    hydeparkNameLbl.font = [UIFont fontWithName:@"Hobo" size:20];
+    hydeparkNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.15),(screenRect.size.height*0.90), 80,namewidth1)];
+    hydeparkNameLbl.font = customFontbig;
     hydeparkNameLbl.text=@"HYDE\nPARK";
     hydeparkNameLbl.numberOfLines = 0;
     hydeparkNameLbl.textColor=[UIColor blackColor];
@@ -1071,76 +1134,75 @@
     [signalBtn4 setImage:[UIImage imageNamed:@"underground-symbol-small.gif"] forState:UIControlStateNormal];
     [self.mainscrollview addSubview:signalBtn4];
     
-    
-    hydeparkNameLbl1=[[UILabel alloc]initWithFrame:CGRectMake(7,(screenRect.size.height*1.10), 25,250)];
-    hydeparkNameLbl1.font = [UIFont fontWithName:@"Hobo" size:20];
-    hydeparkNameLbl1.text=@"H\nY\nD\nE\nP\nA \nR \nK";
+    hydeparkNameLbl1=[[UILabel alloc]initWithFrame:CGRectMake(7,(screenRect.size.height*1.10), 25,namewidth2)];
+    hydeparkNameLbl1.font = customFontbig;
+    hydeparkNameLbl1.text=@"H\nY\nD\nE\n\nP\nA \nR \nK";
     hydeparkNameLbl1.textColor=[UIColor blackColor];
     hydeparkNameLbl1.numberOfLines = 0;
     [self.mainscrollview addSubview:hydeparkNameLbl1];
     
-    marleboneyNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.90),(screenRect.size.height*0.74), 20,280)];
-    marleboneyNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    marleboneyNameLbl.text=@"M\na\nr\ny\nl\ne\nb\no\nn\ne\nh\ni\ng\nh\ns\nt\nr\ne\ne\nt";
+    marleboneyNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.91),(screenRect.size.height*0.74), 20,namewidth2)];
+    marleboneyNameLbl.font = customFontd;
+    marleboneyNameLbl.text=@"M\na\nr\ny\nl\ne\nb\no\nn\ne\n\nH\ni\ng\nh\n\nS\nt\nr\ne\ne\nt";
     marleboneyNameLbl.numberOfLines = 0;
     marleboneyNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:marleboneyNameLbl];
     
-    bondstreetNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*1.21), 120,23)];
+    bondstreetNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*1.21), 120,namewidth)];
     bondstreetNameLbl.font = customFont;
-    bondstreetNameLbl.text=@"Bond Street";
+    bondstreetNameLbl.text=@"Bond  Street";
     bondstreetNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:bondstreetNameLbl];
     
-    grosvenorstreetNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.35),(screenRect.size.height*1.29), 120,23)];
+    grosvenorstreetNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.35),(screenRect.size.height*1.29), 120,namewidth)];
     grosvenorstreetNameLbl.font = customFont;
-    grosvenorstreetNameLbl.text=@"Grosvenor Street";
+    grosvenorstreetNameLbl.text=@"Grosvenor  Street";
     grosvenorstreetNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:grosvenorstreetNameLbl];
     
-    newbondNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.75),(screenRect.size.height*1.24), 20,250)];
-    newbondNameLbl.font = customFont;
+    newbondNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.76),(screenRect.size.height*1.24), 20,namewidth2)];
+    newbondNameLbl.font = customFontd;
     newbondNameLbl.numberOfLines = 0;
-    newbondNameLbl.text=@"N\ne\nw\nB\no\nn\nd\nS\nt\nr\ne\ne\nt";
+    newbondNameLbl.text=@"N\ne\nw\n\nB\no\nn\nd\n\nS\nt\nr\ne\ne\nt";
     newbondNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:newbondNameLbl];
     
-    berkeleyNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*1.55), 80,55)];
-    berkeleyNameLbl.font = [UIFont fontWithName:@"Hobo" size:18];
+    berkeleyNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*1.52), 100,namewidth1-30)];
+    berkeleyNameLbl.font = [UIFont fontWithName:@"Hobo" size:22];
     berkeleyNameLbl.numberOfLines = 0;
     berkeleyNameLbl.text=@"Berkeley\nSquare";
     berkeleyNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:berkeleyNameLbl];
     
-    stratonstreetNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.26),(screenRect.size.height*1.63), 17,200)];
-    stratonstreetNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
+    stratonstreetNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.26),(screenRect.size.height*1.60), 17,namewidth2)];
+    stratonstreetNameLbl.font = customFontd;
     stratonstreetNameLbl.numberOfLines = 0;
-    stratonstreetNameLbl.text=@"S\nt\nr\na\nt\nt\no\nn\nS\nt\nr\ne\ne\nt";
+    stratonstreetNameLbl.text=@"S\nt\nr\na\nt\nt\no\nn\n\nS\nt\nr\ne\ne\nt";
     stratonstreetNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:stratonstreetNameLbl];
     
-    berkeleystreetNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.51),(screenRect.size.height*1.63), 17,200)];
-    berkeleystreetNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];;
+    berkeleystreetNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.51),(screenRect.size.height*1.60), 17,namewidth2)];
+    berkeleystreetNameLbl.font = customFontd;
     berkeleystreetNameLbl.numberOfLines = 0;
-    berkeleystreetNameLbl.text=@"B\ne\nr\nk\ne\nl\ne\ny\nS\nt\nr\ne\ne\nt";
+    berkeleystreetNameLbl.text=@"B\ne\nr\nk\ne\nl\ne\ny\n\nS\nt\nr\ne\ne\nt";
     berkeleystreetNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:berkeleystreetNameLbl];
     
-    piccadillyNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.60),(screenRect.size.height*1.74), 120,23)];
+    piccadillyNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.60),(screenRect.size.height*1.74), 120,namewidth)];
     piccadillyNameLbl.font = customFont;
     piccadillyNameLbl.text=@"Piccadilly";
     piccadillyNameLbl.textColor=[UIColor blackColor];
     //[self.mainscrollview addSubview:piccadillyNameLbl];
     
-    mayfairNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*1.44), 80,25)];
-    mayfairNameLbl.font = [UIFont fontWithName:@"Hobo" size:20];
+    mayfairNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*1.44), 230,namewidth+10)];
+    mayfairNameLbl.font = customFontbig;
     mayfairNameLbl.text=@"MAYFAIR";
     mayfairNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:mayfairNameLbl];
     
-    greenparkNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.35),(screenRect.size.height*2), 110,25)];
-    greenparkNameLbl.font = [UIFont fontWithName:@"Hobo" size:20];
-    greenparkNameLbl.text=@"GREEN PARK";
+    greenparkNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.35),(screenRect.size.height*2), 250,namewidth+10)];
+    greenparkNameLbl.font = [UIFont fontWithName:@"Hobo" size:22];
+    greenparkNameLbl.text=@"GREEN  PARK";
     greenparkNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:greenparkNameLbl];
     
@@ -1160,62 +1222,61 @@
     [signalBtn8 setImage:[UIImage imageNamed:@"underground-symbol-small.gif"] forState:UIControlStateNormal];
     [self.mainscrollview addSubview:signalBtn8];
     
-    knighsNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*2.09), 150,23)];
+    knighsNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.29),(screenRect.size.height*2.09), 150,namewidth)];
     knighsNameLbl.font = customFont;
     knighsNameLbl.text=@"Knightsbridge";
     knighsNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:knighsNameLbl];
     
-    queenNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.26),(screenRect.size.height*2.13), 17,170)];
-    queenNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];;
+    queenNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.26),(screenRect.size.height*2.0), 17,namewidth2)];
+    queenNameLbl.font = customFontd;
     queenNameLbl.numberOfLines = 0;
-    queenNameLbl.text=@"Q\nu\ne\ne\nn\n's\nG\na\nt\ne";
+    queenNameLbl.text=@"Q\nu\ne\ne\nn\n's\n\nG\na\nt\ne";
     queenNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:queenNameLbl];
     
-    bromptNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.76),(screenRect.size.height*2.22), 17,170)];
-    bromptNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];;
+    bromptNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.76),(screenRect.size.height*2.18), 17,namewidth2)];
+    bromptNameLbl.font = customFontd;
     bromptNameLbl.numberOfLines = 0;
-    bromptNameLbl.text=@"B\nr\no\nm\np\nt\no\nn\nR\no\na\nd";
+    bromptNameLbl.text=@"B\nr\no\nm\np\nt\no\nn\n\nR\no\na\nd";
     bromptNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:bromptNameLbl];
     
-    slonneNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.91),(screenRect.size.height*2.32), 17,170)];
-    slonneNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];;
+    slonneNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.91),(screenRect.size.height*2.22), 17,namewidth2)];
+    slonneNameLbl.font = customFontd;
     slonneNameLbl.numberOfLines = 0;
-    slonneNameLbl.text=@"S\nl\no\na\nn\ne\nS\nt\nr\ne\ne\nt";
+    slonneNameLbl.text=@"S\nl\no\na\nn\ne\n\n\nS\nt\nr\ne\ne\nt";
     slonneNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:slonneNameLbl];
     
-    thurloeNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*2.49), 150,23)];
+    thurloeNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*2.49), 150,namewidth)];
     thurloeNameLbl.font = customFont;
-    thurloeNameLbl.text=@"Thurloe Place";
+    thurloeNameLbl.text=@"Thurloe  Place";
     thurloeNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:thurloeNameLbl];
     
-    gloucesterNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.11),(screenRect.size.height*2.50), 17,200)];
-    gloucesterNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];;
+    gloucesterNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.11),(screenRect.size.height*2.42), 17,namewidth2)];
+    gloucesterNameLbl.font = customFontd;
     gloucesterNameLbl.numberOfLines = 0;
-    gloucesterNameLbl.text=@"G\nl\no\nu\nc\ne\nS\nt\nr\ne\nR\no\na\nd";
+    gloucesterNameLbl.text=@"G\nl\no\nu\nc\ne\ns\nt\ne\nr\n\nR\no\na\nd";
     gloucesterNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:gloucesterNameLbl];
     
-    
-    kingsNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.60),(screenRect.size.height*2.74), 150,23)];
+    kingsNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.62),(screenRect.size.height*2.74), 150,namewidth)];
     kingsNameLbl.font = customFont;
-    kingsNameLbl.text=@"King's Road";
+    kingsNameLbl.text=@"King's  Road";
     kingsNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:kingsNameLbl];
     
-    chelseaNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.55),(screenRect.size.height*2.89), 150,23)];
+    chelseaNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.55),(screenRect.size.height*2.89), 150,namewidth)];
     chelseaNameLbl.font = customFont;
-    chelseaNameLbl.text=@"Chelsea Embankment";
+    chelseaNameLbl.text=@"Chelsea  Embankment";
     chelseaNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:chelseaNameLbl];
     
-    southNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.20),(screenRect.size.height*2.64), 130,60)];
-    southNameLbl.font = [UIFont fontWithName:@"Hobo" size:20];
-    southNameLbl.text=@"SOUTH \nKENSINGTON";
+    southNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.20),(screenRect.size.height*2.61), 900,namewidth1)];
+    southNameLbl.font = customFontbig;
+    southNameLbl.text=@"SOUTH\nKENSINGTON";
     southNameLbl.textColor=[UIColor blackColor];
     southNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:southNameLbl];
@@ -1232,41 +1293,41 @@
     [signalBtn11 setImage:[UIImage imageNamed:@"underground-symbol-small.gif"] forState:UIControlStateNormal];
     [self.mainscrollview addSubview:signalBtn11];
     
-    eustonNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.25),(screenRect.size.height*0.21), 150,23)];
+    eustonNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.25),(screenRect.size.height*0.21), 150,namewidth)];
     eustonNameLbl.font = customFont;
-    eustonNameLbl.text=@"Euston Square";
+    eustonNameLbl.text=@"Euston  Square";
     eustonNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:eustonNameLbl];
     
-    gowerNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.76),(screenRect.size.height*0.25), 17,170)];
-    gowerNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    gowerNameLbl.text=@"G\no\nw\ne\nr\nS\nt\nr\ne\ne\nt";
+    gowerNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.76),(screenRect.size.height*0.18), 17,namewidth2)];
+    gowerNameLbl.font = customFontd;
+    gowerNameLbl.text=@"G\no\nw\ne\nr\n\n\nS\nt\nr\ne\ne\nt";
     gowerNameLbl.textColor=[UIColor blackColor];
     gowerNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:gowerNameLbl];
     
-    bloomsburyNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.35),(screenRect.size.height*0.40), 150,23)];
-    bloomsburyNameLbl.font = [UIFont fontWithName:@"Hobo" size:25];
-    bloomsburyNameLbl.text=@"Bloomsbury";
+    bloomsburyNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.40),(screenRect.size.height*0.40), 380,namewidth+10)];
+    bloomsburyNameLbl.font = customFontbig;
+    bloomsburyNameLbl.text=@"BLOOMSBURY";
     bloomsburyNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:bloomsburyNameLbl];
     
-    goodgeNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.12),(screenRect.size.height*0.49), 150,23)];
+    goodgeNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.14),(screenRect.size.height*0.49), 350,namewidth)];
     goodgeNameLbl.font = customFont;
-    goodgeNameLbl.text=@"Goodge Street";
+    goodgeNameLbl.text=@"Goodge  Street";
     goodgeNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:goodgeNameLbl];
     
-    russelNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.91),(screenRect.size.height*0.48), 17,170)];
-    russelNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    russelNameLbl.text=@"R\nu\ns\ns\ne\nl\nl\nS\nq\nu\na\nr\ne";
+    russelNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.91),(screenRect.size.height*0.43), 17,namewidth2)];
+    russelNameLbl.font = customFontd;
+    russelNameLbl.text=@"R\nu\ns\ns\ne\nl\nl\n\nS\nq\nu\na\nr\ne";
     russelNameLbl.textColor=[UIColor blackColor];
     russelNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:russelNameLbl];
     
-    tottennamNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.51),(screenRect.size.height*0.70), 20,250)];
-    tottennamNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    tottennamNameLbl.text=@"T\no\nt\nt\ne\nn\nn\na\nm\nC\no\nu\nr\nt\nR\no\na\nd";
+    tottennamNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.51),(screenRect.size.height*0.54), 20,namewidth2)];
+    tottennamNameLbl.font = customFontd;
+    tottennamNameLbl.text=@"T\no\nt\nt\ne\nn\nh\na\nm\n\nC\no\nu\nr\nt\n\nR\no\na\nd";
     tottennamNameLbl.textColor=[UIColor blackColor];
     tottennamNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:tottennamNameLbl];
@@ -1295,10 +1356,9 @@
     [signalBtn15_ setImage:[UIImage imageNamed:@"underground-symbol-small.gif"] forState:UIControlStateNormal];
     [self.mainscrollview addSubview:signalBtn15_];
     
-    
-    bloomsburyStreetNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.76),(screenRect.size.height*0.85), 20,250)];
-    bloomsburyStreetNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    bloomsburyStreetNameLbl.text=@"B\nl\no\no\nm\ns\nb\nu\nr\ny\nS\nt\nr\ne\ne\nt";
+    bloomsburyStreetNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.76),(screenRect.size.height*0.80), 20,namewidth2)];
+    bloomsburyStreetNameLbl.font = customFontd;
+    bloomsburyStreetNameLbl.text=@"B\nl\no\no\nm\ns\nb\nu\nr\ny\n\nS\nt\nr\ne\ne\nt";
     bloomsburyStreetNameLbl.textColor=[UIColor blackColor];
     bloomsburyStreetNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:bloomsburyStreetNameLbl];
@@ -1315,40 +1375,40 @@
     [signalBtn20 setImage:[UIImage imageNamed:@"underground-symbol-small.gif"] forState:UIControlStateNormal];
     [self.mainscrollview addSubview:signalBtn20];
     
-    oxfordNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.15),(screenRect.size.height*1.21), 150,23)];
+    oxfordNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.15),(screenRect.size.height*1.21), 150,namewidth)];
     oxfordNameLbl.font = customFont;
-    oxfordNameLbl.text=@"Oxford Street";
+    oxfordNameLbl.text=@"Oxford  Street";
     oxfordNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:oxfordNameLbl];
     
-    sohoNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.55),(screenRect.size.height*1.30), 100,23)];
-    sohoNameLbl.font = [UIFont fontWithName:@"Hobo" size:25];
+    sohoNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.55),(screenRect.size.height*1.30), 100,namewidth+10)];
+    sohoNameLbl.font =customFontbig;
     sohoNameLbl.text=@"SOHO";
     sohoNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:sohoNameLbl];
     
-    regentNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.51),(screenRect.size.height*1.40), 20,250)];
-    regentNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    regentNameLbl.text=@"R\ne\ng\ne\nn\nt\nS\nt\nr\ne\ne\nt";
+    regentNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.51),(screenRect.size.height*1.30), 20,namewidth2)];
+    regentNameLbl.font = customFontd;
+    regentNameLbl.text=@"R\ne\ng\ne\nn\nt\n\nS\nt\nr\ne\ne\nt";
     regentNameLbl.textColor=[UIColor blackColor];
     regentNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:regentNameLbl];
     
-    UILabel*  charingNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.91),(screenRect.size.height*1.30), 20,250)];
-    charingNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    charingNameLbl.text=@"C\nh\na\nr\ni\nn\ng\nC\nr\no\ns\ns\nR\no\na\nd";
+    UILabel*  charingNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.91),(screenRect.size.height*1.25), 20,namewidth2)];
+    charingNameLbl.font = customFontd;
+    charingNameLbl.text=@"C\nh\na\nr\ni\nn\ng\n\nC\nr\no\ns\ns\n\nR\no\na\nd";
     charingNameLbl.textColor=[UIColor blackColor];
     charingNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:charingNameLbl];
     
-    shaffesburyNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.76),(screenRect.size.height*1.40), 20,250)];
-    shaffesburyNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    shaffesburyNameLbl.text=@"S\nh\na\nf\nf\ne\ns\nb\nu\nr\ny\nA\nV\ne";
+    shaffesburyNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.76),(screenRect.size.height*1.35), 20,namewidth2)];
+    shaffesburyNameLbl.font = customFontd;
+    shaffesburyNameLbl.text=@"S\nh\na\nf\nf\ne\ns\nb\nu\nr\ny\n\nA\nV\ne\nn\nu\ne";
     shaffesburyNameLbl.textColor=[UIColor blackColor];
     shaffesburyNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:shaffesburyNameLbl];
     
-    piccadilly1NameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.52),(screenRect.size.height*1.74), 100,23)];
+    piccadilly1NameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.54),(screenRect.size.height*1.74), 100,namewidth)];
     piccadilly1NameLbl.font = customFont;
     piccadilly1NameLbl.text=@"Piccadilly";
     piccadilly1NameLbl.textColor=[UIColor blackColor];
@@ -1362,51 +1422,50 @@
     [signalBtn22 setImage:[UIImage imageNamed:@"underground-symbol-small.gif"] forState:UIControlStateNormal];
     [self.mainscrollview addSubview:signalBtn22];
     
-    
-    belgraviaNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.22),(screenRect.size.height*2.35), 100,30)];
-    belgraviaNameLbl.font = [UIFont fontWithName:@"Hobo" size:25];
-    belgraviaNameLbl.text=@"Belgravia";
+    belgraviaNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.22),(screenRect.size.height*2.35), 350,namewidth)];
+    belgraviaNameLbl.font = customFontbig;
+    belgraviaNameLbl.text=@"BELGRAVIA";
     belgraviaNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:belgraviaNameLbl];
     
-    cadoganNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.11),(screenRect.size.height*2.45), 20,250)];
-    cadoganNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    cadoganNameLbl.text=@"C\na\nd\no\ng\na\nn\nP\nl\na\nc\ne";
+    cadoganNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.11),(screenRect.size.height*2.35), 20,namewidth2)];
+    cadoganNameLbl.font = customFontd;
+    cadoganNameLbl.text=@"C\na\nd\no\ng\na\nn\n\nP\nl\na\nc\ne";
     cadoganNameLbl.textColor=[UIColor blackColor];
     cadoganNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:cadoganNameLbl];
     
-    eatonNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.36),(screenRect.size.height*2.35), 20,250)];
-    eatonNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    eatonNameLbl.text=@"E\na\nt\no\nn\nS\nq\nu\na\nr\ne";
+    eatonNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.36),(screenRect.size.height*2.30), 20,namewidth2)];
+    eatonNameLbl.font = customFontd;
+    eatonNameLbl.text=@"E\na\nt\no\nn\n\nS\nq\nu\na\nr\ne";
     eatonNameLbl.textColor=[UIColor blackColor];
     eatonNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:eatonNameLbl];
     
-    grosvenerNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.76),(screenRect.size.height*2.23), 20,250)];
-    grosvenerNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    grosvenerNameLbl.text=@"G\nr\no\ns\nv\ne\nn\nO\nr\nP\nl\na\nc\ne";
+    grosvenerNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.76),(screenRect.size.height*2.15), 20,namewidth2)];
+    grosvenerNameLbl.font = customFontd;
+    grosvenerNameLbl.text=@"G\nr\no\ns\nv\ne\nn\nO\nr\n\nP\nl\na\nc\ne";
     grosvenerNameLbl.textColor=[UIColor blackColor];
     grosvenerNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:grosvenerNameLbl];
     
-    ecclestenNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.91),(screenRect.size.height*2.35), 20,250)];
-    ecclestenNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    ecclestenNameLbl.text=@"E\nc\nc\nl\ne\ns\nt\nO\nn\nS\nt\nr\ne\ne\nt";
+    ecclestenNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.91),(screenRect.size.height*2.27), 20,namewidth2)];
+    ecclestenNameLbl.font = customFontd;
+    ecclestenNameLbl.text=@"E\nc\nc\nl\ne\ns\nt\nO\nn\n\nS\nt\nr\ne\ne\nt";
     ecclestenNameLbl.textColor=[UIColor blackColor];
     ecclestenNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:ecclestenNameLbl];
     
-    buckinghamNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.51),(screenRect.size.height*2.50), 20,280)];
-    buckinghamNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    buckinghamNameLbl.text=@"B\nu\nc\nk\ni\nn\ng\nh\na\nm\nP\nl\na\nc\ne\nR\no\na\nd";
+    buckinghamNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.51),(screenRect.size.height*2.50), 20,namewidth2)];
+    buckinghamNameLbl.font = customFontd;
+    buckinghamNameLbl.text=@"B\nu\nc\nk\ni\nn\ng\nh\na\nm\n\nP\nl\na\nc\ne\n\nR\no\na\nd";
     buckinghamNameLbl.textColor=[UIColor blackColor];
     buckinghamNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:buckinghamNameLbl];
     
-    belgraveNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.55),(screenRect.size.height*2.64), 100,23)];
+    belgraveNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.55),(screenRect.size.height*2.64), 100,namewidth)];
     belgraveNameLbl.font = customFont;
-    belgraveNameLbl.text=@"Belgrave Road";
+    belgraveNameLbl.text=@"Belgrave  Road";
     belgraveNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:belgraveNameLbl];
     
@@ -1418,47 +1477,55 @@
     [signalBtn24 setImage:[UIImage imageNamed:@"underground-symbol-small.gif"] forState:UIControlStateNormal];
     [self.mainscrollview addSubview:signalBtn24];
     
-    gowersNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.60),(screenRect.size.height*0.21), 100,23)];
+    gowersNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.65),(screenRect.size.height*0.215), 100,23)];
     gowersNameLbl.font = customFont;
-    gowersNameLbl.text=@"King's Gross";
+    gowersNameLbl.text=@"King's  Cross";
     gowersNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:gowersNameLbl];
     
-    juddNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.76),(screenRect.size.height*0.25), 20,280)];
-    juddNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    juddNameLbl.text=@"J\nu\nd\nd\nS\nt\nr\ne\ne\nt";
+   UILabel* argylesquare=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.76),(screenRect.size.height*0.20), 20,namewidth2)];
+    argylesquare.font = customFontd;
+    argylesquare.text=@"A\nr\ng\ny\nl\ne\n\nS\nq\nu\na\nr\ne";
+    argylesquare.textColor=[UIColor blackColor];
+    argylesquare.numberOfLines = 0;
+    [self.mainscrollview addSubview:argylesquare];
+
+    
+    juddNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.51),(screenRect.size.height*0.47), 20,namewidth2)];
+    juddNameLbl.font = customFontd;
+    juddNameLbl.text=@"J\nu\nd\nd\n\nS\nt\nr\ne\ne\nt";
     juddNameLbl.textColor=[UIColor blackColor];
     juddNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:juddNameLbl];
     
-    graysNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.91),(screenRect.size.height*0.30), 20,280)];
-    graysNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    graysNameLbl.text=@"G\nr\na\ny\n's\nI\nn\nn\nR\no\na\nd";
+    graysNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.91),(screenRect.size.height*0.23), 20,namewidth2)];
+    graysNameLbl.font = customFontd;
+    graysNameLbl.text=@"G\nr\na\ny\n's\n\nI\nn\nn\n\nR\no\na\nd";
     graysNameLbl.textColor=[UIColor blackColor];
     graysNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:graysNameLbl];
     
-    theobaldsNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.35),(screenRect.size.height*0.49), 100,23)];
+    theobaldsNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.35),(screenRect.size.height*0.49), 100,namewidth)];
     theobaldsNameLbl.font = customFont;
-    theobaldsNameLbl.text=@"Theobalds Road";
+    theobaldsNameLbl.text=@"Theobalds  Road";
     theobaldsNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:theobaldsNameLbl];
     
-    southampNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.11),(screenRect.size.height*0.65), 20,280)];
-    southampNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    southampNameLbl.text=@"S\no\nu\nt\nh\na\nm\np\nt\no\nn\nR\no\nw";
+    southampNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.11),(screenRect.size.height*0.55), 20,namewidth2)];
+    southampNameLbl.font = customFontd;
+    southampNameLbl.text=@"S\no\nu\nt\nh\na\nm\np\nt\no\nn\n\nR\no\nw";
     southampNameLbl.textColor=[UIColor blackColor];
     southampNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:southampNameLbl];
     
-    highholbornNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.60),(screenRect.size.height*0.74), 100,23)];
+    highholbornNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.60),(screenRect.size.height*0.74), 100,namewidth)];
     highholbornNameLbl.font = customFont;
-    highholbornNameLbl.text=@"High Holborn";
+    highholbornNameLbl.text=@"High  Holborn";
     highholbornNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:highholbornNameLbl];
     
-    holbornNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.53),(screenRect.size.height*0.66), 100,23)];
-    holbornNameLbl.font = [UIFont fontWithName:@"Hobo" size:25];
+    holbornNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.55),(screenRect.size.height*0.66), 250,namewidth+10)];
+    holbornNameLbl.font = customFontbig;
     holbornNameLbl.text=@"HOLBORN";
     holbornNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:holbornNameLbl];
@@ -1479,134 +1546,140 @@
     [signalBtn28 setImage:[UIImage imageNamed:@"underground-symbol-small.gif"] forState:UIControlStateNormal];
     [self.mainscrollview addSubview:signalBtn28];
     
-    longNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.25),(screenRect.size.height*1.09), 100,23)];
+    longNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.25),(screenRect.size.height*1.09), 100,namewidth)];
     longNameLbl.font = customFont;
-    longNameLbl.text=@"Long Acre";
+    longNameLbl.text=@"Long  Acre";
     longNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:longNameLbl];
     
-    kingswayNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.37),(screenRect.size.height*1.29), 100,23)];
+    kingswayNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.40),(screenRect.size.height*1.29), 100,namewidth)];
     kingswayNameLbl.font = customFont;
     kingswayNameLbl.text=@"Kingsway";
     kingswayNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:kingswayNameLbl];
     
-    stNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.11),(screenRect.size.height*1.15), 20,280)];
-    stNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    stNameLbl.text=@"S\nt\nM\na\nr\nt\ni\nn\n's\nL\na\nn\ne";
+    UILabel* strand=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.76),(screenRect.size.height*1.21), 20,namewidth2)];
+    strand.font = customFontd;
+    strand.text=@"S\nt\nr\na\nn\nd";
+    strand.textColor=[UIColor blackColor];
+    strand.numberOfLines = 0;
+    [self.mainscrollview addSubview:strand];
+
+    stNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.11),(screenRect.size.height*1.08), 20,namewidth2)];
+    stNameLbl.font = customFontd;
+    stNameLbl.text=@"S\nt\n\nM\na\nr\nt\ni\nn\n's\n\nL\na\nn\ne";
     stNameLbl.textColor=[UIColor blackColor];
     stNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:stNameLbl];
     
-    coventNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.14),(screenRect.size.height*1.30), 150,60)];
-    coventNameLbl.font = [UIFont fontWithName:@"Hobo" size:20];
+    coventNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.17),(screenRect.size.height*1.30), 790,namewidth1)];
+    coventNameLbl.font = customFontbig;
     coventNameLbl.text=@"COVENT\nGARDEN";
     coventNameLbl.textColor=[UIColor blackColor];
     coventNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:coventNameLbl];
     
-    aldwychNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.45),(screenRect.size.height*1.49), 100,23)];
+    aldwychNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.45),(screenRect.size.height*1.49), 100,namewidth)];
     aldwychNameLbl.font = customFont;
     aldwychNameLbl.text=@"Aidwych";
     aldwychNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:aldwychNameLbl];
     
-    whiteNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.51),(screenRect.size.height*1.55), 17,170)];
-    whiteNameLbl.font = customFont;
+    whiteNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.51),(screenRect.size.height*1.45), 17,namewidth2)];
+    whiteNameLbl.font = customFontd;
     whiteNameLbl.text=@"W\nh\ni\nt\ne\nh\na\nl\nl";
     whiteNameLbl.numberOfLines = 0;
     whiteNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:whiteNameLbl];
     
-    victoryaNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.91),(screenRect.size.height*1.55), 20,280)];
-    victoryaNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    victoryaNameLbl.text=@"V\ni\nc\nt\no\nr\ni\na\nE\nm\nb\na\nn\nk\nm\ne\nn\nt";
+    victoryaNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.91),(screenRect.size.height*1.55), 20,namewidth2)];
+    victoryaNameLbl.font = customFontd;
+    victoryaNameLbl.text=@"V\ni\nc\nt\no\nr\ni\na\n\nE\nm\nb\na\nn\nk\nm\ne\nn\nt";
     victoryaNameLbl.textColor=[UIColor blackColor];
     victoryaNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:victoryaNameLbl];
     
-    parliamentNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.26),(screenRect.size.height*1.89), 100,23)];
+    parliamentNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.29),(screenRect.size.height*1.89), 200,namewidth)];
     parliamentNameLbl.font = customFont;
-    parliamentNameLbl.text=@"Parliament Street";
+    parliamentNameLbl.text=@"Parliament  Street";
     parliamentNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:parliamentNameLbl];
     
-    victoriaNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.55),(screenRect.size.height*2.09), 100,23)];
+    victoriaNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.55),(screenRect.size.height*2.09), 100,namewidth)];
     victoriaNameLbl.font = customFont;
-    victoriaNameLbl.text=@"Victoria Street";
+    victoriaNameLbl.text=@"Victoria  Street";
     victoriaNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:victoriaNameLbl];
     
-    westNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.25),(screenRect.size.height*2.15), 180,23)];
-    westNameLbl.font = [UIFont fontWithName:@"Hobo" size:25];
+    westNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.25),(screenRect.size.height*2.15), 380,namewidth+10)];
+    westNameLbl.font = customFontbig;
     westNameLbl.text=@"WESTMINSTER";
     westNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:westNameLbl];
     
-    buckkingNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.0),(screenRect.size.height*2.21), 100,23)];
+    buckkingNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.0),(screenRect.size.height*2.21), 100,namewidth)];
     buckkingNameLbl.font = customFont;
-    buckkingNameLbl.text=@"Buckingham Gate";
+    buckkingNameLbl.text=@"Buckingham  Gate";
     buckkingNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:buckkingNameLbl];
     
-    marshamNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.76),(screenRect.size.height*2.22), 20,280)];
-    marshamNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    marshamNameLbl.text=@"M\na\nr\ns\nh\na\nm\nS\nt\nr\ne\ne\nt";
+    marshamNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.76),(screenRect.size.height*2.20), 20,namewidth2)];
+    marshamNameLbl.font = customFontd;
+    marshamNameLbl.text=@"M\na\nr\ns\nh\na\nm\n\nS\nt\nr\ne\ne\nt";
     marshamNameLbl.textColor=[UIColor blackColor];
     marshamNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:marshamNameLbl];
     
-    millbankNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.91),(screenRect.size.height*2.22), 20,280)];
-    millbankNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
+    millbankNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.91),(screenRect.size.height*2.15), 20,namewidth2)];
+    millbankNameLbl.font = customFontd;
     millbankNameLbl.text=@"M\ni\nl\nl\nb\na\nn\nk";
     millbankNameLbl.textColor=[UIColor blackColor];
     millbankNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:millbankNameLbl];
     
-    greatNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.40),(screenRect.size.height*2.39), 100,23)];
+    greatNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.40),(screenRect.size.height*2.39), 200,namewidth)];
     greatNameLbl.font = customFont;
-    greatNameLbl.text=@"Great Peter Street";
+    greatNameLbl.text=@"Great  Peter  Street";
     greatNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:greatNameLbl];
     
-    horebwrryNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.26),(screenRect.size.height*2.49), 100,23)];
+    horebwrryNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.26),(screenRect.size.height*2.49), 100,namewidth)];
     horebwrryNameLbl.font = customFont;
-    horebwrryNameLbl.text=@"Horeberry Road";
+    horebwrryNameLbl.text=@"Horeberry  Road";
     horebwrryNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:horebwrryNameLbl];
     
-    rochNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.11),(screenRect.size.height*2.40), 20,280)];
-    rochNameLbl.font = [UIFont fontWithName:@"Hobo" size:9];
-    rochNameLbl.text=@"R\no\nc\nh\ne\ns\nf\ne\nr\nR\no\nw";
+    rochNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.11),(screenRect.size.height*2.40), 20,namewidth2)];
+    rochNameLbl.font = customFontd;
+    rochNameLbl.text=@"R\no\nc\nh\ne\ns\nf\ne\nr\n\nR\no\nw";
     rochNameLbl.textColor=[UIColor blackColor];
     rochNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:rochNameLbl];
     
-    vauxhallNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.50),(screenRect.size.height*2.89), 150,23)];
+    vauxhallNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.50),(screenRect.size.height*2.89), 150,namewidth)];
     vauxhallNameLbl.font = customFont;
-    vauxhallNameLbl.text=@"Vauxhall Bridge Road";
+    vauxhallNameLbl.text=@"Vauxhall  Bridge  Road";
     vauxhallNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:vauxhallNameLbl];
     
-    UILabel* riverNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*3.02),(screenRect.size.height*1.50), 300,70)];
-    riverNameLbl.font = [UIFont fontWithName:@"Hobo" size:25];
+    UILabel* riverNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*3.02),(screenRect.size.height*1.50), 900,namewidth1)];
+    riverNameLbl.font = customFontbig;
     riverNameLbl.text=@"RIVER\nTHAMES";
     riverNameLbl.numberOfLines = 0;
     riverNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:riverNameLbl];
     
-    UILabel* riverNameLbl1=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.30),(screenRect.size.height*3.10), 230,30)];
-    riverNameLbl1.font = [UIFont fontWithName:@"Hobo" size:25];
-    riverNameLbl1.text=@"RIVER THAMES";
+    UILabel* riverNameLbl1=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.30),(screenRect.size.height*3.10), 330,namewidth+10)];
+    riverNameLbl1.font = customFontbig;
+    riverNameLbl1.text=@"RIVER  THAMES";
     riverNameLbl1.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:riverNameLbl1];
     
-    UILabel* riverNameLbl2=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.30),(screenRect.size.height*3.10), 230,30)];
-    riverNameLbl2.font = [UIFont fontWithName:@"Hobo" size:25];
-    riverNameLbl2.text=@"RIVER THAMES";
+    UILabel* riverNameLbl2=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.30),(screenRect.size.height*3.10), 330,namewidth+10)];
+    riverNameLbl2.font = customFontbig;
+    riverNameLbl2.text=@"RIVER  THAMES";
     riverNameLbl2.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:riverNameLbl2];
-    
     
     BOB_T0P_MARGIN = 1.48;
     BOB_LEFT_MARGIN = 1.48;
@@ -1622,13 +1695,13 @@
     mainscrollview.contentSize = CGSizeMake(screenRect.size.width*4.0,screenRect.size.height*4.0);
     mainscrollview.scrollEnabled=NO;
     
-    
     isMovingUp=YES;
     indexvalue=0;
     indexvlaueRedimg=8;
     indexvalueRedimgCompa=0;
     imageIndex=0;
     marginVO=[[MarginVO alloc]init];
+    
     timer = [NSTimer scheduledTimerWithTimeInterval: 0.015 target:self selector:@selector(RunnerAction) userInfo:nil repeats: YES];
 
 }
@@ -1642,8 +1715,10 @@
 }
 - (void)didSwipe:(UISwipeGestureRecognizer*)swipe{
     STARTSEC = CURRENTSEC;
-    [self vibratePhone];
-
+    bobSpeed=bobSpeed+1;
+    vibrateCount=0;
+vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(vibratePhone) userInfo:nil repeats:YES];
+    
     if (swipe.direction == UISwipeGestureRecognizerDirectionLeft) {
         isMovingUp=NO;
         isMovingDown=NO;
@@ -1684,9 +1759,17 @@
 }
 - (void)vibratePhone;
 {
+    vibrateCount = vibrateCount +1;
     
+    if(vibrateCount == 1) {
           AudioServicesPlaySystemSound (4095);
-}
+    }else {
+        
+        //vibrated 5 times already kill timer and stop vibrating
+        [vibrateTimer invalidate];
+        
+    }
+    }
 -(void)RunnerAction{
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     Score_timeInMilliseconds = ([[NSDate date] timeIntervalSince1970]) - Score_startTime;
@@ -1710,9 +1793,16 @@
             //score = (long) (Score_updatedTime * 0.005);
             score+=5;
             NSLog(@"score :-%ld",score);
-            Updatescoretime+=3;
+            Updatescoretime+=1;
             CURRENT_SCORE = score;
+            [scoreDisplyayLbl removeFromSuperview];
+            scoreDisplyayLbl=[[UILabel alloc]initWithFrame:CGRectMake(60,10, 80,30)];
+            scoreDisplyayLbl.font=[UIFont fontWithName:@"Hobo" size:15.0];
+            scoreDisplyayLbl.textColor=[UIColor blackColor];
             scoreDisplyayLbl.text=[NSString stringWithFormat:@"%ld", score];
+            [self.view addSubview:scoreDisplyayLbl];
+            [self.view bringSubviewToFront:scoreDisplyayLbl];
+
 
         }
     CGFloat leftmargin = (CGFloat) ((screenRect.size.width) * BOB_LEFT_MARGIN);
@@ -1764,7 +1854,7 @@
     }
         if (indexvlaueRedimg==indexvalueRedimgCompa) {
             [self AddColorView];
-            indexvlaueRedimg=indexvlaueRedimg+8;
+            indexvlaueRedimg=indexvlaueRedimg+18;
         }
         indexvalueRedimgCompa=indexvalueRedimgCompa+1;
 
@@ -1843,17 +1933,19 @@
 								Score_timeSwapBuff += Score_timeInMilliseconds;
     }
     cav=[[CameraAlertView alloc] init];
+    
+
 
     bgImage=[[UIImageView alloc]initWithFrame:CGRectMake(0,0, cav.demoView.bounds.size.width,cav.demoView.bounds.size.height)];
     [bgImage setImage:[UIImage imageNamed:@"gameoverimage.png"]];
     [cav.demoView addSubview:bgImage];
 
-    UIButton *ResumeBtn=[[UIButton alloc] initWithFrame:CGRectMake(0,100, cav.demoView.bounds.size.width,48)];
+    UIButton *ResumeBtn=[[UIButton alloc] initWithFrame:CGRectMake(0,130, cav.demoView.bounds.size.width,48)];
     [ResumeBtn setTitle:@"Resume" forState:UIControlStateNormal];
     [ResumeBtn addTarget:self
                      action:@selector(resumeAction)
            forControlEvents:UIControlEventTouchUpInside];
-    [ResumeBtn.titleLabel setFont:[UIFont fontWithName:@"Hobo" size:25.0]];
+    [ResumeBtn.titleLabel setFont:[UIFont fontWithName:@"Hobo" size:50.0]];
     [ResumeBtn setBackgroundColor:[UIColor clearColor]];
     ResumeBtn.tag=1;
     
@@ -1872,12 +1964,12 @@
     ResumeBtn.alpha = 1.0f;
     [UIView commitAnimations];
     
-    UIButton *ExitBtn=[[UIButton alloc] initWithFrame:CGRectMake(0,160, cav.demoView.bounds.size.width,48)];
+    UIButton *ExitBtn=[[UIButton alloc] initWithFrame:CGRectMake(0,190, cav.demoView.bounds.size.width,48)];
     [ExitBtn setTitle:@"Exit" forState:UIControlStateNormal];
     [ExitBtn addTarget:self
                      action:@selector(exitAction)
            forControlEvents:UIControlEventTouchUpInside];
-    [ExitBtn.titleLabel setFont:[UIFont fontWithName:@"Hobo" size:25.0]];
+    [ExitBtn.titleLabel setFont:[UIFont fontWithName:@"Hobo" size:50.0]];
     [ExitBtn setBackgroundColor:[UIColor clearColor]];
     ExitBtn.tag=2;
     
@@ -1886,10 +1978,40 @@
     
     [cav.demoView addSubview:ExitBtn];
 
+    GADBannerView *bannerViewtop=[[GADBannerView alloc]init];
+    [bannerViewtop setFrame:CGRectMake(40,0,cav.demoView.bounds.size.width-80,50)];
+    bannerViewtop.adUnitID = @"ca-app-pub-1192482966027684/8176365056";
+    bannerViewtop.rootViewController = self;
+    
+    GADRequest *request = [GADRequest request];
+    request.testDevices = @[
+                            @"2077ef9a63d2b398840261c8221a0c9a"  // Eric's iPod Touch
+                            ];
+    [bannerViewtop loadRequest:request];
+    [cav.demoView addSubview:bannerViewtop];
+    [cav.demoView bringSubviewToFront:bannerViewtop];
+    
+    GADBannerView *bannerViewDown=[[GADBannerView alloc]init];
+    [bannerViewDown setFrame:CGRectMake(40,cav.demoView.bounds.size.height-50,cav.demoView.bounds.size.width-80,50)];
+    bannerViewDown.adUnitID = @"ca-app-pub-1192482966027684/9653098255";
+    bannerViewDown.rootViewController = self;
+    
+    GADRequest *requests = [GADRequest request];
+    requests.testDevices = @[
+                             @"2077ef9a63d2b398840261c8221a0c9a"  // Eric's iPod Touch
+                             ];
+    [bannerViewDown loadRequest:requests];
+    [cav.demoView addSubview:bannerViewDown];
+    [cav.demoView bringSubviewToFront:bannerViewDown];
+    
     [cav show];
 
 }
 -(IBAction)resumeAction{
+    vibrateCount=0;
+    vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(vibratePhone) userInfo:nil repeats:YES];
+
+    
     if (isPause) {
 								isPause = false;
 								Score_startTime = [[NSDate date] timeIntervalSince1970];
@@ -1900,75 +2022,107 @@
 }
 -(IBAction)exitAction{
     [cav close];
+    vibrateCount=0;
+    vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(vibratePhone) userInfo:nil repeats:YES];
+
     MenuViewController *menu=[[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
     [self.navigationController pushViewController:menu animated:NO];
 
 }
 -(void)pickImages{
-    [self vibratePhone];
+    admobCount=admobCount+1;
+    if (admobCount==5) {
+        admobCount=0;
+        if ([self.interstitial isReady]) {
+            [self.interstitial presentFromRootViewController:self];
+        }else{
+            [self dialogAction];
+        }
+    }else{
+        [self dialogAction];
+    }
+    }
+-(void)dialogAction{
     CGRect screenRect = [[UIScreen mainScreen] bounds];
+    
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    
+    vibrateCount=0;
+    vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(vibratePhone) userInfo:nil repeats:YES];
     for(UIView *subview in [mainscrollview subviews]) {
-      
-                [subview removeFromSuperview];
+        
+        [subview removeFromSuperview];
     }
     [self AllViewDisplay];
     [redcolor removeFromSuperview];
     CURRENT_SCORE = 0;
-     redline = 500,Updatescoretime=2;
+    redline = 500,Updatescoretime=0;
     Score_timeInMilliseconds = 0L;
     Score_timeSwapBuff = 0L;
     Score_updatedTime = 0L;
     updatemint = 1;
-
+    
     STARTSEC = 0, CURRENTSEC = 0;
     cav=[[CameraAlertView alloc] init];
     [timer invalidate];
-      timer = nil;
+    timer = nil;
     indexvalue=1;
     marginVO=[[MarginVO alloc]init];
     ywidthsim=10;
     ywidthbob=0;
+    yheightsim=cav.demoView.bounds.size.height*0.68;
     simonArray=[[NSMutableArray alloc]init];
     timer2 = [NSTimer scheduledTimerWithTimeInterval: 0.015 target:self selector:@selector(BobisRunning) userInfo:nil repeats: YES];
-
+    
     bgImage=[[UIImageView alloc]initWithFrame:CGRectMake(0,0, cav.demoView.bounds.size.width,cav.demoView.bounds.size.height)];
     [bgImage setImage:[UIImage imageNamed:@"gameoverimage.png"]];
     [cav.demoView addSubview:bgImage];
     
     
-   UILabel * gameOverLbl=[[UILabel alloc]initWithFrame:CGRectMake(0,100, cav.demoView.bounds.size.width,23)];
-    gameOverLbl.font = [UIFont fontWithName:@"Hobo" size:30];
+    UILabel * gameOverLbl=[[UILabel alloc]initWithFrame:CGRectMake(0,100, cav.demoView.bounds.size.width,35)];
+    gameOverLbl.font = [UIFont fontWithName:@"Hobo" size:45];
     gameOverLbl.text=@"GAME OVER";
     gameOverLbl.textAlignment = NSTextAlignmentCenter;
     gameOverLbl.textColor=[UIColor redColor];
     [cav.demoView addSubview:gameOverLbl];
-
     
-    UILabel * scoreLbls=[[UILabel alloc]initWithFrame:CGRectMake(0,150, cav.demoView.bounds.size.width*0.60,23)];
-    scoreLbls.font = [UIFont fontWithName:@"Hobo" size:25];
+    
+    UILabel * scoreLbls=[[UILabel alloc]initWithFrame:CGRectMake(10,150, cav.demoView.bounds.size.width*0.65,35)];
+    scoreLbls.font = [UIFont fontWithName:@"Hobo" size:35];
     scoreLbls.textAlignment = NSTextAlignmentCenter;
     scoreLbls.textColor=[UIColor redColor];
-
-    UILabel * scoreDispalyLbls=[[UILabel alloc]initWithFrame:CGRectMake(cav.demoView.bounds.size.width*0.55,150, 50,23)];
-    scoreDispalyLbls.font = [UIFont fontWithName:@"Hobo" size:25];
-
-
+    UILabel * scoreDispalyLbls=[[UILabel alloc]init];
+    NSUserDefaults *prefscore = [NSUserDefaults standardUserDefaults];
+    scoreValuess=[[prefscore objectForKey:@"score"] integerValue];
+    [highScoreDisplayLbl removeFromSuperview];
+    highScoreDisplayLbl=[[UILabel alloc]initWithFrame:CGRectMake(85,35, 100,30)];
+    highScoreDisplayLbl.font=[UIFont fontWithName:@"Hobo" size:15.0];
+    highScoreDisplayLbl.textColor=[UIColor blackColor];
+    
+    highScoreDisplayLbl.text=[prefscore objectForKey:@"score"];
     if (score>scoreValuess) {
-        scoreLbls.text=@"High Score :";
+       scoreDispalyLbls.layer.frame=CGRectMake(cav.demoView.bounds.size.width*0.65,150, 100,35);
+        scoreDispalyLbls.font = [UIFont fontWithName:@"Hobo" size:35];
+        scoreDispalyLbls.textAlignment = NSTextAlignmentLeft;
+
+        scoreLbls.text=@"High Score:";
         scoreValuess= score;
+        scoreDispalyLbls.text=@"";
         highScoreDisplayLbl.text=[NSString stringWithFormat:@"%ld", score];
+        
         scoreDispalyLbls.text=[NSString stringWithFormat:@"%ld", score];
         NSUserDefaults *prefscore = [NSUserDefaults standardUserDefaults];
         [prefscore setObject:scoreDispalyLbls.text forKey:@"score"];
         [prefscore synchronize];
-
+        
         scoreLbls.alpha = 0.0f;
         scoreLbls.textColor=[UIColor redColor];
-        scoreLbls.transform = CGAffineTransformMakeScale(1.2,1.2);
+        scoreLbls.transform = CGAffineTransformMakeScale(1.0,1.0);
         [UIView beginAnimations:@"fadeInNewView" context:NULL];
         [UIView setAnimationDuration:1.0];
         [UIView setAnimationRepeatCount:5000];
-        scoreLbls.transform = CGAffineTransformMakeScale(0.8,0.8);
+        scoreLbls.transform = CGAffineTransformMakeScale(0.7,0.7);
         scoreLbls.alpha = 1.0f;
         [UIView commitAnimations];
         
@@ -1981,34 +2135,40 @@
         scoreDispalyLbls.transform = CGAffineTransformMakeScale(0.8,0.8);
         scoreDispalyLbls.alpha = 1.0f;
         [UIView commitAnimations];
-
-
-
+        
+        
+        
     }else{
+        scoreDispalyLbls.layer.frame=CGRectMake(cav.demoView.bounds.size.width*0.57,150, 100,35);
+        scoreDispalyLbls.font = [UIFont fontWithName:@"Hobo" size:35];
+        scoreDispalyLbls.textAlignment = NSTextAlignmentLeft;
+
         scoreLbls.text=@"Score :";
+        scoreDispalyLbls.text=@"";
         scoreDispalyLbls.text=[NSString stringWithFormat:@"%ld", score];
-
+        
     }
-
+    [self.view addSubview:highScoreDisplayLbl];
+    [self.view bringSubviewToFront:highScoreDisplayLbl];
+    
     [cav.demoView addSubview:scoreLbls];
     
-    scoreDispalyLbls.textAlignment = NSTextAlignmentCenter;
     scoreDispalyLbls.textColor=[UIColor redColor];
     [cav.demoView addSubview:scoreDispalyLbls];
-
-
-    UIButton *playAgainBtn=[[UIButton alloc] initWithFrame:CGRectMake(0,190, cav.demoView.bounds.size.width,48)];
+    
+    
+    UIButton *playAgainBtn=[[UIButton alloc] initWithFrame:CGRectMake(0,210, cav.demoView.bounds.size.width,48)];
     [playAgainBtn setTitle:@"Play Again" forState:UIControlStateNormal];
     [playAgainBtn addTarget:self
-                      action:@selector(playAgain)
-            forControlEvents:UIControlEventTouchUpInside];
-    [playAgainBtn.titleLabel setFont:[UIFont fontWithName:@"Hobo" size:20.0]];
+                     action:@selector(playAgain)
+           forControlEvents:UIControlEventTouchUpInside];
+    [playAgainBtn.titleLabel setFont:[UIFont fontWithName:@"Hobo" size:30.0]];
     [playAgainBtn setBackgroundColor:[UIColor clearColor]];
     playAgainBtn.tag=1;
     
     [playAgainBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     playAgainBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-
+    
     [cav.demoView addSubview:playAgainBtn];
     
     playAgainBtn.alpha = 0.0f;
@@ -2020,38 +2180,80 @@
     playAgainBtn.transform = CGAffineTransformMakeScale(0.8,0.8);
     playAgainBtn.alpha = 1.0f;
     [UIView commitAnimations];
-
     
-    UIButton *mainmenuBtn=[[UIButton alloc] initWithFrame:CGRectMake(0,230, cav.demoView.bounds.size.width,50)];
+    
+    UIButton *mainmenuBtn=[[UIButton alloc] initWithFrame:CGRectMake(0,250, cav.demoView.bounds.size.width,50)];
     [mainmenuBtn setTitle:@"Menu" forState:UIControlStateNormal];
     [mainmenuBtn addTarget:self
-                     action:@selector(goToMainMenu)
-           forControlEvents:UIControlEventTouchUpInside];
+                    action:@selector(goToMainMenu)
+          forControlEvents:UIControlEventTouchUpInside];
     [mainmenuBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     mainmenuBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-    [mainmenuBtn.titleLabel setFont:[UIFont fontWithName:@"Hobo" size:20.0]];
+    [mainmenuBtn.titleLabel setFont:[UIFont fontWithName:@"Hobo" size:30.0]];
     [mainmenuBtn setBackgroundColor:[UIColor clearColor]];
     mainmenuBtn.tag=1;
     [cav.demoView addSubview:mainmenuBtn];
     
+    GADBannerView *bannerViewtop=[[GADBannerView alloc]init];
+    [bannerViewtop setFrame:CGRectMake(40,0,cav.demoView.bounds.size.width-80,50)];
+    bannerViewtop.adUnitID = @"ca-app-pub-1192482966027684/3746165453";
+    bannerViewtop.rootViewController = self;
+    
+    GADRequest *request = [GADRequest request];
+    request.testDevices = @[
+                            @"2077ef9a63d2b398840261c8221a0c9a"  // Eric's iPod Touch
+                            ];
+    [bannerViewtop loadRequest:request];
+    [cav.demoView addSubview:bannerViewtop];
+    [cav.demoView bringSubviewToFront:bannerViewtop];
+    
+    GADBannerView *bannerViewDown=[[GADBannerView alloc]init];
+    [bannerViewDown setFrame:CGRectMake(40,cav.demoView.bounds.size.height-50,cav.demoView.bounds.size.width-80,50)];
+    bannerViewDown.adUnitID = @"ca-app-pub-1192482966027684/5222898652";
+    bannerViewDown.rootViewController = self;
+    
+    GADRequest *requests = [GADRequest request];
+    requests.testDevices = @[
+                             @"2077ef9a63d2b398840261c8221a0c9a"  // Eric's iPod Touch
+                             ];
+    [bannerViewDown loadRequest:requests];
+    [cav.demoView addSubview:bannerViewDown];
+    [cav.demoView bringSubviewToFront:bannerViewDown];
+    
     [cav show];
+
 }
 -(void)BobisRunning{
     [bobImg removeFromSuperview];
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat checkcod = cav.demoView.bounds.size.width*0.45;
     CGFloat checkcodss = cav.demoView.bounds.size.width*0.85;
-    ywidthsim=ywidthsim+(screenRect.size.width*0.003);
+    CGFloat checkcdss = cav.demoView.bounds.size.height*0.77;
+
     CGFloat BOB_T0P_MARGINheight;
-    BOB_T0P_MARGINheight=cav.demoView.bounds.size.height*0.68;
-    bobImg=[[UIImageView alloc]initWithFrame:CGRectMake(ywidthsim,cav.demoView.bounds.size.height*0.68, screenRect.size.height*0.05,screenRect.size.height*0.05)];
 
     if (checkcod<=ywidthsim) {
-        bobImg=[[UIImageView alloc]initWithFrame:CGRectMake(ywidthsim,cav.demoView.bounds.size.height*0.77, screenRect.size.height*0.05,screenRect.size.height*0.05)];
-        BOB_T0P_MARGINheight=cav.demoView.bounds.size.height*0.77;
+        if(checkcdss<=yheightsim){
+            ywidthsim=ywidthsim+(screenRect.size.width*0.003);
+            bobImg=[[UIImageView alloc]initWithFrame:CGRectMake(ywidthsim,cav.demoView.bounds.size.height*0.77, screenRect.size.height*0.05,screenRect.size.height*0.05)];
+            BOB_T0P_MARGINheight=cav.demoView.bounds.size.height*0.77;
+            
+        }else{
+            yheightsim=yheightsim+(screenRect.size.height*0.003);
+            bobImg=[[UIImageView alloc]initWithFrame:CGRectMake(cav.demoView.bounds.size.width*0.45,yheightsim, screenRect.size.height*0.05,screenRect.size.height*0.05)];
+            BOB_T0P_MARGINheight=yheightsim;
+
+        }
+           }else if (ywidthsim>=10) {
+        ywidthsim=ywidthsim+(screenRect.size.width*0.003);
+        BOB_T0P_MARGINheight=cav.demoView.bounds.size.height*0.68;
+        bobImg=[[UIImageView alloc]initWithFrame:CGRectMake(ywidthsim,cav.demoView.bounds.size.height*0.68, screenRect.size.height*0.05,screenRect.size.height*0.05)];
+
     }
+    
     if (checkcodss<=ywidthsim) {
-        ywidthsim=0;
+        ywidthsim=10;
+        yheightsim=cav.demoView.bounds.size.height*0.68;;
         ywidthsim=ywidthsim+(screenRect.size.width*0.003);
         BOB_T0P_MARGINheight=cav.demoView.bounds.size.height*0.68;
     }
@@ -2098,18 +2300,26 @@
             topmargin = (int) (screenRect.size.height * (BOB_T0P_MARGIN + 0.01));
             leftmargin = (int) (screenRect.size.width * (BOB_LEFT_MARGIN + 0.02));
         }
-    redcolor=[[UIImageView alloc]initWithFrame:CGRectMake(leftmargin+3,topmargin+4, 7,7)];
-    redcolor.layer.cornerRadius = 2;
+    redcolor=[[UIImageView alloc]initWithFrame:CGRectMake(leftmargin+3,topmargin+4, screenRect.size.width*0.025,screenRect.size.width*0.025)];
+    redcolor.layer.cornerRadius = 5;
     redcolor.clipsToBounds = YES;
     [redcolor setBackgroundColor:[UIColor redColor]];
     [self.mainscrollview addSubview:redcolor ];
 
 }
 -(void)playAgain{
+
     score = 0;
+    [scoreDisplyayLbl removeFromSuperview];
+    scoreDisplyayLbl=[[UILabel alloc]initWithFrame:CGRectMake(60,10, 80,30)];
+    scoreDisplyayLbl.font=[UIFont fontWithName:@"Hobo" size:15.0];
+    scoreDisplyayLbl.textColor=[UIColor blackColor];
+    scoreDisplyayLbl.text=[NSString stringWithFormat:@"%ld", score];
+    [self.view addSubview:scoreDisplyayLbl];
+    [self.view bringSubviewToFront:scoreDisplyayLbl];
+
     Score_startTime=[[NSDate date] timeIntervalSince1970];
 
-    scoreDisplyayLbl.text=@"";
     for(UIView *subview in [mainscrollview subviews]) {
         if ([subview isKindOfClass:[UIImageView class]]) {
             if (subview.backgroundColor==[UIColor redColor]) {
@@ -2126,7 +2336,7 @@
     isMaproad1_2 = false;
     isMaproad1_3 = false;
     isMaproad1_4 = false; isMaproad2_1 = false;
-    isMaproad2_2 = true; isMaproad2_3 = false; isMaproad2_4 = false;
+    isMaproad2_2 = true;  isMaproad2_3 = false; isMaproad2_4 = false;
     isMaproad3_1 = false; isMaproad3_2 = false; isMaproad3_3 = false;
     isMaproad3_4 = false; isMaproad4_1 = false; isMaproad4_2 = false;
     isMaproad4_3 = false; isMaproad4_4= false;
@@ -2312,9 +2522,12 @@
         if (BOB_T0P_MARGIN<0.60) {
             [mainscrollview setContentOffset:CGPointMake(0,0) animated:NO];
 
-        }else{
-            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*((bobtopmargin+30))) animated:NO];
+        }else if (BOB_T0P_MARGIN<2.60){
+            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobtopmargin+20)) animated:NO];
 
+        }else{
+            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*((bobtopmargin+100))) animated:NO];
+ 
         }
         [UIView commitAnimations];
 
@@ -2326,8 +2539,11 @@
         if (BOB_T0P_MARGIN<0.60) {
             [mainscrollview setContentOffset:CGPointMake(0,0) animated:NO];
             
+        }else if (BOB_T0P_MARGIN<2.60){
+        [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobtopmargin+60)) animated:NO];
         }else{
-        [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*((bobtopmargin+30))) animated:NO];
+            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*((bobtopmargin+100))) animated:NO];
+
         }
         [UIView commitAnimations];
 
@@ -2337,10 +2553,13 @@
               [UIView beginAnimations:nil context:NULL];
               [UIView setAnimationDuration:1.0];
               if (BOB_T0P_MARGIN<0.60) {
-                  [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(screenRect.size.height*0.35)) animated:NO];
+                  [mainscrollview setContentOffset:CGPointMake(0,0) animated:NO];
                   
+              }else if (BOB_T0P_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobtopmargin+20)) animated:NO];
               }else{
-                [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                  [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+
               }
               [UIView commitAnimations];
 
@@ -2350,10 +2569,13 @@
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_T0P_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.30),0) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.20),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.30),BOB_T0P_MARGIN*(bobtopmargin+20)) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.40),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.30),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+
                 }
                 [UIView commitAnimations];
 
@@ -2363,10 +2585,13 @@
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_T0P_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.60),0) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.50),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.60),BOB_T0P_MARGIN*(bobtopmargin+20)) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.75),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.60),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+
                 }
                 [UIView commitAnimations];
 
@@ -2376,10 +2601,13 @@
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_T0P_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake(screenRect.size.width,0) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(screenRect.size.width*0.85,0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake(screenRect.size.width*0.85,BOB_T0P_MARGIN*(bobtopmargin+20)) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake(screenRect.size.width,BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(screenRect.size.width*0.85,BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+
                 }
                 [UIView commitAnimations];
 
@@ -2392,8 +2620,11 @@
                 if (BOB_T0P_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.25),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.15),BOB_T0P_MARGIN*(bobtopmargin+20)) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.25),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.15),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+ 
                 }
                 [UIView commitAnimations];
 
@@ -2405,8 +2636,11 @@
                 if (BOB_T0P_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.50),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.50),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.50),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.50),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+
                 }
                 [UIView commitAnimations];
 
@@ -2417,8 +2651,11 @@
                 if (BOB_T0P_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.75),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.75),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.75),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.75),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+
                 }
                 [UIView commitAnimations];
 
@@ -2429,8 +2666,11 @@
                 if (BOB_T0P_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+
                 }
                 [UIView commitAnimations];
             }
@@ -2442,8 +2682,11 @@
                 if (BOB_T0P_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.25),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.25),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.25),BOB_T0P_MARGIN*bobtopmargin) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.25),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+ 
                 }
                 [UIView commitAnimations];
 
@@ -2455,8 +2698,12 @@
                 if (BOB_T0P_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.50),0) animated:NO];
                     
-                }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.50),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                }else if (BOB_T0P_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.50),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
+                }
+                else{
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.50),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+
                 }
                 [UIView commitAnimations];
 
@@ -2464,9 +2711,16 @@
                        && (BOB_LEFT_MARGIN * screenRect.size.width) < screenRect.size.width * 3.16) {
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.75),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
-                [UIView commitAnimations];
+                if (BOB_T0P_MARGIN<0.60) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.75),0) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.75),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
+                }else{
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.75),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
 
+                }
+                [UIView commitAnimations];
 
             } else if ((BOB_LEFT_MARGIN * screenRect.size.width) > (screenRect.size.width * 3.40)
                        && (BOB_LEFT_MARGIN * screenRect.size.width) < (screenRect.size.width * 3.41)) {
@@ -2475,8 +2729,11 @@
                 if (BOB_T0P_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3),BOB_T0P_MARGIN*bobtopmargin) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+
                 }
                 [UIView commitAnimations];
             }
@@ -2487,8 +2744,11 @@
                 if (BOB_T0P_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3.50),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3.50),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3.50),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3.50),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+
                 }
                 [UIView commitAnimations];
 
@@ -2506,8 +2766,11 @@
                 if (BOB_LEFT_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(0,0) animated:NO];
                     
-                }else{
+                }else if (BOB_LEFT_MARGIN<2.60) {
                 [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 0.10)) animated:NO];
+                }else{
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 0.10)) animated:NO];
+ 
                 }
                 [UIView commitAnimations];
 
@@ -2518,20 +2781,26 @@
                 if (BOB_LEFT_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(0,0) animated:NO];
                     
-                }else{
+                } else if (BOB_LEFT_MARGIN<2.60){
                 [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 0.25)) animated:NO];
+                }else{
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 0.25)) animated:NO];
+
                 }
                 [UIView commitAnimations];
                 
-            } else if ((BOB_T0P_MARGIN * screenRect.size.height) > screenRect.size.height * 0.90
-                       && (BOB_T0P_MARGIN * screenRect.size.height) < screenRect.size.height * 0.91) {
+            } else if ((BOB_T0P_MARGIN * screenRect.size.height) > screenRect.size.height * 0.70
+                       && (BOB_T0P_MARGIN * screenRect.size.height) < screenRect.size.height * 0.85) {
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_LEFT_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 0.50)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 0.60)) animated:NO];
                     
+                } else if (BOB_LEFT_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 0.60)) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 0.50)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 0.60)) animated:NO];
+
                 }
                 [UIView commitAnimations];
 
@@ -2540,10 +2809,13 @@
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_LEFT_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 0.75)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 0.85)) animated:NO];
                     
+                } else if (BOB_LEFT_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 0.85)) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 0.75)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 0.85)) animated:NO];
+
                 }
                 [UIView commitAnimations];
 
@@ -2553,10 +2825,13 @@
                 [UIView setAnimationDuration:1.0];
 
                 if (BOB_LEFT_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.0)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.10)) animated:NO];
                     
+                } else if (BOB_LEFT_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,screenRect.size.height*1.10) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,screenRect.size.height*1.0) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),screenRect.size.height*1.10) animated:NO];
+ 
                 }
                 [UIView commitAnimations];
 
@@ -2566,12 +2841,15 @@
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_LEFT_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.15)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.25)) animated:NO];
                     
-                }else{
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 1.15)) animated:NO];
+                } else if (BOB_LEFT_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 1.25)) animated:NO];
                 
-            }
+                }else{
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 1.25)) animated:NO];
+ 
+                }
                 [UIView commitAnimations];
 
             } else if ((BOB_T0P_MARGIN * screenRect.size.height) > screenRect.size.height * 1.90
@@ -2579,10 +2857,13 @@
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_LEFT_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.40)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.50)) animated:NO];
                     
+                } else if (BOB_LEFT_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 1.50)) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 1.40)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 1.50)) animated:NO];
+
                 }
                 [UIView commitAnimations];
 
@@ -2591,22 +2872,45 @@
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_LEFT_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.70)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.80)) animated:NO];
                     
+                } else if (BOB_LEFT_MARGIN<2.60){
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 1.80)) animated:NO];
+
                 }else{
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 1.70)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 1.80)) animated:NO];
+
                 }
                 [UIView commitAnimations];
 
+            }else if ((BOB_T0P_MARGIN * screenRect.size.height) > (screenRect.size.height * 2.25)
+                      && (BOB_T0P_MARGIN * screenRect.size.height) < screenRect.size.height * 2.35) {
+                [UIView beginAnimations:nil context:NULL];
+                [UIView setAnimationDuration:1.0];
+                if (BOB_LEFT_MARGIN<0.60) {
+                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.95)) animated:NO];
+                    
+                } else if (BOB_LEFT_MARGIN<2.60){
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 1.95)) animated:NO];
+
+                }else{
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 1.95)) animated:NO];
+                    
+                }
+                [UIView commitAnimations];
+                
             } else if ((BOB_T0P_MARGIN * screenRect.size.height) > (screenRect.size.height * 2.40)
                        && (BOB_T0P_MARGIN * screenRect.size.height) < (screenRect.size.height * 2.41)) {
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_LEFT_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2.10)) animated:NO];
                     
+                } else if (BOB_LEFT_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 2.10)) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 2)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 2.10)) animated:NO];
+
                 }
                 [UIView commitAnimations];
 
@@ -2617,10 +2921,13 @@
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_LEFT_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2.25)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2.35)) animated:NO];
                     
+                } else if (BOB_LEFT_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 2.35)) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 2.25)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 2.35)) animated:NO];
+
                 }
                 [UIView commitAnimations];
 
@@ -2629,10 +2936,13 @@
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_LEFT_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2.50)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2.60)) animated:NO];
                     
+                } else if (BOB_LEFT_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 2.60)) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 2.50)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 2.60)) animated:NO];
+
                 }
                 [UIView commitAnimations];
 
@@ -2641,11 +2951,14 @@
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_LEFT_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2.75)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2.85)) animated:NO];
                     
+                } else if (BOB_LEFT_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 2.85)) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 2.75)) animated:NO];
-            }
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 2.85)) animated:NO];
+                    
+                }
                 [UIView commitAnimations];
 
             } else if ((BOB_T0P_MARGIN * screenRect.size.height) > (screenRect.size.height * 3.40)
@@ -2653,10 +2966,13 @@
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_LEFT_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 3)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 3.10)) animated:NO];
                     
+                } else if (BOB_LEFT_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),screenRect.size.height * 3.10) animated:NO];
                 }else{
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,screenRect.size.height * 3) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),screenRect.size.height * 3.10) animated:NO];
+
                 }
                 [UIView commitAnimations];
 
@@ -2676,9 +2992,31 @@
         if (BOB_LEFT_MARGIN<0.60) {
             [mainscrollview setContentOffset:CGPointMake(0,0) animated:NO];
             
-        }else{
+        }else if (BOB_LEFT_MARGIN<2.60){
         [mainscrollview setContentOffset:CGPointMake((BOB_LEFT_MARGIN*bobleftmargin),
                                                      (screenRect.size.height * 0.02)) animated:NO];
+        }else{
+            [mainscrollview setContentOffset:CGPointMake((BOB_LEFT_MARGIN*(bobleftmargin+50)),
+                                                         (screenRect.size.height * 0.02)) animated:NO];
+
+        }
+        
+        [UIView commitAnimations];
+    }
+    else if ((BOB_T0P_MARGIN * screenRect.size.height) > screenRect.size.height * 0.35
+        && (BOB_T0P_MARGIN * screenRect.size.height) < screenRect.size.height * 0.55) {
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:1.0];
+        if (BOB_LEFT_MARGIN<0.60) {
+            [mainscrollview setContentOffset:CGPointMake(0,0) animated:NO];
+            
+        }else if (BOB_LEFT_MARGIN<2.60){
+            [mainscrollview setContentOffset:CGPointMake((BOB_LEFT_MARGIN*bobleftmargin),
+                                                         0) animated:NO];
+        }else{
+            [mainscrollview setContentOffset:CGPointMake((BOB_LEFT_MARGIN*(bobleftmargin+50)),
+                                                         (screenRect.size.height * 0.02)) animated:NO];
+            
         }
         
         [UIView commitAnimations];
@@ -2690,9 +3028,13 @@
         if (BOB_LEFT_MARGIN<0.60) {
             [mainscrollview setContentOffset:CGPointMake(0,0) animated:NO];
             
-        }else{
+        }else if (BOB_LEFT_MARGIN<2.60){
             [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
              0) animated:NO];
+        }else{
+            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
+                                                         0) animated:NO];
+
         }
         [UIView commitAnimations];
         } else
@@ -2703,21 +3045,29 @@
                 if (BOB_LEFT_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 0.25)) animated:NO];
                     
-                }else{
+                }else if (BOB_LEFT_MARGIN<2.60){
             [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
                                                           (screenRect.size.height * 0.25)) animated:NO];
+                }else{
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
+                                                                 (screenRect.size.height * 0.25)) animated:NO];
+
                 }
                 [UIView commitAnimations];
         } else if ((BOB_T0P_MARGIN * screenRect.size.height) > (screenRect.size.height * 1.15)
-                   && (BOB_T0P_MARGIN * screenRect.size.height) < screenRect.size.height * 1.154) {
+                   && (BOB_T0P_MARGIN * screenRect.size.height) < screenRect.size.height * 1.20) {
             [UIView beginAnimations:nil context:NULL];
             [UIView setAnimationDuration:1.0];
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 0.50)) animated:NO];
                 
-            }else{
+            }else if (BOB_LEFT_MARGIN<2.60){
             [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
                                                          (screenRect.size.height * 0.50)) animated:NO];
+            }else{
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
+                                                             (screenRect.size.height * 0.50)) animated:NO];
+
             }
             [UIView commitAnimations];
         } else if ((BOB_T0P_MARGIN * screenRect.size.height) > (screenRect.size.height * 1.40)
@@ -2727,9 +3077,13 @@
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 0.75)) animated:NO];
                 
-            }else{
+            }else if (BOB_LEFT_MARGIN<2.60){
             [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
                                                          (screenRect.size.height * 0.75)) animated:NO];
+            }else{
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
+                                                             (screenRect.size.height * 0.75)) animated:NO];
+
             }
             [UIView commitAnimations];
         } else if ((BOB_T0P_MARGIN * screenRect.size.height) > screenRect.size.height * 1.65
@@ -2739,9 +3093,13 @@
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,screenRect.size.height ) animated:NO];
                 
-            }else{
+            }else if (BOB_LEFT_MARGIN<2.60){
             [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
                                                          (screenRect.size.height)) animated:NO];
+            }else{
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
+                                                             (screenRect.size.height)) animated:NO];
+
             }
             [UIView commitAnimations];
         } else if ((BOB_T0P_MARGIN * screenRect.size.height) > screenRect.size.height * 1.90
@@ -2751,9 +3109,13 @@
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.25)) animated:NO];
                 
-            }else{
+            }else if (BOB_LEFT_MARGIN<2.60){
             [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
                                                          (screenRect.size.height * 1.25)) animated:NO];
+            }else{
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
+                                                             (screenRect.size.height * 1.25)) animated:NO];
+
             }
             [UIView commitAnimations];
         } else if ((BOB_T0P_MARGIN * screenRect.size.height) > (screenRect.size.height * 2.15)
@@ -2763,9 +3125,13 @@
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.50)) animated:NO];
                 
-            }else{
+            }else if (BOB_LEFT_MARGIN<2.60){
             [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
                                                          (screenRect.size.height * 1.50)) animated:NO];
+            }else{
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
+                                                             (screenRect.size.height * 1.50)) animated:NO];
+
             }
             [UIView commitAnimations];
         } else if ((BOB_T0P_MARGIN * screenRect.size.height) > (screenRect.size.height * 2.40)
@@ -2775,9 +3141,12 @@
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.75)) animated:NO];
                 
-            }else{
+            }else if (BOB_LEFT_MARGIN<2.60){
             [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
                                                          (screenRect.size.height * 1.75)) animated:NO];
+            }else{
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
+                                                             (screenRect.size.height * 1.75)) animated:NO];
             }
             [UIView commitAnimations];
         }
@@ -2789,9 +3158,13 @@
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2)) animated:NO];
                 
-            }else{
+            }else if (BOB_LEFT_MARGIN<2.60){
             [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
                                                          (screenRect.size.height * 2)) animated:NO];
+            }else{
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
+                                                             (screenRect.size.height * 2)) animated:NO];
+
             }
             [UIView commitAnimations];
         } else if ((BOB_T0P_MARGIN * screenRect.size.height) > screenRect.size.height * 2.90
@@ -2801,9 +3174,13 @@
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2.25)) animated:NO];
                 
-            }else{
+            }else if (BOB_LEFT_MARGIN<2.60){
             [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
                                                          (screenRect.size.height * 2.25)) animated:NO];
+            }else{
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
+                                                             (screenRect.size.height * 2.25)) animated:NO];
+
             }
             [UIView commitAnimations];
         } else if ((BOB_T0P_MARGIN * screenRect.size.height) > (screenRect.size.height * 3.15)
@@ -2814,10 +3191,14 @@
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2.50)) animated:NO];
                 
-            }else{
+            }else if (BOB_LEFT_MARGIN<2.60) {
             [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
                                                          (screenRect.size.height * 2.50)) animated:NO];
-        }
+            }else{
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
+                                                             (screenRect.size.height * 2.50)) animated:NO];
+
+            }
             [UIView commitAnimations];
         } else if ((BOB_T0P_MARGIN * screenRect.size.height) > (screenRect.size.height * 3.40)
                    && (BOB_T0P_MARGIN * screenRect.size.height) < (screenRect.size.height * 3.404)) {
@@ -2826,9 +3207,13 @@
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2.75)) animated:NO];
                 
-            }else{
+            }else if (BOB_LEFT_MARGIN<2.60) {
                         [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
                                                          (screenRect.size.height * 2.75)) animated:NO];
+            }else{
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
+                                                             (screenRect.size.height * 2.75)) animated:NO];
+
             }
             [UIView commitAnimations];
         }

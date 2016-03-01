@@ -9,6 +9,11 @@
 #import "MenuViewController.h"
 #import "HomeViewController.h"
 #import "UIColor+Expanded.h"
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
+#import "Reachability.h"
+@import GoogleMobileAds;
+
 @interface MenuViewController ()
 
 @end
@@ -31,12 +36,12 @@
     [mainimageView setImage:[UIImage imageNamed:@"menubackimage.png"]];
     [self.view addSubview:mainimageView];
 
-    playBtn=[[UIButton alloc]initWithFrame:CGRectMake(0,screenRect.size.height*0.65,screenRect.size.width,50)];
+    playBtn=[[UIButton alloc]initWithFrame:CGRectMake(0,screenRect.size.height*0.67,screenRect.size.width,50)];
     [playBtn setTitle:@"Play" forState:UIControlStateNormal];
     [playBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [playBtn addTarget:self action:@selector(playAction) forControlEvents:UIControlEventTouchUpInside];
     playBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-    [playBtn.titleLabel setFont:[UIFont fontWithName:@"Hobo" size:35.0]];
+    [playBtn.titleLabel setFont:[UIFont fontWithName:@"Hobo" size:60.0]];
     [self.view addSubview:playBtn];
     
     playBtn.alpha = 0.0f;
@@ -45,15 +50,15 @@
     [UIView beginAnimations:@"fadeInNewView" context:NULL];
     [UIView setAnimationDuration:1.0];
     [UIView setAnimationRepeatCount:5000];
-    playBtn.transform = CGAffineTransformMakeScale(0.5,0.5);
+    playBtn.transform = CGAffineTransformMakeScale(0.8,0.8);
     playBtn.alpha = 1.0f;
     [UIView commitAnimations];
     
-    shareBtn=[[UIButton alloc]initWithFrame:CGRectMake(0,screenRect.size.height*0.75,screenRect.size.width,50)];
-    [shareBtn.titleLabel setFont:[UIFont fontWithName:@"Hobo" size:35.0]];
+    shareBtn=[[UIButton alloc]initWithFrame:CGRectMake(0,screenRect.size.height*0.80,screenRect.size.width,50)];
+    [shareBtn.titleLabel setFont:[UIFont fontWithName:@"Hobo" size:60.0]];
     [shareBtn setTitle:@"Share" forState:UIControlStateNormal];
     [shareBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [shareBtn addTarget:self action:@selector(playAction) forControlEvents:UIControlEventTouchUpInside];
+    [shareBtn addTarget:self action:@selector(shareAction) forControlEvents:UIControlEventTouchUpInside];
     shareBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
     [self.view addSubview:shareBtn];
     
@@ -63,7 +68,7 @@
     [UIView beginAnimations:@"fadeInNewView" context:NULL];
     [UIView setAnimationDuration:1.0];
     [UIView setAnimationRepeatCount:5000];
-    shareBtn.transform = CGAffineTransformMakeScale(0.5,0.5);
+    shareBtn.transform = CGAffineTransformMakeScale(0.7,0.7);
     shareBtn.alpha = 1.0f;
     [UIView commitAnimations];
 
@@ -72,7 +77,7 @@
     leftposition=YES;
     indexvalue=0;
     marginVO=[[MarginVO alloc]init];
-    timer = [NSTimer scheduledTimerWithTimeInterval: 0.02 target:self selector:@selector(DateFunction) userInfo:nil repeats: YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval: 0.015 target:self selector:@selector(DateFunction) userInfo:nil repeats: YES];
 }
 -(void)DateFunction{
     CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -133,7 +138,6 @@
 
             bobImg=[[UIImageView alloc]initWithFrame:CGRectMake(screenRect.size.width*0.85,ywidthbob, screenRect.size.height*0.07,screenRect.size.height*0.07)];
            // simamImg=[[UIImageView alloc]initWithFrame:CGRectMake(screenRect.size.width*0.90,ywidthsim, screenRect.size.height*0.05,screenRect.size.height*0.05)];
-            
         }
     }else if (bottomposition==YES) {
         if (checkcodsss>=ywidthsim) {
@@ -157,7 +161,6 @@
     marginVO.simLeftRight=[NSString stringWithFormat: @"%.4f", ywidthsim];
     marginVO.simTopDown=[NSString stringWithFormat: @"%.4f", ywidthbob];
     [simonArray addObject:marginVO];
-
     
     if (simonArray.count>=50) {
         [simamImg removeFromSuperview];
@@ -167,7 +170,6 @@
         simLeft=(CGFloat)[marginVO.simLeftRight floatValue];
 
         //simTop=simTop-(screenRect.size.height*0.003);
-
         simamImg=[[UIImageView alloc]initWithFrame:CGRectMake(simLeft,simTop, screenRect.size.height*0.07,screenRect.size.height*0.07)];
         [simamImg setImage:[UIImage imageNamed:@"simamimage.png"]];
         [self.view addSubview:simamImg];
@@ -176,8 +178,30 @@
     }
 }
 -(void)playAction{
-    HomeViewController *home=[[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
+    HomeViewController *home;
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone) {
+        home=[[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
+    }else{
+        home=[[HomeViewController alloc] initWithNibName:@"HomeViewController~ipad" bundle:nil];
+    }
     [self.navigationController pushViewController:home animated:NO];
+}
+
+-(void)shareAction{
+    Reachability *myNetwork = [Reachability reachabilityWithHostname:@"google.com"];
+    NetworkStatus myStatus = [myNetwork currentReachabilityStatus];
+    if(myStatus == NotReachable)
+    {
+        UIAlertView * alerts = [[UIAlertView alloc]initWithTitle:@"PGFH" message:@"No internet connection available!!!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alerts show];
+    }else{
+
+    if (![[UIApplication sharedApplication] openURL: [NSURL URLWithString:@"fb://profile/534278026736224"]])
+    {
+        NSURL *url = [NSURL URLWithString:@"https://www.facebook.com/534278026736224"];
+        [[UIApplication sharedApplication] openURL:url];
+    }
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
