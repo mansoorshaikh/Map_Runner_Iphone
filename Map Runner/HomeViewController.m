@@ -22,7 +22,7 @@
 @end
 
 @implementation HomeViewController
-@synthesize roadView,mainscrollview,leftgreenImg,topgreenImg,rightwaterImg,downwaterImg,insideFirstImg,insideFirstImg1,insideFirstImg2,insideFirstImg3,insideFirstImg4,bobImg,simamImg,simonArray,marginVO,timer,ywidthbobTop,ywidthsimLeft,BOB_LEFT_MARGIN,BOB_T0P_MARGIN,isMovingUp,isMovingDown,isMovingLeft,isMovingRight,indexvalue,position,startPosition,SIMAN_LEFT_MARGIN,SIMAN_T0P_MARGIN,hor_1_top ,hor_2_top ,hor_3_top,hor_4_top,hor_5_top,hor_6_top,hor_7_top,hor_8_top,ver_1_left,ver_2_left,ver_3_left,ver_4_left,ver_5_left,ver_6_left,isValidMove,isGAMEOVER,isMaproad1_1,isMaproad1_2,isMaproad1_3,isMaproad1_4,isMaproad2_1,isMaproad2_2,isMaproad2_3,isMaproad2_4,isMaproad3_1,isMaproad3_2,isMaproad3_3,isMaproad3_4,isMaproad4_1,isMaproad4_2,isMaproad4_3,isMaproad4_4,isPause,isSimanMove,isWait,isBottom_to_Top,isTop_to_Bottom,isLeft_to_Right,isRight_to_Left,ywidth,yheights,alert,cav,alertView,bgImage,ywidthbob,ywidthsim,simTop,simLeft,timer2,scoreLbl,highScoreLbl,titleName,maryNameLbl,hydeparkNameLbl1,hydeparkNameLbl,mayfairNameLbl,greenparkNameLbl,southNameLbl,maryroadNameLbl,paddingNameLbl,edgwareNameLbl,bakerNameLbl,gioucesterNameLbl,marleboneyNameLbl,bondstreetNameLbl,grosvenorstreetNameLbl,newbondNameLbl,berkeleyNameLbl,stratonstreetNameLbl,berkeleystreetNameLbl,piccadillyNameLbl,knighsNameLbl,queenNameLbl,bromptNameLbl,slonneNameLbl,thurloeNameLbl,gloucesterNameLbl,gloucester1NameLbl,kingsNameLbl,chelseaNameLbl,eustonNameLbl,gowerNameLbl,bloomsburyNameLbl,goodgeNameLbl,russelNameLbl,tottennamNameLbl,bloomsburyStreetNameLbl,oxfordNameLbl,sohoNameLbl,regentNameLbl,shaffesburyNameLbl,piccadilly1NameLbl,belgraviaNameLbl,cadoganNameLbl,eatonNameLbl,grosvenerNameLbl,ecclestenNameLbl,buckinghamNameLbl,belgraveNameLbl,gowersNameLbl,juddNameLbl,graysNameLbl,theobaldsNameLbl,southampNameLbl,highholbornNameLbl,holbornNameLbl,longNameLbl,kingswayNameLbl,stNameLbl,coventNameLbl,aldwychNameLbl,whiteNameLbl,victoryaNameLbl,parliamentNameLbl,victoriaNameLbl,westNameLbl,buckkingNameLbl,marshamNameLbl,millbankNameLbl,greatNameLbl,horebwrryNameLbl,rochNameLbl,vauxhallNameLbl,redcolor,indexvlaueRedimg,indexvalueRedimgCompa,score,redimageArray,imageIndex,signalBtn1,signalBtn2,signalBtn3,signalBtn4,signalBtn5,signalBtn6,signalBtn7,signalBtn8,signalBtn9,signalBtn10,signalBtn11,signalBtn12,signalBtn13,signalBtn14,signalBtn15,signalBtn16,signalBtn17,signalBtn18,signalBtn19,signalBtn20,signalBtn21,signalBtn22,signalBtn23,signalBtn24,signalBtn25,signalBtn26,signalBtn27,signalBtn28,CURRENT_SCORE,Updatescoretime,Score_startTime,Score_timeInMilliseconds,Score_timeSwapBuff,Score_updatedTime,STARTSEC , CURRENTSEC,redline,updatemint,scoreDisplyayLbl,highScoreDisplayLbl,scoreValuess,bobleftmargin,bobtopmargin,pauseBtn,timeSwapBuff,bobrightmargin,bobdownmarign,vibrateCount,vibrateTimer,admobCount,bobSpeed,yheightsim;
+@synthesize roadView,mainscrollview,leftgreenImg,topgreenImg,rightwaterImg,downwaterImg,insideFirstImg,insideFirstImg1,insideFirstImg2,insideFirstImg3,insideFirstImg4,bobImg,simamImg,simonArray,marginVO,timer,ywidthbobTop,ywidthsimLeft,BOB_LEFT_MARGIN,BOB_T0P_MARGIN,isMovingUp,isMovingDown,isMovingLeft,isMovingRight,indexvalue,position,startPosition,SIMAN_LEFT_MARGIN,SIMAN_T0P_MARGIN,hor_1_top ,hor_2_top ,hor_3_top,hor_4_top,hor_5_top,hor_6_top,hor_7_top,hor_8_top,ver_1_left,ver_2_left,ver_3_left,ver_4_left,ver_5_left,ver_6_left,isValidMove,isGAMEOVER,isMaproad1_1,isMaproad1_2,isMaproad1_3,isMaproad1_4,isMaproad2_1,isMaproad2_2,isMaproad2_3,isMaproad2_4,isMaproad3_1,isMaproad3_2,isMaproad3_3,isMaproad3_4,isMaproad4_1,isMaproad4_2,isMaproad4_3,isMaproad4_4,isPause,isSimanMove,isWait,isBottom_to_Top,isTop_to_Bottom,isLeft_to_Right,isRight_to_Left,ywidth,yheights,alert,cav,alertView,bgImage,ywidthbob,ywidthsim,simTop,simLeft,timer2,scoreLbl,highScoreLbl,titleName,maryNameLbl,hydeparkNameLbl1,hydeparkNameLbl,mayfairNameLbl,greenparkNameLbl,southNameLbl,maryroadNameLbl,paddingNameLbl,edgwareNameLbl,bakerNameLbl,gioucesterNameLbl,marleboneyNameLbl,bondstreetNameLbl,grosvenorstreetNameLbl,newbondNameLbl,berkeleyNameLbl,stratonstreetNameLbl,berkeleystreetNameLbl,piccadillyNameLbl,knighsNameLbl,queenNameLbl,bromptNameLbl,slonneNameLbl,thurloeNameLbl,gloucesterNameLbl,gloucester1NameLbl,kingsNameLbl,chelseaNameLbl,eustonNameLbl,gowerNameLbl,bloomsburyNameLbl,goodgeNameLbl,russelNameLbl,tottennamNameLbl,bloomsburyStreetNameLbl,oxfordNameLbl,sohoNameLbl,regentNameLbl,shaffesburyNameLbl,piccadilly1NameLbl,belgraviaNameLbl,cadoganNameLbl,eatonNameLbl,grosvenerNameLbl,ecclestenNameLbl,buckinghamNameLbl,belgraveNameLbl,gowersNameLbl,juddNameLbl,graysNameLbl,theobaldsNameLbl,southampNameLbl,highholbornNameLbl,holbornNameLbl,longNameLbl,kingswayNameLbl,stNameLbl,coventNameLbl,aldwychNameLbl,whiteNameLbl,victoryaNameLbl,parliamentNameLbl,victoriaNameLbl,westNameLbl,buckkingNameLbl,marshamNameLbl,millbankNameLbl,greatNameLbl,horebwrryNameLbl,rochNameLbl,vauxhallNameLbl,redcolor,indexvlaueRedimg,indexvalueRedimgCompa,score,redimageArray,imageIndex,signalBtn1,signalBtn2,signalBtn3,signalBtn4,signalBtn5,signalBtn6,signalBtn7,signalBtn8,signalBtn9,signalBtn10,signalBtn11,signalBtn12,signalBtn13,signalBtn14,signalBtn15,signalBtn16,signalBtn17,signalBtn18,signalBtn19,signalBtn20,signalBtn21,signalBtn22,signalBtn23,signalBtn24,signalBtn25,signalBtn26,signalBtn27,signalBtn28,CURRENT_SCORE,Updatescoretime,Score_startTime,Score_timeInMilliseconds,Score_timeSwapBuff,Score_updatedTime,STARTSEC , CURRENTSEC,redline,updatemint,scoreDisplyayLbl,highScoreDisplayLbl,scoreValuess,bobleftmargin,bobtopmargin,pauseBtn,timeSwapBuff,bobrightmargin,bobdownmarign,vibrateCount,vibrateTimer,admobCount,bobSpeed,yheightsim,newscore;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -78,7 +78,8 @@
     isMaproad4_3 = false; isMaproad4_4= false;
     STARTSEC = 0, CURRENTSEC = 0;
     CURRENT_SCORE = 0;
-     score = 0, redline = 500,Updatescoretime=0;
+     score = 0, redline = 500,Updatescoretime=25;
+    newscore=0;
     Score_startTime = 0L;
      Score_timeInMilliseconds = 0L;
      Score_timeSwapBuff = 0L;
@@ -182,7 +183,7 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
    // [self.view addSubview:highScoreDisplayLbl];
    // [self.view bringSubviewToFront:highScoreDisplayLbl];
     
-    pauseBtn=[[UIButton alloc]initWithFrame:CGRectMake((screenRect.size.width*0.85),13, 25,50)];
+    pauseBtn=[[UIButton alloc]initWithFrame:CGRectMake((screenRect.size.width*0.85),13, 40,40)];
     //[pauseBtn setImage:[UIImage imageNamed:@"pause.png"] forState:UIControlStateNormal];
     [pauseBtn setBackgroundImage:[UIImage imageNamed:@"pause.png"]
                         forState:UIControlStateNormal];
@@ -1763,6 +1764,7 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
     
     if(vibrateCount == 1) {
           AudioServicesPlaySystemSound (4095);
+         //AudioServicesPlayAlertSound (1105);
     }else {
         
         //vibrated 5 times already kill timer and stop vibrating
@@ -1773,6 +1775,8 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
 -(void)RunnerAction{
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     Score_timeInMilliseconds = ([[NSDate date] timeIntervalSince1970]) - Score_startTime;
+    //long diffinsec=Score_timeInMilliseconds*900;
+    newscore=newscore+1;
     Score_updatedTime = Score_timeSwapBuff + Score_timeInMilliseconds;
     CURRENTSEC = Score_updatedTime;
     if (CURRENTSEC > STARTSEC + 1.5)
@@ -1788,12 +1792,12 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
             
         }
         
-        if(Score_updatedTime>Updatescoretime)
+        if(newscore>Updatescoretime)
         {
             //score = (long) (Score_updatedTime * 0.005);
             score+=5;
             NSLog(@"score :-%ld",score);
-            Updatescoretime+=1;
+            Updatescoretime+=25;
             CURRENT_SCORE = score;
             [scoreDisplyayLbl removeFromSuperview];
             scoreDisplyayLbl=[[UILabel alloc]initWithFrame:CGRectMake(60,10, 80,30)];
@@ -1858,8 +1862,6 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
         }
         indexvalueRedimgCompa=indexvalueRedimgCompa+1;
 
-
-        
     [bobImg setImage:[UIImage imageNamed:@"bobimage.png"]];
     [self.mainscrollview addSubview:bobImg];
     marginVO=[[MarginVO alloc]init];
@@ -2015,7 +2017,8 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
     if (isPause) {
 								isPause = false;
 								Score_startTime = [[NSDate date] timeIntervalSince1970];
-								
+        newscore=0;
+        Updatescoretime=25;
     }
     [cav close];
 
@@ -2057,7 +2060,7 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
     [self AllViewDisplay];
     [redcolor removeFromSuperview];
     CURRENT_SCORE = 0;
-    redline = 500,Updatescoretime=0;
+    redline = 500;
     Score_timeInMilliseconds = 0L;
     Score_timeSwapBuff = 0L;
     Score_updatedTime = 0L;
@@ -2088,8 +2091,8 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
     [cav.demoView addSubview:gameOverLbl];
     
     
-    UILabel * scoreLbls=[[UILabel alloc]initWithFrame:CGRectMake(10,150, cav.demoView.bounds.size.width*0.65,35)];
-    scoreLbls.font = [UIFont fontWithName:@"Hobo" size:35];
+    UILabel * scoreLbls=[[UILabel alloc]initWithFrame:CGRectMake(10,150, cav.demoView.bounds.size.width*0.67,35)];
+    scoreLbls.font = [UIFont fontWithName:@"Hobo" size:37];
     scoreLbls.textAlignment = NSTextAlignmentCenter;
     scoreLbls.textColor=[UIColor redColor];
     UILabel * scoreDispalyLbls=[[UILabel alloc]init];
@@ -2102,27 +2105,27 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
     
     highScoreDisplayLbl.text=[prefscore objectForKey:@"score"];
     if (score>scoreValuess) {
-       scoreDispalyLbls.layer.frame=CGRectMake(cav.demoView.bounds.size.width*0.65,150, 100,35);
-        scoreDispalyLbls.font = [UIFont fontWithName:@"Hobo" size:35];
-        scoreDispalyLbls.textAlignment = NSTextAlignmentLeft;
+       scoreDispalyLbls.layer.frame=CGRectMake(0,150, cav.demoView.bounds.size.width,50);
+        scoreDispalyLbls.font = [UIFont fontWithName:@"Hobo" size:36];
+        scoreDispalyLbls.textAlignment = NSTextAlignmentCenter;
 
         scoreLbls.text=@"High Score:";
         scoreValuess= score;
         scoreDispalyLbls.text=@"";
         highScoreDisplayLbl.text=[NSString stringWithFormat:@"%ld", score];
         
-        scoreDispalyLbls.text=[NSString stringWithFormat:@"%ld", score];
+        scoreDispalyLbls.text=[NSString stringWithFormat:@"High Score: %ld", score];
         NSUserDefaults *prefscore = [NSUserDefaults standardUserDefaults];
-        [prefscore setObject:scoreDispalyLbls.text forKey:@"score"];
+        [prefscore setObject:highScoreDisplayLbl.text forKey:@"score"];
         [prefscore synchronize];
         
         scoreLbls.alpha = 0.0f;
         scoreLbls.textColor=[UIColor redColor];
-        scoreLbls.transform = CGAffineTransformMakeScale(1.0,1.0);
+        scoreLbls.transform = CGAffineTransformMakeScale(0.9,0.9);
         [UIView beginAnimations:@"fadeInNewView" context:NULL];
         [UIView setAnimationDuration:1.0];
         [UIView setAnimationRepeatCount:5000];
-        scoreLbls.transform = CGAffineTransformMakeScale(0.7,0.7);
+        scoreLbls.transform = CGAffineTransformMakeScale(0.6,0.6);
         scoreLbls.alpha = 1.0f;
         [UIView commitAnimations];
         
@@ -2139,19 +2142,19 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
         
         
     }else{
-        scoreDispalyLbls.layer.frame=CGRectMake(cav.demoView.bounds.size.width*0.57,150, 100,35);
-        scoreDispalyLbls.font = [UIFont fontWithName:@"Hobo" size:35];
-        scoreDispalyLbls.textAlignment = NSTextAlignmentLeft;
+        scoreDispalyLbls.layer.frame=CGRectMake(0,150, cav.demoView.bounds.size.width,45);
+        scoreDispalyLbls.font = [UIFont fontWithName:@"Hobo" size:40];
+        scoreDispalyLbls.textAlignment = NSTextAlignmentCenter;
 
         scoreLbls.text=@"Score :";
         scoreDispalyLbls.text=@"";
-        scoreDispalyLbls.text=[NSString stringWithFormat:@"%ld", score];
+        scoreDispalyLbls.text=[NSString stringWithFormat:@"Score: %ld", score];
         
     }
     [self.view addSubview:highScoreDisplayLbl];
     [self.view bringSubviewToFront:highScoreDisplayLbl];
     
-    [cav.demoView addSubview:scoreLbls];
+   // [cav.demoView addSubview:scoreLbls];
     
     scoreDispalyLbls.textColor=[UIColor redColor];
     [cav.demoView addSubview:scoreDispalyLbls];
@@ -2308,7 +2311,7 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
 
 }
 -(void)playAgain{
-
+    Updatescoretime=25;
     score = 0;
     [scoreDisplyayLbl removeFromSuperview];
     scoreDisplyayLbl=[[UILabel alloc]initWithFrame:CGRectMake(60,10, 80,30)];
@@ -2319,7 +2322,7 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
     [self.view bringSubviewToFront:scoreDisplyayLbl];
 
     Score_startTime=[[NSDate date] timeIntervalSince1970];
-
+    newscore=0;
     for(UIView *subview in [mainscrollview subviews]) {
         if ([subview isKindOfClass:[UIImageView class]]) {
             if (subview.backgroundColor==[UIColor redColor]) {
