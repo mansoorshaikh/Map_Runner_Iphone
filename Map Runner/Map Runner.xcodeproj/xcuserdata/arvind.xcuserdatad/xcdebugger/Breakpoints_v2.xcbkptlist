@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeViewController.m"
-            timestampString = "478595449.208278"
+            timestampString = "479221714.287369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2707"
-            endingLineNumber = "2707"
+            startingLineNumber = "3123"
+            endingLineNumber = "3123"
             landmarkName = "-MoveLEFTAnimation"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,44 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeViewController.m"
-            timestampString = "478595449.208278"
+            timestampString = "479221714.287369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2724"
-            endingLineNumber = "2724"
-            landmarkName = "-MoveLEFTAnimation"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HomeViewController.m"
-            timestampString = "478595449.208278"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2734"
-            endingLineNumber = "2734"
-            landmarkName = "-MoveLEFTAnimation"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HomeViewController.m"
-            timestampString = "478595449.208278"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2753"
-            endingLineNumber = "2753"
-            landmarkName = "-MoveLEFTAnimation"
+            startingLineNumber = "3187"
+            endingLineNumber = "3187"
+            landmarkName = "-MoveDOWNAnimation"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeViewController.m"
-            timestampString = "478595449.208278"
+            timestampString = "479221714.287369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2748"
-            endingLineNumber = "2748"
+            startingLineNumber = "3133"
+            endingLineNumber = "3133"
             landmarkName = "-MoveLEFTAnimation"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeViewController.m"
-            timestampString = "478595449.208278"
+            timestampString = "479221714.287369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2732"
-            endingLineNumber = "2732"
+            startingLineNumber = "3111"
+            endingLineNumber = "3111"
             landmarkName = "-MoveLEFTAnimation"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,75 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeViewController.m"
-            timestampString = "478595449.208278"
+            timestampString = "479221714.287369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2717"
-            endingLineNumber = "2717"
-            landmarkName = "-MoveLEFTAnimation"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HomeViewController.m"
-            timestampString = "478595449.208278"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2701"
-            endingLineNumber = "2701"
-            landmarkName = "-MoveLEFTAnimation"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HomeViewController.m"
-            timestampString = "478595449.208278"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2750"
-            endingLineNumber = "2750"
-            landmarkName = "-MoveLEFTAnimation"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HomeViewController.m"
-            timestampString = "478595449.208278"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2738"
-            endingLineNumber = "2738"
-            landmarkName = "-MoveLEFTAnimation"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HomeViewController.m"
-            timestampString = "478595449.208278"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2710"
-            endingLineNumber = "2710"
+            startingLineNumber = "3126"
+            endingLineNumber = "3126"
             landmarkName = "-MoveLEFTAnimation"
             landmarkType = "5">
          </BreakpointContent>

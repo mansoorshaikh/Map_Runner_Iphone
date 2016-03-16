@@ -47,6 +47,7 @@
 		A46BB6481C72EA9C001CE95F /* Hobo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A46BB6471C72EA9C001CE95F /* Hobo.ttf */; };
 		A46FF81F1C71D20C00786CC7 /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A46FF81E1C71D20C00786CC7 /* CustomIOS7AlertView.m */; };
 		A46FF8221C71D2E900786CC7 /* CameraAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A46FF8211C71D2E900786CC7 /* CameraAlertView.m */; };
+		A47132191C903D2100A189CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47132181C903D2000A189CB /* UIKit.framework */; };
 		A471767F1C76F343003332CA /* underground-symbol-small.gif in Resources */ = {isa = PBXBuildFile; fileRef = A471767E1C76F343003332CA /* underground-symbol-small.gif */; };
 		A49CCC201C81AAF100AB1CCF /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A49CCC1F1C81AAF100AB1CCF /* EventKit.framework */; };
 		A49CCC221C81AAF600AB1CCF /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A49CCC211C81AAF600AB1CCF /* EventKitUI.framework */; };
@@ -124,6 +125,7 @@
 		A46FF81E1C71D20C00786CC7 /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomIOS7AlertView.m; path = AlertView/CustomIOS7AlertView.m; sourceTree = "<group>"; };
 		A46FF8201C71D2E900786CC7 /* CameraAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraAlertView.h; path = AlertView/CameraAlertView.h; sourceTree = "<group>"; };
 		A46FF8211C71D2E900786CC7 /* CameraAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraAlertView.m; path = AlertView/CameraAlertView.m; sourceTree = "<group>"; };
+		A47132181C903D2000A189CB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A471767E1C76F343003332CA /* underground-symbol-small.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "underground-symbol-small.gif"; path = "images/underground-symbol-small.gif"; sourceTree = "<group>"; };
 		A49CCC1F1C81AAF100AB1CCF /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		A49CCC211C81AAF600AB1CCF /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
@@ -153,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A47132191C903D2100A189CB /* UIKit.framework in Frameworks */,
 				A49CCC281C81AB2800AB1CCF /* CoreTelephony.framework in Frameworks */,
 				A49CCC261C81AB1D00AB1CCF /* CoreMedia.framework in Frameworks */,
 				A49CCC241C81AB0B00AB1CCF /* AVFoundation.framework in Frameworks */,
@@ -235,6 +238,7 @@
 		A46A11411C6D9D61000CFA58 = {
 			isa = PBXGroup;
 			children = (
+				A47132181C903D2000A189CB /* UIKit.framework */,
 				A49CCC271C81AB2800AB1CCF /* CoreTelephony.framework */,
 				A49CCC251C81AB1D00AB1CCF /* CoreMedia.framework */,
 				A49CCC231C81AB0B00AB1CCF /* AVFoundation.framework */,
@@ -489,7 +493,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "f8add251-accf-4cd2-a53e-8856e9383b08";
+				PROVISIONING_PROFILE = "55dad1ad-5fa1-4dc4-80ff-bd552cd01cc0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -528,7 +532,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "f8add251-accf-4cd2-a53e-8856e9383b08";
+				PROVISIONING_PROFILE = "55dad1ad-5fa1-4dc4-80ff-bd552cd01cc0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -540,6 +544,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Khor Chin Kiew (FZ829W37EB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khor Chin Kiew (FZ829W37EB)";
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -562,7 +567,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiwebcode.pgfh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f8add251-accf-4cd2-a53e-8856e9383b08";
+				PROVISIONING_PROFILE = "55dad1ad-5fa1-4dc4-80ff-bd552cd01cc0";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
@@ -572,6 +577,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Khor Chin Kiew (FZ829W37EB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khor Chin Kiew (FZ829W37EB)";
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -594,7 +600,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiwebcode.pgfh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f8add251-accf-4cd2-a53e-8856e9383b08";
+				PROVISIONING_PROFILE = "55dad1ad-5fa1-4dc4-80ff-bd552cd01cc0";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;

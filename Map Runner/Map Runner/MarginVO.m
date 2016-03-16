@@ -9,5 +9,4 @@
 #import "MarginVO.h"
 
 @implementation MarginVO
-
 @end

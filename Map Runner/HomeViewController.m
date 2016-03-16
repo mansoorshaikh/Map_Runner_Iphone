@@ -13,6 +13,7 @@
 #import <AudioToolbox/AudioServices.h>
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
+#import <UIKit/UIKit.h>
 @import GoogleMobileAds;
 @interface HomeViewController ()
 
@@ -22,12 +23,14 @@
 @end
 
 @implementation HomeViewController
-@synthesize roadView,mainscrollview,leftgreenImg,topgreenImg,rightwaterImg,downwaterImg,insideFirstImg,insideFirstImg1,insideFirstImg2,insideFirstImg3,insideFirstImg4,bobImg,simamImg,simonArray,marginVO,timer,ywidthbobTop,ywidthsimLeft,BOB_LEFT_MARGIN,BOB_T0P_MARGIN,isMovingUp,isMovingDown,isMovingLeft,isMovingRight,indexvalue,position,startPosition,SIMAN_LEFT_MARGIN,SIMAN_T0P_MARGIN,hor_1_top ,hor_2_top ,hor_3_top,hor_4_top,hor_5_top,hor_6_top,hor_7_top,hor_8_top,ver_1_left,ver_2_left,ver_3_left,ver_4_left,ver_5_left,ver_6_left,isValidMove,isGAMEOVER,isMaproad1_1,isMaproad1_2,isMaproad1_3,isMaproad1_4,isMaproad2_1,isMaproad2_2,isMaproad2_3,isMaproad2_4,isMaproad3_1,isMaproad3_2,isMaproad3_3,isMaproad3_4,isMaproad4_1,isMaproad4_2,isMaproad4_3,isMaproad4_4,isPause,isSimanMove,isWait,isBottom_to_Top,isTop_to_Bottom,isLeft_to_Right,isRight_to_Left,ywidth,yheights,alert,cav,alertView,bgImage,ywidthbob,ywidthsim,simTop,simLeft,timer2,scoreLbl,highScoreLbl,titleName,maryNameLbl,hydeparkNameLbl1,hydeparkNameLbl,mayfairNameLbl,greenparkNameLbl,southNameLbl,maryroadNameLbl,paddingNameLbl,edgwareNameLbl,bakerNameLbl,gioucesterNameLbl,marleboneyNameLbl,bondstreetNameLbl,grosvenorstreetNameLbl,newbondNameLbl,berkeleyNameLbl,stratonstreetNameLbl,berkeleystreetNameLbl,piccadillyNameLbl,knighsNameLbl,queenNameLbl,bromptNameLbl,slonneNameLbl,thurloeNameLbl,gloucesterNameLbl,gloucester1NameLbl,kingsNameLbl,chelseaNameLbl,eustonNameLbl,gowerNameLbl,bloomsburyNameLbl,goodgeNameLbl,russelNameLbl,tottennamNameLbl,bloomsburyStreetNameLbl,oxfordNameLbl,sohoNameLbl,regentNameLbl,shaffesburyNameLbl,piccadilly1NameLbl,belgraviaNameLbl,cadoganNameLbl,eatonNameLbl,grosvenerNameLbl,ecclestenNameLbl,buckinghamNameLbl,belgraveNameLbl,gowersNameLbl,juddNameLbl,graysNameLbl,theobaldsNameLbl,southampNameLbl,highholbornNameLbl,holbornNameLbl,longNameLbl,kingswayNameLbl,stNameLbl,coventNameLbl,aldwychNameLbl,whiteNameLbl,victoryaNameLbl,parliamentNameLbl,victoriaNameLbl,westNameLbl,buckkingNameLbl,marshamNameLbl,millbankNameLbl,greatNameLbl,horebwrryNameLbl,rochNameLbl,vauxhallNameLbl,redcolor,indexvlaueRedimg,indexvalueRedimgCompa,score,redimageArray,imageIndex,signalBtn1,signalBtn2,signalBtn3,signalBtn4,signalBtn5,signalBtn6,signalBtn7,signalBtn8,signalBtn9,signalBtn10,signalBtn11,signalBtn12,signalBtn13,signalBtn14,signalBtn15,signalBtn16,signalBtn17,signalBtn18,signalBtn19,signalBtn20,signalBtn21,signalBtn22,signalBtn23,signalBtn24,signalBtn25,signalBtn26,signalBtn27,signalBtn28,CURRENT_SCORE,Updatescoretime,Score_startTime,Score_timeInMilliseconds,Score_timeSwapBuff,Score_updatedTime,STARTSEC , CURRENTSEC,redline,updatemint,scoreDisplyayLbl,highScoreDisplayLbl,scoreValuess,bobleftmargin,bobtopmargin,pauseBtn,timeSwapBuff,bobrightmargin,bobdownmarign,vibrateCount,vibrateTimer,admobCount,bobSpeed,yheightsim,newscore;
+@synthesize roadView,mainscrollview,leftgreenImg,topgreenImg,rightwaterImg,downwaterImg,insideFirstImg,insideFirstImg1,insideFirstImg2,insideFirstImg3,insideFirstImg4,bobImg,simamImg,simonArray,marginVO,timer,ywidthbobTop,ywidthsimLeft,BOB_LEFT_MARGIN,BOB_T0P_MARGIN,isMovingUp,isMovingDown,isMovingLeft,isMovingRight,indexvalue,position,startPosition,SIMAN_LEFT_MARGIN,SIMAN_T0P_MARGIN,hor_1_top ,hor_2_top ,hor_3_top,hor_4_top,hor_5_top,hor_6_top,hor_7_top,hor_8_top,ver_1_left,ver_2_left,ver_3_left,ver_4_left,ver_5_left,ver_6_left,isValidMove,isGAMEOVER,isMaproad1_1,isMaproad1_2,isMaproad1_3,isMaproad1_4,isMaproad2_1,isMaproad2_2,isMaproad2_3,isMaproad2_4,isMaproad3_1,isMaproad3_2,isMaproad3_3,isMaproad3_4,isMaproad4_1,isMaproad4_2,isMaproad4_3,isMaproad4_4,isPause,isSimanMove,isWait,isBottom_to_Top,isTop_to_Bottom,isLeft_to_Right,isRight_to_Left,ywidth,yheights,alert,cav,alertView,bgImage,ywidthbob,ywidthsim,simTop,simLeft,timer2,scoreLbl,highScoreLbl,titleName,maryNameLbl,hydeparkNameLbl1,hydeparkNameLbl,mayfairNameLbl,greenparkNameLbl,southNameLbl,maryroadNameLbl,paddingNameLbl,edgwareNameLbl,bakerNameLbl,gioucesterNameLbl,marleboneyNameLbl,bondstreetNameLbl,grosvenorstreetNameLbl,newbondNameLbl,berkeleyNameLbl,stratonstreetNameLbl,berkeleystreetNameLbl,piccadillyNameLbl,knighsNameLbl,queenNameLbl,bromptNameLbl,slonneNameLbl,thurloeNameLbl,gloucesterNameLbl,gloucester1NameLbl,kingsNameLbl,chelseaNameLbl,eustonNameLbl,gowerNameLbl,bloomsburyNameLbl,goodgeNameLbl,russelNameLbl,tottennamNameLbl,bloomsburyStreetNameLbl,oxfordNameLbl,sohoNameLbl,regentNameLbl,shaffesburyNameLbl,piccadilly1NameLbl,belgraviaNameLbl,cadoganNameLbl,eatonNameLbl,grosvenerNameLbl,ecclestenNameLbl,buckinghamNameLbl,belgraveNameLbl,gowersNameLbl,juddNameLbl,graysNameLbl,theobaldsNameLbl,southampNameLbl,highholbornNameLbl,holbornNameLbl,longNameLbl,kingswayNameLbl,stNameLbl,coventNameLbl,aldwychNameLbl,whiteNameLbl,victoryaNameLbl,parliamentNameLbl,victoriaNameLbl,westNameLbl,buckkingNameLbl,marshamNameLbl,millbankNameLbl,greatNameLbl,horebwrryNameLbl,rochNameLbl,vauxhallNameLbl,redcolor,indexvlaueRedimg,indexvalueRedimgCompa,score,redimageArray,imageIndex,signalBtn1,signalBtn2,signalBtn3,signalBtn4,signalBtn5,signalBtn6,signalBtn7,signalBtn8,signalBtn9,signalBtn10,signalBtn11,signalBtn12,signalBtn13,signalBtn14,signalBtn15,signalBtn16,signalBtn17,signalBtn18,signalBtn19,signalBtn20,signalBtn21,signalBtn22,signalBtn23,signalBtn24,signalBtn25,signalBtn26,signalBtn27,signalBtn28,CURRENT_SCORE,Updatescoretime,Score_startTime,Score_timeInMilliseconds,Score_timeSwapBuff,Score_updatedTime,STARTSEC , CURRENTSEC,redline,updatemint,scoreDisplyayLbl,highScoreDisplayLbl,scoreValuess,bobleftmargin,bobtopmargin,pauseBtn,timeSwapBuff,bobrightmargin,bobdownmarign,vibrateCount,vibrateTimer,admobCount,bobSpeed,yheightsim,newscore,repeatpointsDict;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    repeatpointsDict=  [[NSMutableDictionary alloc] init];
+    
     self.navigationController.navigationBarHidden=YES;
-[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:YES];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:YES];
     self.interstitial = [[GADInterstitial alloc] init ];
                          
            self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
@@ -127,11 +130,11 @@
 }
 - (void)interstitial:(GADInterstitial *)interstitial
 didFailToReceiveAdWithError:(GADRequestError *)error {
-    NSLog(@"interstitialDidFailToReceiveAdWithError: %@", [error localizedDescription]);
+    //NSLog(@"interstitialDidFailToReceiveAdWithError: %@", [error localizedDescription]);
 }
 
 - (void)interstitialDidDismissScreen:(GADInterstitial *)interstitial {
-    NSLog(@"interstitialDidDismissScreen");
+    //NSLog(@"interstitialDidDismissScreen");
     [self dialogAction];
 
     self.interstitial = [[GADInterstitial alloc] init];
@@ -149,15 +152,13 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     ywidth = screenRect.size.width;
     yheights = screenRect.size.height;
-    
     bobleftmargin= screenRect.size.width*0.70;
-    bobtopmargin=screenRect.size.height*0.65;
-    bobrightmargin= screenRect.size.height*0.75;
+    bobtopmargin=screenRect.size.height*0.60;
+    bobrightmargin= screenRect.size.height*0.62;
     bobdownmarign= screenRect.size.width*0.70;
-    
     scoreLbl=[[UILabel alloc]initWithFrame:CGRectMake(5,10, 80,30)];
     scoreLbl.font=[UIFont fontWithName:@"Hobo" size:15.0];
-    scoreLbl.text=@"Score :";
+    scoreLbl.text=@"Score:";
     scoreLbl.textColor=[UIColor blackColor];
     [self.view addSubview:scoreLbl];
     [self.view bringSubviewToFront:scoreLbl];
@@ -1060,9 +1061,9 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     UIFont *customFont = [UIFont fontWithName:@"Hobo" size:screenRect.size.width*0.035];
     UIFont *customFontd = [UIFont fontWithName:@"Hobo" size:screenRect.size.width*0.03];
 
-    UIFont *customFontbig = [UIFont fontWithName:@"Hobo" size:screenRect.size.width*0.09];
-    CGFloat namewidth=screenRect.size.width*0.08;
-    CGFloat namewidth1=screenRect.size.height*0.20;
+    UIFont *customFontbig = [UIFont fontWithName:@"Hobo" size:screenRect.size.width*0.07];
+    CGFloat namewidth=screenRect.size.width*0.07;
+    CGFloat namewidth1=screenRect.size.height*0.15;
     CGFloat namewidth2=screenRect.size.height*0.55;
 
     titleName=[[UILabel alloc]initWithFrame:CGRectMake(screenRect.size.width*0.35,11, 200,35)];
@@ -1072,10 +1073,11 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     [self.mainscrollview addSubview:titleName];
     
     
-    maryNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*0.41), 300,namewidth)];
+    maryNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*0.40), 300,namewidth)];
     maryNameLbl.font = customFontbig;
-    maryNameLbl.text=@"MARYLEBONE";
+    maryNameLbl.text=@"M A R Y L E B O N E";
     maryNameLbl.textColor=[UIColor blackColor];
+    [maryNameLbl sizeToFit];
     [self.mainscrollview addSubview:maryNameLbl];
     
     maryroadNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.23),(screenRect.size.height*0.21), 120,namewidth)];
@@ -1096,18 +1098,20 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     edgwareNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:edgwareNameLbl];
     
-    bakerNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.76),(screenRect.size.height*0.20), 20,namewidth2)];
+    bakerNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.76),(screenRect.size.height*0.25), 20,namewidth2)];
     bakerNameLbl.font = customFontd;
     bakerNameLbl.text=@"B\na\nk\ne\nr\n\nS\nt\nr\ne\ne\nt";
     bakerNameLbl.lineBreakMode = UILineBreakModeWordWrap;
     bakerNameLbl.numberOfLines = 0;
+    [bakerNameLbl sizeToFit];
     bakerNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:bakerNameLbl];
     
-    gioucesterNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.51),(screenRect.size.height*0.46), 20,namewidth2)];
+    gioucesterNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.51),(screenRect.size.height*0.55), 20,namewidth2)];
     gioucesterNameLbl.font = customFontd;
     gioucesterNameLbl.text=@"G\nl\no\nu\nc\ne\ns\nt\ne\nr\n\nP\nl\na\nc\ne";
     gioucesterNameLbl.numberOfLines = 0;
+    [gioucesterNameLbl sizeToFit];
     gioucesterNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:gioucesterNameLbl];
     
@@ -1135,17 +1139,19 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     [signalBtn4 setImage:[UIImage imageNamed:@"underground-symbol-small.gif"] forState:UIControlStateNormal];
     [self.mainscrollview addSubview:signalBtn4];
     
-    hydeparkNameLbl1=[[UILabel alloc]initWithFrame:CGRectMake(7,(screenRect.size.height*1.10), 25,namewidth2)];
+    hydeparkNameLbl1=[[UILabel alloc]initWithFrame:CGRectMake(7,(screenRect.size.height*1.10), 25,namewidth2+100)];
     hydeparkNameLbl1.font = customFontbig;
     hydeparkNameLbl1.text=@"H\nY\nD\nE\n\nP\nA \nR \nK";
     hydeparkNameLbl1.textColor=[UIColor blackColor];
     hydeparkNameLbl1.numberOfLines = 0;
+    [hydeparkNameLbl1 sizeToFit];
     [self.mainscrollview addSubview:hydeparkNameLbl1];
     
-    marleboneyNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.91),(screenRect.size.height*0.74), 20,namewidth2)];
+    marleboneyNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.91),(screenRect.size.height*0.77), 20,namewidth2)];
     marleboneyNameLbl.font = customFontd;
     marleboneyNameLbl.text=@"M\na\nr\ny\nl\ne\nb\no\nn\ne\n\nH\ni\ng\nh\n\nS\nt\nr\ne\ne\nt";
     marleboneyNameLbl.numberOfLines = 0;
+    [marleboneyNameLbl sizeToFit];
     marleboneyNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:marleboneyNameLbl];
     
@@ -1161,32 +1167,35 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     grosvenorstreetNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:grosvenorstreetNameLbl];
     
-    newbondNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.76),(screenRect.size.height*1.24), 20,namewidth2)];
+    newbondNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.76),(screenRect.size.height*1.25), 20,namewidth2)];
     newbondNameLbl.font = customFontd;
     newbondNameLbl.numberOfLines = 0;
     newbondNameLbl.text=@"N\ne\nw\n\nB\no\nn\nd\n\nS\nt\nr\ne\ne\nt";
     newbondNameLbl.textColor=[UIColor blackColor];
+    [newbondNameLbl sizeToFit];
     [self.mainscrollview addSubview:newbondNameLbl];
     
-    berkeleyNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*1.52), 100,namewidth1-30)];
+    berkeleyNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*1.52), 100,namewidth1)];
     berkeleyNameLbl.font = [UIFont fontWithName:@"Hobo" size:22];
     berkeleyNameLbl.numberOfLines = 0;
     berkeleyNameLbl.text=@"Berkeley\nSquare";
     berkeleyNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:berkeleyNameLbl];
     
-    stratonstreetNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.26),(screenRect.size.height*1.60), 17,namewidth2)];
+    stratonstreetNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.26),(screenRect.size.height*1.67), 17,namewidth2)];
     stratonstreetNameLbl.font = customFontd;
     stratonstreetNameLbl.numberOfLines = 0;
     stratonstreetNameLbl.text=@"S\nt\nr\na\nt\nt\no\nn\n\nS\nt\nr\ne\ne\nt";
     stratonstreetNameLbl.textColor=[UIColor blackColor];
+    [stratonstreetNameLbl sizeToFit];
     [self.mainscrollview addSubview:stratonstreetNameLbl];
     
-    berkeleystreetNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.51),(screenRect.size.height*1.60), 17,namewidth2)];
+    berkeleystreetNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.51),(screenRect.size.height*1.67), 17,namewidth2)];
     berkeleystreetNameLbl.font = customFontd;
     berkeleystreetNameLbl.numberOfLines = 0;
     berkeleystreetNameLbl.text=@"B\ne\nr\nk\ne\nl\ne\ny\n\nS\nt\nr\ne\ne\nt";
     berkeleystreetNameLbl.textColor=[UIColor blackColor];
+    [berkeleystreetNameLbl sizeToFit];
     [self.mainscrollview addSubview:berkeleystreetNameLbl];
     
     piccadillyNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.60),(screenRect.size.height*1.74), 120,namewidth)];
@@ -1197,7 +1206,7 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     
     mayfairNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*1.44), 230,namewidth+10)];
     mayfairNameLbl.font = customFontbig;
-    mayfairNameLbl.text=@"MAYFAIR";
+    mayfairNameLbl.text=@"M A Y F A I R";
     mayfairNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:mayfairNameLbl];
     
@@ -1229,25 +1238,28 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     knighsNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:knighsNameLbl];
     
-    queenNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.26),(screenRect.size.height*2.0), 17,namewidth2)];
+    queenNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.26),(screenRect.size.height*2.12), 17,namewidth2)];
     queenNameLbl.font = customFontd;
     queenNameLbl.numberOfLines = 0;
     queenNameLbl.text=@"Q\nu\ne\ne\nn\n's\n\nG\na\nt\ne";
     queenNameLbl.textColor=[UIColor blackColor];
+    [queenNameLbl sizeToFit];
     [self.mainscrollview addSubview:queenNameLbl];
     
-    bromptNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.76),(screenRect.size.height*2.18), 17,namewidth2)];
+    bromptNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.76),(screenRect.size.height*2.25), 17,namewidth2)];
     bromptNameLbl.font = customFontd;
     bromptNameLbl.numberOfLines = 0;
     bromptNameLbl.text=@"B\nr\no\nm\np\nt\no\nn\n\nR\no\na\nd";
     bromptNameLbl.textColor=[UIColor blackColor];
+    [bromptNameLbl sizeToFit];
     [self.mainscrollview addSubview:bromptNameLbl];
     
-    slonneNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.91),(screenRect.size.height*2.22), 17,namewidth2)];
+    slonneNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.91),(screenRect.size.height*2.34), 17,namewidth2)];
     slonneNameLbl.font = customFontd;
     slonneNameLbl.numberOfLines = 0;
     slonneNameLbl.text=@"S\nl\no\na\nn\ne\n\n\nS\nt\nr\ne\ne\nt";
     slonneNameLbl.textColor=[UIColor blackColor];
+    [slonneNameLbl sizeToFit];
     [self.mainscrollview addSubview:slonneNameLbl];
     
     thurloeNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.25),(screenRect.size.height*2.49), 150,namewidth)];
@@ -1256,11 +1268,12 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     thurloeNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:thurloeNameLbl];
     
-    gloucesterNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.11),(screenRect.size.height*2.42), 17,namewidth2)];
+    gloucesterNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.11),(screenRect.size.height*2.53), 17,namewidth2)];
     gloucesterNameLbl.font = customFontd;
     gloucesterNameLbl.numberOfLines = 0;
     gloucesterNameLbl.text=@"G\nl\no\nu\nc\ne\ns\nt\ne\nr\n\nR\no\na\nd";
     gloucesterNameLbl.textColor=[UIColor blackColor];
+    [gloucesterNameLbl sizeToFit];
     [self.mainscrollview addSubview:gloucesterNameLbl];
     
     kingsNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.62),(screenRect.size.height*2.74), 150,namewidth)];
@@ -1275,9 +1288,9 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     chelseaNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:chelseaNameLbl];
     
-    southNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.20),(screenRect.size.height*2.61), 900,namewidth1)];
+    southNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.20),(screenRect.size.height*2.62), 900,namewidth1)];
     southNameLbl.font = customFontbig;
-    southNameLbl.text=@"SOUTH\nKENSINGTON";
+    southNameLbl.text=@"S O U T H\nK E N S I N G T O N";
     southNameLbl.textColor=[UIColor blackColor];
     southNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:southNameLbl];
@@ -1300,16 +1313,17 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     eustonNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:eustonNameLbl];
     
-    gowerNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.76),(screenRect.size.height*0.18), 17,namewidth2)];
+    gowerNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.76),(screenRect.size.height*0.24), 17,namewidth2)];
     gowerNameLbl.font = customFontd;
     gowerNameLbl.text=@"G\no\nw\ne\nr\n\n\nS\nt\nr\ne\ne\nt";
     gowerNameLbl.textColor=[UIColor blackColor];
     gowerNameLbl.numberOfLines = 0;
+    [gowerNameLbl sizeToFit];
     [self.mainscrollview addSubview:gowerNameLbl];
     
     bloomsburyNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.40),(screenRect.size.height*0.40), 380,namewidth+10)];
     bloomsburyNameLbl.font = customFontbig;
-    bloomsburyNameLbl.text=@"BLOOMSBURY";
+    bloomsburyNameLbl.text=@"B L O O M S B U R Y";
     bloomsburyNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:bloomsburyNameLbl];
     
@@ -1319,18 +1333,20 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     goodgeNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:goodgeNameLbl];
     
-    russelNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.91),(screenRect.size.height*0.43), 17,namewidth2)];
+    russelNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.91),(screenRect.size.height*0.48), 17,namewidth2)];
     russelNameLbl.font = customFontd;
     russelNameLbl.text=@"R\nu\ns\ns\ne\nl\nl\n\nS\nq\nu\na\nr\ne";
     russelNameLbl.textColor=[UIColor blackColor];
     russelNameLbl.numberOfLines = 0;
+    [russelNameLbl sizeToFit];
     [self.mainscrollview addSubview:russelNameLbl];
     
-    tottennamNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.51),(screenRect.size.height*0.54), 20,namewidth2)];
+    tottennamNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.51),(screenRect.size.height*0.55), 20,namewidth2)];
     tottennamNameLbl.font = customFontd;
     tottennamNameLbl.text=@"T\no\nt\nt\ne\nn\nh\na\nm\n\nC\no\nu\nr\nt\n\nR\no\na\nd";
     tottennamNameLbl.textColor=[UIColor blackColor];
     tottennamNameLbl.numberOfLines = 0;
+    [tottennamNameLbl sizeToFit];
     [self.mainscrollview addSubview:tottennamNameLbl];
     
     signalBtn12=[[UIButton alloc]initWithFrame:CGRectMake((screenRect.size.width*1.27),(screenRect.size.height*0.13), 17,17)];
@@ -1357,11 +1373,12 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     [signalBtn15_ setImage:[UIImage imageNamed:@"underground-symbol-small.gif"] forState:UIControlStateNormal];
     [self.mainscrollview addSubview:signalBtn15_];
     
-    bloomsburyStreetNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.76),(screenRect.size.height*0.80), 20,namewidth2)];
+    bloomsburyStreetNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.76),(screenRect.size.height*0.86), 20,namewidth2)];
     bloomsburyStreetNameLbl.font = customFontd;
     bloomsburyStreetNameLbl.text=@"B\nl\no\no\nm\ns\nb\nu\nr\ny\n\nS\nt\nr\ne\ne\nt";
     bloomsburyStreetNameLbl.textColor=[UIColor blackColor];
     bloomsburyStreetNameLbl.numberOfLines = 0;
+    [bloomsburyStreetNameLbl sizeToFit];
     [self.mainscrollview addSubview:bloomsburyStreetNameLbl];
     
     signalBtn18=[[UIButton alloc]initWithFrame:CGRectMake((screenRect.size.width*1.55),(screenRect.size.height*1.25), 17,17)];
@@ -1384,15 +1401,16 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     
     sohoNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.55),(screenRect.size.height*1.30), 100,namewidth+10)];
     sohoNameLbl.font =customFontbig;
-    sohoNameLbl.text=@"SOHO";
+    sohoNameLbl.text=@"S O H O";
     sohoNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:sohoNameLbl];
     
-    regentNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.51),(screenRect.size.height*1.30), 20,namewidth2)];
+    regentNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.51),(screenRect.size.height*1.40), 20,namewidth2)];
     regentNameLbl.font = customFontd;
     regentNameLbl.text=@"R\ne\ng\ne\nn\nt\n\nS\nt\nr\ne\ne\nt";
     regentNameLbl.textColor=[UIColor blackColor];
     regentNameLbl.numberOfLines = 0;
+    [regentNameLbl sizeToFit];
     [self.mainscrollview addSubview:regentNameLbl];
     
     UILabel*  charingNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.91),(screenRect.size.height*1.25), 20,namewidth2)];
@@ -1400,13 +1418,15 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     charingNameLbl.text=@"C\nh\na\nr\ni\nn\ng\n\nC\nr\no\ns\ns\n\nR\no\na\nd";
     charingNameLbl.textColor=[UIColor blackColor];
     charingNameLbl.numberOfLines = 0;
+    [charingNameLbl sizeToFit];
     [self.mainscrollview addSubview:charingNameLbl];
     
-    shaffesburyNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.76),(screenRect.size.height*1.35), 20,namewidth2)];
+    shaffesburyNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.76),(screenRect.size.height*1.40), 20,namewidth2)];
     shaffesburyNameLbl.font = customFontd;
     shaffesburyNameLbl.text=@"S\nh\na\nf\nf\ne\ns\nb\nu\nr\ny\n\nA\nV\ne\nn\nu\ne";
     shaffesburyNameLbl.textColor=[UIColor blackColor];
     shaffesburyNameLbl.numberOfLines = 0;
+    [shaffesburyNameLbl sizeToFit];
     [self.mainscrollview addSubview:shaffesburyNameLbl];
     
     piccadilly1NameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.54),(screenRect.size.height*1.74), 100,namewidth)];
@@ -1425,43 +1445,48 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     
     belgraviaNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.22),(screenRect.size.height*2.35), 350,namewidth)];
     belgraviaNameLbl.font = customFontbig;
-    belgraviaNameLbl.text=@"BELGRAVIA";
+    belgraviaNameLbl.text=@"B E L G R A V I A";
     belgraviaNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:belgraviaNameLbl];
     
-    cadoganNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.11),(screenRect.size.height*2.35), 20,namewidth2)];
+    cadoganNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.11),(screenRect.size.height*2.50), 20,namewidth2)];
     cadoganNameLbl.font = customFontd;
     cadoganNameLbl.text=@"C\na\nd\no\ng\na\nn\n\nP\nl\na\nc\ne";
     cadoganNameLbl.textColor=[UIColor blackColor];
     cadoganNameLbl.numberOfLines = 0;
+    [cadoganNameLbl sizeToFit];
     [self.mainscrollview addSubview:cadoganNameLbl];
     
-    eatonNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.36),(screenRect.size.height*2.30), 20,namewidth2)];
+    eatonNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.36),(screenRect.size.height*2.36), 20,namewidth2)];
     eatonNameLbl.font = customFontd;
     eatonNameLbl.text=@"E\na\nt\no\nn\n\nS\nq\nu\na\nr\ne";
     eatonNameLbl.textColor=[UIColor blackColor];
     eatonNameLbl.numberOfLines = 0;
+    [eatonNameLbl sizeToFit];
     [self.mainscrollview addSubview:eatonNameLbl];
     
-    grosvenerNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.76),(screenRect.size.height*2.15), 20,namewidth2)];
+    grosvenerNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.76),(screenRect.size.height*2.24), 20,namewidth2)];
     grosvenerNameLbl.font = customFontd;
     grosvenerNameLbl.text=@"G\nr\no\ns\nv\ne\nn\nO\nr\n\nP\nl\na\nc\ne";
     grosvenerNameLbl.textColor=[UIColor blackColor];
     grosvenerNameLbl.numberOfLines = 0;
+    [grosvenerNameLbl sizeToFit];
     [self.mainscrollview addSubview:grosvenerNameLbl];
     
-    ecclestenNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.91),(screenRect.size.height*2.27), 20,namewidth2)];
+    ecclestenNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.91),(screenRect.size.height*2.35), 20,namewidth2)];
     ecclestenNameLbl.font = customFontd;
     ecclestenNameLbl.text=@"E\nc\nc\nl\ne\ns\nt\nO\nn\n\nS\nt\nr\ne\ne\nt";
     ecclestenNameLbl.textColor=[UIColor blackColor];
     ecclestenNameLbl.numberOfLines = 0;
+    [ecclestenNameLbl sizeToFit];
     [self.mainscrollview addSubview:ecclestenNameLbl];
     
-    buckinghamNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.51),(screenRect.size.height*2.50), 20,namewidth2)];
+    buckinghamNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.51),(screenRect.size.height*2.55), 20,namewidth2)];
     buckinghamNameLbl.font = customFontd;
     buckinghamNameLbl.text=@"B\nu\nc\nk\ni\nn\ng\nh\na\nm\n\nP\nl\na\nc\ne\n\nR\no\na\nd";
     buckinghamNameLbl.textColor=[UIColor blackColor];
     buckinghamNameLbl.numberOfLines = 0;
+    [buckinghamNameLbl sizeToFit];
     [self.mainscrollview addSubview:buckinghamNameLbl];
     
     belgraveNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*1.55),(screenRect.size.height*2.64), 100,namewidth)];
@@ -1478,45 +1503,49 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     [signalBtn24 setImage:[UIImage imageNamed:@"underground-symbol-small.gif"] forState:UIControlStateNormal];
     [self.mainscrollview addSubview:signalBtn24];
     
-    gowersNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.65),(screenRect.size.height*0.215), 100,23)];
+    gowersNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.60),(screenRect.size.height*0.215), 100,23)];
     gowersNameLbl.font = customFont;
     gowersNameLbl.text=@"King's  Cross";
     gowersNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:gowersNameLbl];
     
-   UILabel* argylesquare=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.76),(screenRect.size.height*0.20), 20,namewidth2)];
+   UILabel* argylesquare=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.76),(screenRect.size.height*0.25), 20,namewidth2)];
     argylesquare.font = customFontd;
     argylesquare.text=@"A\nr\ng\ny\nl\ne\n\nS\nq\nu\na\nr\ne";
     argylesquare.textColor=[UIColor blackColor];
     argylesquare.numberOfLines = 0;
+    [argylesquare sizeToFit];
     [self.mainscrollview addSubview:argylesquare];
 
     
-    juddNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.51),(screenRect.size.height*0.47), 20,namewidth2)];
+    juddNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.51),(screenRect.size.height*0.60), 20,namewidth2)];
     juddNameLbl.font = customFontd;
     juddNameLbl.text=@"J\nu\nd\nd\n\nS\nt\nr\ne\ne\nt";
     juddNameLbl.textColor=[UIColor blackColor];
     juddNameLbl.numberOfLines = 0;
+    [juddNameLbl sizeToFit];
     [self.mainscrollview addSubview:juddNameLbl];
     
-    graysNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.91),(screenRect.size.height*0.23), 20,namewidth2)];
+    graysNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.91),(screenRect.size.height*0.30), 20,namewidth2)];
     graysNameLbl.font = customFontd;
     graysNameLbl.text=@"G\nr\na\ny\n's\n\nI\nn\nn\n\nR\no\na\nd";
     graysNameLbl.textColor=[UIColor blackColor];
     graysNameLbl.numberOfLines = 0;
+    [graysNameLbl sizeToFit];
     [self.mainscrollview addSubview:graysNameLbl];
     
     theobaldsNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.35),(screenRect.size.height*0.49), 100,namewidth)];
     theobaldsNameLbl.font = customFont;
-    theobaldsNameLbl.text=@"Theobalds  Road";
+    theobaldsNameLbl.text=@"Theobald's  Road";
     theobaldsNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:theobaldsNameLbl];
     
-    southampNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.11),(screenRect.size.height*0.55), 20,namewidth2)];
+    southampNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.11),(screenRect.size.height*0.65), 20,namewidth2)];
     southampNameLbl.font = customFontd;
     southampNameLbl.text=@"S\no\nu\nt\nh\na\nm\np\nt\no\nn\n\nR\no\nw";
     southampNameLbl.textColor=[UIColor blackColor];
     southampNameLbl.numberOfLines = 0;
+    [southampNameLbl sizeToFit];
     [self.mainscrollview addSubview:southampNameLbl];
     
     highholbornNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.60),(screenRect.size.height*0.74), 100,namewidth)];
@@ -1527,7 +1556,7 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     
     holbornNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.55),(screenRect.size.height*0.66), 250,namewidth+10)];
     holbornNameLbl.font = customFontbig;
-    holbornNameLbl.text=@"HOLBORN";
+    holbornNameLbl.text=@"H O L B O R N";
     holbornNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:holbornNameLbl];
     
@@ -1559,23 +1588,25 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     kingswayNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:kingswayNameLbl];
     
-    UILabel* strand=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.76),(screenRect.size.height*1.21), 20,namewidth2)];
+    UILabel* strand=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.76),(screenRect.size.height*1.35), 20,namewidth2)];
     strand.font = customFontd;
     strand.text=@"S\nt\nr\na\nn\nd";
     strand.textColor=[UIColor blackColor];
     strand.numberOfLines = 0;
+    [strand sizeToFit];
     [self.mainscrollview addSubview:strand];
 
-    stNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.11),(screenRect.size.height*1.08), 20,namewidth2)];
+    stNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.11),(screenRect.size.height*1.16), 20,namewidth2)];
     stNameLbl.font = customFontd;
     stNameLbl.text=@"S\nt\n\nM\na\nr\nt\ni\nn\n's\n\nL\na\nn\ne";
     stNameLbl.textColor=[UIColor blackColor];
     stNameLbl.numberOfLines = 0;
+    [stNameLbl sizeToFit];
     [self.mainscrollview addSubview:stNameLbl];
     
     coventNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.17),(screenRect.size.height*1.30), 790,namewidth1)];
     coventNameLbl.font = customFontbig;
-    coventNameLbl.text=@"COVENT\nGARDEN";
+    coventNameLbl.text=@"C O V E N T\nG A R D E N";
     coventNameLbl.textColor=[UIColor blackColor];
     coventNameLbl.numberOfLines = 0;
     [self.mainscrollview addSubview:coventNameLbl];
@@ -1586,18 +1617,20 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     aldwychNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:aldwychNameLbl];
     
-    whiteNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.51),(screenRect.size.height*1.45), 17,namewidth2)];
+    whiteNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.51),(screenRect.size.height*1.54), 17,namewidth2)];
     whiteNameLbl.font = customFontd;
     whiteNameLbl.text=@"W\nh\ni\nt\ne\nh\na\nl\nl";
     whiteNameLbl.numberOfLines = 0;
+    [whiteNameLbl sizeToFit];
     whiteNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:whiteNameLbl];
     
-    victoryaNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.91),(screenRect.size.height*1.55), 20,namewidth2)];
+    victoryaNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.91),(screenRect.size.height*1.58), 20,namewidth2)];
     victoryaNameLbl.font = customFontd;
     victoryaNameLbl.text=@"V\ni\nc\nt\no\nr\ni\na\n\nE\nm\nb\na\nn\nk\nm\ne\nn\nt";
     victoryaNameLbl.textColor=[UIColor blackColor];
     victoryaNameLbl.numberOfLines = 0;
+    [victoryaNameLbl sizeToFit];
     [self.mainscrollview addSubview:victoryaNameLbl];
     
     parliamentNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.29),(screenRect.size.height*1.89), 200,namewidth)];
@@ -1614,7 +1647,7 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     
     westNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.25),(screenRect.size.height*2.15), 380,namewidth+10)];
     westNameLbl.font = customFontbig;
-    westNameLbl.text=@"WESTMINSTER";
+    westNameLbl.text=@"W E S T M I N S T E R";
     westNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:westNameLbl];
     
@@ -1624,18 +1657,20 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     buckkingNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:buckkingNameLbl];
     
-    marshamNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.76),(screenRect.size.height*2.20), 20,namewidth2)];
+    marshamNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.76),(screenRect.size.height*2.24), 20,namewidth2)];
     marshamNameLbl.font = customFontd;
     marshamNameLbl.text=@"M\na\nr\ns\nh\na\nm\n\nS\nt\nr\ne\ne\nt";
     marshamNameLbl.textColor=[UIColor blackColor];
     marshamNameLbl.numberOfLines = 0;
+    [marshamNameLbl sizeToFit];
     [self.mainscrollview addSubview:marshamNameLbl];
     
-    millbankNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.91),(screenRect.size.height*2.15), 20,namewidth2)];
+    millbankNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.91),(screenRect.size.height*2.24), 20,namewidth2)];
     millbankNameLbl.font = customFontd;
     millbankNameLbl.text=@"M\ni\nl\nl\nb\na\nn\nk";
     millbankNameLbl.textColor=[UIColor blackColor];
     millbankNameLbl.numberOfLines = 0;
+    [millbankNameLbl sizeToFit];
     [self.mainscrollview addSubview:millbankNameLbl];
     
     greatNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.40),(screenRect.size.height*2.39), 200,namewidth)];
@@ -1650,11 +1685,12 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     horebwrryNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:horebwrryNameLbl];
     
-    rochNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.11),(screenRect.size.height*2.40), 20,namewidth2)];
+    rochNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.11),(screenRect.size.height*2.54), 20,namewidth2)];
     rochNameLbl.font = customFontd;
     rochNameLbl.text=@"R\no\nc\nh\ne\ns\nf\ne\nr\n\nR\no\nw";
     rochNameLbl.textColor=[UIColor blackColor];
     rochNameLbl.numberOfLines = 0;
+    [rochNameLbl sizeToFit];
     [self.mainscrollview addSubview:rochNameLbl];
     
     vauxhallNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.50),(screenRect.size.height*2.89), 150,namewidth)];
@@ -1665,33 +1701,34 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     
     UILabel* riverNameLbl=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*3.02),(screenRect.size.height*1.50), 900,namewidth1)];
     riverNameLbl.font = customFontbig;
-    riverNameLbl.text=@"RIVER\nTHAMES";
+    riverNameLbl.text=@"R I V E R\nT H A M E S";
     riverNameLbl.numberOfLines = 0;
     riverNameLbl.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:riverNameLbl];
     
     UILabel* riverNameLbl1=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*2.30),(screenRect.size.height*3.10), 330,namewidth+10)];
     riverNameLbl1.font = customFontbig;
-    riverNameLbl1.text=@"RIVER  THAMES";
+    riverNameLbl1.text=@"R I V E R   T H A M E S";
     riverNameLbl1.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:riverNameLbl1];
     
     UILabel* riverNameLbl2=[[UILabel alloc]initWithFrame:CGRectMake((screenRect.size.width*0.30),(screenRect.size.height*3.10), 330,namewidth+10)];
     riverNameLbl2.font = customFontbig;
-    riverNameLbl2.text=@"RIVER  THAMES";
+    riverNameLbl2.text=@"R I V E R   T H A M E S";
     riverNameLbl2.textColor=[UIColor blackColor];
     [self.mainscrollview addSubview:riverNameLbl2];
     
     BOB_T0P_MARGIN = 1.48;
     BOB_LEFT_MARGIN = 1.48;
 
+    bobImg=[[UIImageView alloc]initWithFrame:CGRectMake(BOB_LEFT_MARGIN*ywidth,BOB_T0P_MARGIN*yheights, screenRect.size.height*0.05,screenRect.size.height*0.05)];
+    [bobImg setImage:[UIImage imageNamed:@"bobimage.png"]];
+    //[self.mainscrollview addSubview:bobImg];
+    
     simamImg=[[UIImageView alloc]initWithFrame:CGRectMake(BOB_LEFT_MARGIN*ywidth,BOB_T0P_MARGIN*yheights, screenRect.size.height*0.05,screenRect.size.height*0.05)];
     [simamImg setImage:[UIImage imageNamed:@"simamimage.png"]];
     [self.mainscrollview addSubview:simamImg];
     
-    bobImg=[[UIImageView alloc]initWithFrame:CGRectMake(BOB_LEFT_MARGIN*ywidth,BOB_T0P_MARGIN*yheights, screenRect.size.height*0.05,screenRect.size.height*0.05)];
-    [bobImg setImage:[UIImage imageNamed:@"bobimage.png"]];
-    //[self.mainscrollview addSubview:bobImg];
     [mainscrollview setContentOffset:CGPointMake(ywidth,yheights) animated:YES];
     mainscrollview.contentSize = CGSizeMake(screenRect.size.width*4.0,screenRect.size.height*4.0);
     mainscrollview.scrollEnabled=NO;
@@ -1703,10 +1740,11 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     imageIndex=0;
     marginVO=[[MarginVO alloc]init];
     
-    timer = [NSTimer scheduledTimerWithTimeInterval: 0.015 target:self selector:@selector(RunnerAction) userInfo:nil repeats: YES];
-
+    
+        timer = [NSTimer scheduledTimerWithTimeInterval: 0.01 target:self selector:@selector(RunnerAction) userInfo:nil repeats: YES];
 }
 -(void)pauseAction{
+    
     if (!isPause) {
 								isPause = true;
 								Score_timeSwapBuff += Score_timeInMilliseconds;
@@ -1718,7 +1756,7 @@ self.interstitial.adUnitID=@"ca-app-pub-1192482966027684/6699631853";
     STARTSEC = CURRENTSEC;
     bobSpeed=bobSpeed+1;
     vibrateCount=0;
-vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(vibratePhone) userInfo:nil repeats:YES];
+  [self vibratePhone];
     
     if (swipe.direction == UISwipeGestureRecognizerDirectionLeft) {
         isMovingUp=NO;
@@ -1760,20 +1798,30 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
 }
 - (void)vibratePhone;
 {
-    vibrateCount = vibrateCount +1;
     
-    if(vibrateCount == 1) {
-          AudioServicesPlaySystemSound (4095);
-         //AudioServicesPlayAlertSound (1105);
+    if(vibrateCount == 0) {
+        vibrateCount=1;
+        NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+        NSMutableArray* arr = [NSMutableArray array ];
+        
+        [arr addObject:[NSNumber numberWithBool:YES]]; //vibrate for 2000ms
+        [arr addObject:[NSNumber numberWithInt:50]];
+        [dict setObject:arr forKey:@"VibePattern"];
+        [dict setObject:[NSNumber numberWithInt:1] forKey:@"Intensity"];
+        
+        
+        AudioServicesPlaySystemSoundWithVibration(4095,nil,dict);
+        //AudioServicesPlayAlertSound (1105);
     }else {
         
         //vibrated 5 times already kill timer and stop vibrating
         [vibrateTimer invalidate];
-        
     }
     }
 -(void)RunnerAction{
     CGRect screenRect = [[UIScreen mainScreen] bounds];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
     Score_timeInMilliseconds = ([[NSDate date] timeIntervalSince1970]) - Score_startTime;
     //long diffinsec=Score_timeInMilliseconds*900;
     newscore=newscore+1;
@@ -1783,13 +1831,10 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
         isSimanMove = true;
     else
         isSimanMove = false;
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-
+    });
     if (isGAMEOVER==false && !isPause) {
         if (Score_updatedTime > redline) {
             redline = Score_updatedTime + 2.5;
-            
         }
         
         if(newscore>Updatescoretime)
@@ -1807,8 +1852,8 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
             [self.view addSubview:scoreDisplyayLbl];
             [self.view bringSubviewToFront:scoreDisplyayLbl];
 
-
         }
+        
     CGFloat leftmargin = (CGFloat) ((screenRect.size.width) * BOB_LEFT_MARGIN);
     CGFloat topmargin = (CGFloat) ((screenRect.size.height) * BOB_T0P_MARGIN);
         [bobImg removeFromSuperview];
@@ -1830,10 +1875,10 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
         else
            [self MoveLeftDown_to_up:leftmargin :topmargin];
 
-        BOB_LEFT_MARGIN=BOB_LEFT_MARGIN-0.005;
+            BOB_LEFT_MARGIN=BOB_LEFT_MARGIN-0.005;
             //BOB_LEFT_MARGIN=BOB_LEFT_MARGIN-(screenRect.size.width*0.006);
             bobImg=[[UIImageView alloc]initWithFrame:CGRectMake(BOB_LEFT_MARGIN*ywidth,BOB_T0P_MARGIN*yheights, screenRect.size.height*0.05,screenRect.size.height*0.05)];
-        [ self MoveLEFTAnimation ];
+            [self MoveLEFTAnimation ];
     }else if (isMovingRight==YES) {
            //BOB_LEFT_MARGIN=BOB_LEFT_MARGIN+(screenRect.size.width*0.006);
         if(isTop_to_Bottom)
@@ -1841,7 +1886,7 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
         else
             [self MoveRightDown_to_up:leftmargin: topmargin];
 
-        BOB_LEFT_MARGIN=BOB_LEFT_MARGIN+0.005;
+            BOB_LEFT_MARGIN=BOB_LEFT_MARGIN+0.005;
 
             bobImg=[[UIImageView alloc]initWithFrame:CGRectMake(BOB_LEFT_MARGIN*ywidth,BOB_T0P_MARGIN*yheights, screenRect.size.height*0.05,screenRect.size.height*0.05)];
         [self MoveRIGHTAnimation];
@@ -1851,34 +1896,80 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
         else
             [self MoveDownRight_to_Left:leftmargin: topmargin];
         
-        BOB_T0P_MARGIN=BOB_T0P_MARGIN+0.003;
+            BOB_T0P_MARGIN=BOB_T0P_MARGIN+0.003;
 
             bobImg=[[UIImageView alloc]initWithFrame:CGRectMake(BOB_LEFT_MARGIN*ywidth,BOB_T0P_MARGIN*yheights, screenRect.size.height*0.05,screenRect.size.height*0.05)];
         [self MoveDOWNAnimation];
     }
         if (indexvlaueRedimg==indexvalueRedimgCompa) {
-            [self AddColorView];
+            //[self performSelectorOnMainThread:@selector(AddColorView) withObject:nil waitUntilDone:YES];
+            //[NSThread detachNewThreadSelector:@selector(AddColorView) toTarget:self withObject:nil];
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{ [self AddColorView]; dispatch_async(dispatch_get_main_queue(), ^{     [self.mainscrollview addSubview:redcolor ];
+  }); });
+            
             indexvlaueRedimg=indexvlaueRedimg+18;
         }
         indexvalueRedimgCompa=indexvalueRedimgCompa+1;
 
     [bobImg setImage:[UIImage imageNamed:@"bobimage.png"]];
     [self.mainscrollview addSubview:bobImg];
-    marginVO=[[MarginVO alloc]init];
-    marginVO.simLeftRight=[NSString stringWithFormat: @"%.4f", BOB_LEFT_MARGIN];
-    marginVO.simTopDown=[NSString stringWithFormat: @"%.4f", BOB_T0P_MARGIN];
         
-        if (isMovingUp || isMovingDown)
+        NSUInteger count = [repeatpointsDict count];
+        if (count>=4) {
+            NSLog(@"BOB_T0P_MARGIN %@",[NSString stringWithFormat: @"%.2f_right", BOB_T0P_MARGIN]);
+            if([repeatpointsDict objectForKey:[NSString stringWithFormat: @"%.2f_right", BOB_T0P_MARGIN]]!=nil){
+                marginVO=[[MarginVO alloc]init];
+                marginVO=[repeatpointsDict objectForKey:[NSString stringWithFormat: @"%.2f_up", BOB_T0P_MARGIN]];
+                
+                float simanleftmargin =[marginVO.simLeftRight floatValue];
+                float simantopmargin =[ marginVO.simTopDown floatValue];
+                
+                if (marginVO.isMovingUp) {
+                    if (BOB_LEFT_MARGIN == simanleftmargin && ((BOB_T0P_MARGIN + 0.003) >= simantopmargin && (BOB_T0P_MARGIN - 0.003) <= simantopmargin)) {
+                        isGAMEOVER = true;
+                        [self pickImages];
+                    }
+                }
+            }
+            else if([repeatpointsDict objectForKey:[NSString stringWithFormat: @"%.2f_right", BOB_LEFT_MARGIN]]!=nil){
+                marginVO=[[MarginVO alloc]init];
+                marginVO=[repeatpointsDict objectForKey:[NSString stringWithFormat: @"%.2f_right", BOB_LEFT_MARGIN]];
+                
+                float simanleftmargin =[marginVO.simLeftRight floatValue];
+                float simantopmargin =[ marginVO.simTopDown floatValue];
+                if (((BOB_LEFT_MARGIN + 0.005) >= simanleftmargin && (BOB_LEFT_MARGIN - 0.005) <= simanleftmargin)
+                    && BOB_T0P_MARGIN == simantopmargin) {
+                    isGAMEOVER = true;
+                    [self pickImages];
+                }// end of else
+                
+            }
+        }
+    
+        
+        
+    marginVO=[[MarginVO alloc]init];
+    marginVO.simLeftRight=[[NSString alloc] init];
+    marginVO.simTopDown=[[NSString alloc] init];
+    marginVO.simLeftRight=[NSString stringWithFormat: @"%.2f", BOB_LEFT_MARGIN];
+    marginVO.simTopDown=[NSString stringWithFormat: @"%.2f", BOB_T0P_MARGIN];
+        
+        if (isMovingUp || isMovingDown){
+            [repeatpointsDict setValue:marginVO forKey:[NSString stringWithFormat: @"%.2f_up", BOB_T0P_MARGIN]];
             marginVO.isMovingUp = true;
-        else
+        }
+        else{
+            [repeatpointsDict setValue:marginVO forKey:[NSString stringWithFormat: @"%.2f_right", BOB_LEFT_MARGIN]];
             marginVO.isMovingUp = false;
+        }
         
         if (isMovingLeft || isMovingRight)
             marginVO.isMovingRight = true;
         else
             marginVO.isMovingRight = false;
         
-    [simonArray addObject:marginVO];
+        [simonArray addObject:marginVO];
     
     if (simonArray.count>=100 && isSimanMove) {
         if (indexvalue == simonArray.count - 2) {
@@ -1896,37 +1987,37 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
         [simamImg setImage:[UIImage imageNamed:@"simamimage.png"]];
         [self.mainscrollview addSubview:simamImg];
         indexvalue=indexvalue+2;
-                                }
+        
+      }
     }
-
-     NSUInteger count = [simonArray count];
+        
+        /*NSUInteger count = [simonArray count];
         if (count>=4) {
-        for (int k = 0; k < [simonArray count]-3; k++) {
-            marginVO=[[MarginVO alloc]init];
-            marginVO=[simonArray objectAtIndex:k];
-
-            double simanleftmargin =[marginVO.simLeftRight floatValue];;
-            double simantopmargin =[ marginVO.simTopDown floatValue];;
-            
-            // System.out.println("\n\n\n"+simanmarginList+"\n"+simanleftmargin+"\n"+simantopmargin);
-            if (marginVO.isMovingUp) {
-                if (BOB_LEFT_MARGIN == simanleftmargin && ((BOB_T0P_MARGIN + 0.003) >= simantopmargin && (BOB_T0P_MARGIN - 0.003) <= simantopmargin)) {
-                    isGAMEOVER = true;
-                    [self pickImages];
-                    break;
-                }
-            } else {
-                if (((BOB_LEFT_MARGIN + 0.005) >= simanleftmargin && (BOB_LEFT_MARGIN - 0.005) <= simanleftmargin)
-                    && BOB_T0P_MARGIN == simantopmargin) {
-                    isGAMEOVER = true;
-                    [self pickImages];
-                    break;
-                            }
-                        }// end of else
+            for (int k = 0; k < [simonArray count]-3; k++) {
+                marginVO=[[MarginVO alloc]init];
+                marginVO=[simonArray objectAtIndex:k];
+                
+                double simanleftmargin =[marginVO.simLeftRight floatValue];;
+                double simantopmargin =[ marginVO.simTopDown floatValue];;
+                
+                // System.out.println("\n\n\n"+simanmarginList+"\n"+simanleftmargin+"\n"+simantopmargin);
+                if (marginVO.isMovingUp) {
+                    if (BOB_LEFT_MARGIN == simanleftmargin && ((BOB_T0P_MARGIN + 0.003) >= simantopmargin && (BOB_T0P_MARGIN - 0.003) <= simantopmargin)) {
+                        isGAMEOVER = true;
+                        [self pickImages];
+                        break;
                     }
-                }
+                } else {
+                    if (((BOB_LEFT_MARGIN + 0.005) >= simanleftmargin && (BOB_LEFT_MARGIN - 0.005) <= simanleftmargin)
+                        && BOB_T0P_MARGIN == simantopmargin) {
+                        isGAMEOVER = true;
+                        [self pickImages];
+                        break;
+                    }
+                }// end of else
             }
-    });
+        }*/
+   }
 }
 
 -(IBAction)pauseView{
@@ -1935,8 +2026,6 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
 								Score_timeSwapBuff += Score_timeInMilliseconds;
     }
     cav=[[CameraAlertView alloc] init];
-    
-
 
     bgImage=[[UIImageView alloc]initWithFrame:CGRectMake(0,0, cav.demoView.bounds.size.width,cav.demoView.bounds.size.height)];
     [bgImage setImage:[UIImage imageNamed:@"gameoverimage.png"]];
@@ -2033,6 +2122,7 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
 
 }
 -(void)pickImages{
+    [timer invalidate];
     admobCount=admobCount+1;
     if (admobCount==5) {
         admobCount=0;
@@ -2053,11 +2143,11 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
     
     vibrateCount=0;
     vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(vibratePhone) userInfo:nil repeats:YES];
-    for(UIView *subview in [mainscrollview subviews]) {
+   /* for(UIView *subview in [mainscrollview subviews]) {
         
         [subview removeFromSuperview];
-    }
-    [self AllViewDisplay];
+    }*/
+    //[self AllViewDisplay];
     [redcolor removeFromSuperview];
     CURRENT_SCORE = 0;
     redline = 500;
@@ -2076,6 +2166,7 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
     ywidthbob=0;
     yheightsim=cav.demoView.bounds.size.height*0.68;
     simonArray=[[NSMutableArray alloc]init];
+    repeatpointsDict= [[NSMutableDictionary alloc] init];
     timer2 = [NSTimer scheduledTimerWithTimeInterval: 0.015 target:self selector:@selector(BobisRunning) userInfo:nil repeats: YES];
     
     bgImage=[[UIImageView alloc]initWithFrame:CGRectMake(0,0, cav.demoView.bounds.size.width,cav.demoView.bounds.size.height)];
@@ -2148,7 +2239,7 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
 
         scoreLbls.text=@"Score :";
         scoreDispalyLbls.text=@"";
-        scoreDispalyLbls.text=[NSString stringWithFormat:@"Score: %ld", score];
+        scoreDispalyLbls.text=[NSString stringWithFormat:@"Score:%ld",score];
         
     }
     [self.view addSubview:highScoreDisplayLbl];
@@ -2290,28 +2381,40 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
     CGFloat leftmargin=0;
     
         if (isMovingUp) {
-            topmargin = (int) (screenRect.size.height * (BOB_T0P_MARGIN + 0.02));
+            topmargin = (int) (screenRect.size.height * (BOB_T0P_MARGIN + 0.035));
             leftmargin = (int) (screenRect.size.width * (BOB_LEFT_MARGIN + 0.02));
         } else if (isMovingDown)
         {
-            topmargin = (int) (screenRect.size.height * (BOB_T0P_MARGIN));
+            topmargin = (int) (screenRect.size.height * (BOB_T0P_MARGIN-0.01));
             leftmargin = (int) (screenRect.size.width * (BOB_LEFT_MARGIN + 0.02));
         } else if (isMovingRight) {
            topmargin = (int) (screenRect.size.height * (BOB_T0P_MARGIN + 0.01));
-            leftmargin = (int) (screenRect.size.width * (BOB_LEFT_MARGIN));
+            leftmargin = (int) (screenRect.size.width * (BOB_LEFT_MARGIN-0.02));
         } else if (isMovingLeft) {
             topmargin = (int) (screenRect.size.height * (BOB_T0P_MARGIN + 0.01));
-            leftmargin = (int) (screenRect.size.width * (BOB_LEFT_MARGIN + 0.02));
+            leftmargin = (int) (screenRect.size.width * (BOB_LEFT_MARGIN + 0.05));
         }
-    redcolor=[[UIImageView alloc]initWithFrame:CGRectMake(leftmargin+3,topmargin+4, screenRect.size.width*0.025,screenRect.size.width*0.025)];
+    redcolor=[[UIImageView alloc]initWithFrame:CGRectMake(leftmargin+3,topmargin+5, screenRect.size.width*0.025,screenRect.size.width*0.025)];
     redcolor.layer.cornerRadius = 5;
     redcolor.clipsToBounds = YES;
     [redcolor setBackgroundColor:[UIColor redColor]];
-    [self.mainscrollview addSubview:redcolor ];
 
 }
 -(void)playAgain{
-    Updatescoretime=25;
+    [timer invalidate];
+    [timer2 invalidate];
+    timer=nil;
+    timer2=nil;
+    HomeViewController *home;
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone) {
+        home=[[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
+    }else{
+        home=[[HomeViewController alloc] initWithNibName:@"HomeViewController~ipad" bundle:nil];
+    }
+    [self.navigationController pushViewController:home animated:NO];
+    [cav close];
+
+    /*Updatescoretime=25;
     score = 0;
     [scoreDisplyayLbl removeFromSuperview];
     scoreDisplyayLbl=[[UILabel alloc]initWithFrame:CGRectMake(60,10, 80,30)];
@@ -2333,7 +2436,6 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
     [timer2 invalidate];
     timer2 = nil;
 
-    [cav close];
     isGAMEOVER=false;
     isMaproad1_1 = false;
     isMaproad1_2 = false;
@@ -2350,7 +2452,7 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
     
     isMovingUp=YES;
     indexvalue=0;
-    marginVO=[[MarginVO alloc]init];
+    marginVO=[[MarginVO alloc]init];*/
 }
 -(void)goToMainMenu{
     [cav close];
@@ -2358,24 +2460,35 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
     [self.navigationController pushViewController:menu animated:NO];
 }
 -(void)MoveRIGHTAnimation{
-    NSLog(@"MoveRIGHTAnimation");
+    //NSLog(@"MoveRIGHTAnimation");
 
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     // -----------------scrolling animation
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:1.0];
     
     
     if ((BOB_LEFT_MARGIN * screenRect.size.width) > screenRect.size.width * 0.10
         && (BOB_LEFT_MARGIN * screenRect.size.width) < screenRect.size.width * 0.25) {
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:1.0];
+
         if (BOB_T0P_MARGIN<0.60) {
             [mainscrollview setContentOffset:CGPointMake(0,0) animated:NO];
             
+        }else if (BOB_T0P_MARGIN<1.10) {
+            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobrightmargin-100)) animated:NO];
+            
+        }else if (BOB_T0P_MARGIN<2) {
+            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobrightmargin+30)) animated:NO];
+            
+        }else if (BOB_T0P_MARGIN<2.60){
+            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobrightmargin+80)) animated:NO];
+            
         }else{
 
-        [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobrightmargin)) animated:NO];
+        [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobrightmargin+100)) animated:NO];
         }
-       
+        [UIView commitAnimations];
+
     } else if ((BOB_LEFT_MARGIN * screenRect.size.width) > screenRect.size.width * 0.39
                && (BOB_LEFT_MARGIN * screenRect.size.width) < screenRect.size.width * 0.42) {
         [UIView beginAnimations:nil context:NULL];
@@ -2383,8 +2496,17 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
         if (BOB_T0P_MARGIN<0.60) {
             [mainscrollview setContentOffset:CGPointMake(0,0) animated:NO];
             
+        }else if (BOB_T0P_MARGIN<1.10) {
+            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobrightmargin-100)) animated:NO];
+            
+        }else if (BOB_T0P_MARGIN<2) {
+            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobrightmargin+30)) animated:NO];
+            
+        }else if (BOB_T0P_MARGIN<2.60){
+            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobrightmargin+80)) animated:NO];
+            
         }else{
-            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*((bobrightmargin+30))) animated:NO];
+            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobrightmargin+100)) animated:NO];
         }
         [UIView commitAnimations];
         
@@ -2392,128 +2514,313 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
     else
             if ((BOB_LEFT_MARGIN * screenRect.size.width) > screenRect.size.width * 0.60
                 && (BOB_LEFT_MARGIN * screenRect.size.width) < screenRect.size.width * 0.61) {
+                [UIView beginAnimations:nil context:NULL];
+                [UIView setAnimationDuration:1.0];
+
                 if (BOB_T0P_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.25),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<1.10) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.25),BOB_T0P_MARGIN*(bobrightmargin-100)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.25),BOB_T0P_MARGIN*(bobrightmargin+30)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2.60){
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.25),BOB_T0P_MARGIN*(bobrightmargin+80)) animated:NO];
+                    
                 }else{
 
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.25),BOB_T0P_MARGIN*bobrightmargin) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.25),BOB_T0P_MARGIN*(bobrightmargin+100)) animated:NO];
                 }
+                [UIView commitAnimations];
 
             } else if ((BOB_LEFT_MARGIN * screenRect.size.width) > screenRect.size.width * 0.85
                        && (BOB_LEFT_MARGIN * screenRect.size.width) < screenRect.size.width * 0.86) {
+                [UIView beginAnimations:nil context:NULL];
+                [UIView setAnimationDuration:1.0];
+
                 if (BOB_T0P_MARGIN<0.60) {
+
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.50),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<1.10) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.50),BOB_T0P_MARGIN*(bobrightmargin-100)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.50),BOB_T0P_MARGIN*(bobrightmargin+30)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2.60){
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.50),BOB_T0P_MARGIN*(bobrightmargin+80)) animated:NO];
+                    
                 }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.50),BOB_T0P_MARGIN*bobrightmargin) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.50),BOB_T0P_MARGIN*(bobrightmargin+100)) animated:NO];
                 }
+                [UIView commitAnimations];
+
             } else if ((BOB_LEFT_MARGIN * screenRect.size.width) > (screenRect.size.width * 1.15)
                        && (BOB_LEFT_MARGIN * screenRect.size.width) < screenRect.size.width * 1.16) {
                 if (BOB_T0P_MARGIN<0.60) {
+                    [UIView beginAnimations:nil context:NULL];
+                    [UIView setAnimationDuration:1.0];
+
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.75),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<1.10) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.75),BOB_T0P_MARGIN*(bobrightmargin-100)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.75),BOB_T0P_MARGIN*(bobrightmargin+30)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2.60){
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.75),BOB_T0P_MARGIN*(bobrightmargin+80)) animated:NO];
+                    
                 }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.75),BOB_T0P_MARGIN*bobrightmargin) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.75),BOB_T0P_MARGIN*(bobrightmargin+100)) animated:NO];
                 }
+                [UIView commitAnimations];
 
             } else if ((BOB_LEFT_MARGIN * screenRect.size.width) > (screenRect.size.width * 1.40)
                        && (BOB_LEFT_MARGIN * screenRect.size.width) < (screenRect.size.width * 1.41)) {
+                [UIView beginAnimations:nil context:NULL];
+                [UIView setAnimationDuration:1.0];
+
                 if (BOB_T0P_MARGIN<0.60) {
+
                     [mainscrollview setContentOffset:CGPointMake(screenRect.size.width ,0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<1.10) {
+                    [mainscrollview setContentOffset:CGPointMake(screenRect.size.width,BOB_T0P_MARGIN*(bobrightmargin-100)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(screenRect.size.width,BOB_T0P_MARGIN*(bobrightmargin+30)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2.60){
+                    [mainscrollview setContentOffset:CGPointMake(screenRect.size.width,BOB_T0P_MARGIN*(bobrightmargin+80)) animated:NO];
+                    
                 }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width ),BOB_T0P_MARGIN*bobrightmargin) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width ),BOB_T0P_MARGIN*(bobrightmargin+100)) animated:NO];
                 }
+                [UIView commitAnimations];
+
             }
             // -------------
     
     
             else if ((BOB_LEFT_MARGIN * screenRect.size.width) > screenRect.size.width * 1.55
                      && (BOB_LEFT_MARGIN * screenRect.size.width) < screenRect.size.width * 1.56) {
+                [UIView beginAnimations:nil context:NULL];
+                [UIView setAnimationDuration:1.0];
+
                 if (BOB_T0P_MARGIN<0.60) {
+
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.25),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<1.10) {
+                    [mainscrollview setContentOffset:CGPointMake(screenRect.size.width*1.25,BOB_T0P_MARGIN*(bobrightmargin-100)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(screenRect.size.width*1.25,BOB_T0P_MARGIN*(bobrightmargin+30)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2.60){
+                    [mainscrollview setContentOffset:CGPointMake(screenRect.size.width*1.25,BOB_T0P_MARGIN*(bobrightmargin+80)) animated:NO];
+                    
                 }else{
-                [mainscrollview setContentOffset:CGPointMake(screenRect.size.width*1.25,BOB_T0P_MARGIN*bobrightmargin) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake(screenRect.size.width*1.25,BOB_T0P_MARGIN*(bobrightmargin+100)) animated:NO];
                 }
+                [UIView commitAnimations];
+
             }
             else if ((BOB_LEFT_MARGIN * screenRect.size.width) > screenRect.size.width * 1.60
                      && (BOB_LEFT_MARGIN * screenRect.size.width) < screenRect.size.width * 1.61) {
+                [UIView beginAnimations:nil context:NULL];
+                [UIView setAnimationDuration:1.0];
+
                 if (BOB_T0P_MARGIN<0.60) {
+
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.50),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<1.10) {
+                    [mainscrollview setContentOffset:CGPointMake(screenRect.size.width * 1.50,BOB_T0P_MARGIN*(bobrightmargin-100)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(screenRect.size.width * 1.50,BOB_T0P_MARGIN*(bobrightmargin)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2.60){
+                    [mainscrollview setContentOffset:CGPointMake(screenRect.size.width * 1.50,BOB_T0P_MARGIN*(bobrightmargin+80)) animated:NO];
+                    
                 }else{
-                [mainscrollview setContentOffset:CGPointMake(screenRect.size.width * 1.50,BOB_T0P_MARGIN*bobrightmargin) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake(screenRect.size.width * 1.50,BOB_T0P_MARGIN*(bobrightmargin+100)) animated:NO];
                 }
+                [UIView commitAnimations];
 
             } else if ((BOB_LEFT_MARGIN * screenRect.size.width) > screenRect.size.width * 1.85
                        && (BOB_LEFT_MARGIN * screenRect.size.width) < screenRect.size.width * 1.86) {
+                [UIView beginAnimations:nil context:NULL];
+                [UIView setAnimationDuration:1.0];
+
                 if (BOB_T0P_MARGIN<0.60) {
+
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.75),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<1.10) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.75),BOB_T0P_MARGIN*(bobrightmargin-100)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.75),BOB_T0P_MARGIN*(bobrightmargin)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2.60){
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.75),BOB_T0P_MARGIN*(bobrightmargin+80)) animated:NO];
+                    
                 }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.75),BOB_T0P_MARGIN*bobrightmargin) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.75),BOB_T0P_MARGIN*(bobrightmargin+100)) animated:NO];
                 }
-            
+                [UIView commitAnimations];
+
             }else if ((BOB_LEFT_MARGIN * screenRect.size.width) > (screenRect.size.width * 2.15)
                        && (BOB_LEFT_MARGIN * screenRect.size.width) < screenRect.size.width * 2.16) {
+                [UIView beginAnimations:nil context:NULL];
+                [UIView setAnimationDuration:1.0];
+
                 if (BOB_T0P_MARGIN<0.60) {
+
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2),0) animated:NO];
                     
-                }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2),BOB_T0P_MARGIN*bobrightmargin) animated:NO];
-                }
-                
-            } else if ((BOB_LEFT_MARGIN * screenRect.size.width) > (screenRect.size.width * 2.40)
-                       && (BOB_LEFT_MARGIN * screenRect.size.width) < (screenRect.size.width * 2.41)) {
-                if (BOB_T0P_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.25),0) animated:NO];
+                }else if (BOB_T0P_MARGIN<1.10) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2),BOB_T0P_MARGIN*(bobrightmargin-100)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2),BOB_T0P_MARGIN*(bobrightmargin)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2.60){
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2),BOB_T0P_MARGIN*(bobrightmargin+80)) animated:NO];
                     
                 }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.25),BOB_T0P_MARGIN*bobrightmargin) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2),BOB_T0P_MARGIN*(bobrightmargin+100)) animated:NO];
                 }
+                [UIView commitAnimations];
+
+            } else if ((BOB_LEFT_MARGIN * screenRect.size.width) > (screenRect.size.width * 2.40)
+                       && (BOB_LEFT_MARGIN * screenRect.size.width) < (screenRect.size.width * 2.41)) {
+                [UIView beginAnimations:nil context:NULL];
+                [UIView setAnimationDuration:1.0];
+
+                if (BOB_T0P_MARGIN<0.60) {
+
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.25),0) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<1.10) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.25),BOB_T0P_MARGIN*(bobrightmargin-100)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.25),BOB_T0P_MARGIN*(bobrightmargin)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2.60){
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.25),BOB_T0P_MARGIN*(bobrightmargin+80)) animated:NO];
+                    
+                }else{
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.25),BOB_T0P_MARGIN*(bobrightmargin+100)) animated:NO];
+                }
+                [UIView commitAnimations];
+
             }
             // -------------
             else if ((BOB_LEFT_MARGIN * screenRect.size.width) > screenRect.size.width * 2.60
                      && (BOB_LEFT_MARGIN * screenRect.size.width) < screenRect.size.width * 2.61) {
+                [UIView beginAnimations:nil context:NULL];
+                [UIView setAnimationDuration:1.0];
+
                 if (BOB_T0P_MARGIN<0.60) {
+
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.50),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<1.10) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.50),BOB_T0P_MARGIN*(bobrightmargin-100)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.50),BOB_T0P_MARGIN*(bobrightmargin)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2.10){
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.50),BOB_T0P_MARGIN*(bobrightmargin+80)) animated:NO];
+                    
                 }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.50),BOB_T0P_MARGIN*bobrightmargin) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.50),BOB_T0P_MARGIN*(bobrightmargin+100)) animated:NO];
                 }
+                [UIView commitAnimations];
+
             } else if ((BOB_LEFT_MARGIN * screenRect.size.width) > screenRect.size.width * 2.85
                        && (BOB_LEFT_MARGIN * screenRect.size.width) < screenRect.size.width * 2.86) {
+                [UIView beginAnimations:nil context:NULL];
+                [UIView setAnimationDuration:1.0];
+
                 if (BOB_T0P_MARGIN<0.60) {
+
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.65),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<1.10) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.65),BOB_T0P_MARGIN*(bobrightmargin-100)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.65),BOB_T0P_MARGIN*(bobrightmargin)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2.60){
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.65),BOB_T0P_MARGIN*(bobrightmargin+80)) animated:NO];
+                    
                 }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.65),BOB_T0P_MARGIN*bobrightmargin) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.65),BOB_T0P_MARGIN*(bobrightmargin+100)) animated:NO];
                 }
+                [UIView commitAnimations];
+
             } else if ((BOB_LEFT_MARGIN * screenRect.size.width) > (screenRect.size.width * 3.15)
                        && (BOB_LEFT_MARGIN * screenRect.size.width) < screenRect.size.width * 3.16) {
+                [UIView beginAnimations:nil context:NULL];
+                [UIView setAnimationDuration:1.0];
+
                 if (BOB_T0P_MARGIN<0.60) {
+
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.80),0) animated:NO];
                     
-                }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.80),BOB_T0P_MARGIN*bobrightmargin) animated:NO];
-                }
-            } else if ((BOB_LEFT_MARGIN * screenRect.size.width) > (screenRect.size.width * 3.40)
-                       && (BOB_LEFT_MARGIN * screenRect.size.width) < (screenRect.size.width * 3.41)) {
-                if (BOB_T0P_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3),0) animated:NO];
+                }else if (BOB_T0P_MARGIN<1.10) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.80),BOB_T0P_MARGIN*(bobrightmargin-100)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.80),BOB_T0P_MARGIN*(bobrightmargin)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2.60){
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.80),BOB_T0P_MARGIN*(bobrightmargin+80)) animated:NO];
                     
                 }else{
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3),BOB_T0P_MARGIN*bobrightmargin) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.80),BOB_T0P_MARGIN*(bobrightmargin+100)) animated:NO];
+                }
+                [UIView commitAnimations];
+
+            } else if ((BOB_LEFT_MARGIN * screenRect.size.width) > (screenRect.size.width * 3.40)
+                       && (BOB_LEFT_MARGIN * screenRect.size.width) < (screenRect.size.width * 3.41)) {
+                [UIView beginAnimations:nil context:NULL];
+                [UIView setAnimationDuration:1.0];
+
+                if (BOB_T0P_MARGIN<0.60) {
+
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3),0) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<1.10) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3),BOB_T0P_MARGIN*(bobrightmargin-100)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3),BOB_T0P_MARGIN*(bobrightmargin)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2.60){
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3),BOB_T0P_MARGIN*(bobrightmargin+80)) animated:NO];
+                    
+                }else{
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3),BOB_T0P_MARGIN*(bobrightmargin+100)) animated:NO];
                 }
             }
-    [UIView commitAnimations];
     
 }
 -(void)MoveLEFTAnimation{
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    NSLog(@"MoveLEFTAnimation");
+    //NSLog(@"MoveLEFTAnimation");
 
             // -----------------scrolling animation
     
@@ -2525,11 +2832,17 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
         if (BOB_T0P_MARGIN<0.60) {
             [mainscrollview setContentOffset:CGPointMake(0,0) animated:NO];
 
+        }else if (BOB_T0P_MARGIN<1.50) {
+            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*bobtopmargin) animated:NO];
+            
+        }else if (BOB_T0P_MARGIN<2) {
+            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+
         }else if (BOB_T0P_MARGIN<2.60){
-            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobtopmargin+20)) animated:NO];
+            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
 
         }else{
-            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*((bobtopmargin+100))) animated:NO];
+            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*((bobtopmargin+150))) animated:NO];
  
         }
         [UIView commitAnimations];
@@ -2542,10 +2855,16 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
         if (BOB_T0P_MARGIN<0.60) {
             [mainscrollview setContentOffset:CGPointMake(0,0) animated:NO];
             
+        }else if (BOB_T0P_MARGIN<1.50) {
+            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*bobtopmargin) animated:NO];
+            
+        }else if (BOB_T0P_MARGIN<2) {
+            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+            
         }else if (BOB_T0P_MARGIN<2.60){
-        [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobtopmargin+60)) animated:NO];
+        [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
         }else{
-            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*((bobtopmargin+100))) animated:NO];
+            [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*((bobtopmargin+150))) animated:NO];
 
         }
         [UIView commitAnimations];
@@ -2558,10 +2877,16 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
               if (BOB_T0P_MARGIN<0.60) {
                   [mainscrollview setContentOffset:CGPointMake(0,0) animated:NO];
                   
+              }else if (BOB_T0P_MARGIN<1.50) {
+                  [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*bobtopmargin) animated:NO];
+                  
+              }else if (BOB_T0P_MARGIN<2) {
+                  [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                  
               }else if (BOB_T0P_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobtopmargin+20)) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
               }else{
-                  [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+                  [mainscrollview setContentOffset:CGPointMake(0,BOB_T0P_MARGIN*(bobtopmargin+150)) animated:NO];
 
               }
               [UIView commitAnimations];
@@ -2574,10 +2899,16 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_T0P_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.20),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.30),BOB_T0P_MARGIN*bobtopmargin) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.30),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                    
                 }else if (BOB_T0P_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.30),BOB_T0P_MARGIN*(bobtopmargin+20)) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.30),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
                 }else{
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.30),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.30),BOB_T0P_MARGIN*(bobtopmargin+150)) animated:NO];
 
                 }
                 [UIView commitAnimations];
@@ -2590,10 +2921,16 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_T0P_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.50),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.60),BOB_T0P_MARGIN*bobtopmargin) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.60),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                    
                 }else if (BOB_T0P_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.60),BOB_T0P_MARGIN*(bobtopmargin+20)) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.60),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
                 }else{
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.60),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 0.60),BOB_T0P_MARGIN*(bobtopmargin+150)) animated:NO];
 
                 }
                 [UIView commitAnimations];
@@ -2606,10 +2943,16 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_T0P_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(screenRect.size.width*0.85,0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake(screenRect.size.width*0.85,BOB_T0P_MARGIN*bobtopmargin) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(screenRect.size.width*0.85,BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                    
                 }else if (BOB_T0P_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake(screenRect.size.width*0.85,BOB_T0P_MARGIN*(bobtopmargin+20)) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake(screenRect.size.width*0.85,BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
                 }else{
-                    [mainscrollview setContentOffset:CGPointMake(screenRect.size.width*0.85,BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(screenRect.size.width*0.85,BOB_T0P_MARGIN*(bobtopmargin+150)) animated:NO];
 
                 }
                 [UIView commitAnimations];
@@ -2621,28 +2964,62 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_T0P_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.25),0) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width ),0) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width ),BOB_T0P_MARGIN*bobtopmargin) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width ),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
                     
                 }else if (BOB_T0P_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.15),BOB_T0P_MARGIN*(bobtopmargin+20)) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width ),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
                 }else{
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.15),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width ),BOB_T0P_MARGIN*(bobtopmargin+150)) animated:NO];
  
                 }
                 [UIView commitAnimations];
 
 
+            }else if ((BOB_LEFT_MARGIN * screenRect.size.width) > screenRect.size.width * 1.75
+                      && (BOB_LEFT_MARGIN * screenRect.size.width) < screenRect.size.width * 1.88) {
+                [UIView beginAnimations:nil context:NULL];
+                [UIView setAnimationDuration:1.0];
+                if (BOB_T0P_MARGIN<0.60) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width *1.20 ),0) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width*1.20 ),BOB_T0P_MARGIN*bobtopmargin) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width*1.20 ),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2.60){
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width*1.20 ),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
+                }else{
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width*1.20 ),BOB_T0P_MARGIN*(bobtopmargin+150)) animated:NO];
+                    
+                }
+                [UIView commitAnimations];
+                
+                
             } else if ((BOB_LEFT_MARGIN * screenRect.size.width) > screenRect.size.width * 1.90
                        && (BOB_LEFT_MARGIN * screenRect.size.width) < screenRect.size.width * 1.91) {
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_T0P_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.50),0) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.40),0) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.40),BOB_T0P_MARGIN*bobtopmargin) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.40),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
                     
                 }else if (BOB_T0P_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.50),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.40),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
                 }else{
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.50),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.40),BOB_T0P_MARGIN*(bobtopmargin+150)) animated:NO];
 
                 }
                 [UIView commitAnimations];
@@ -2652,12 +3029,18 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_T0P_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.75),0) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.65),0) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.65),BOB_T0P_MARGIN*bobtopmargin) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.65),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
                     
                 }else if (BOB_T0P_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.75),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.65),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
                 }else{
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.75),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.65),BOB_T0P_MARGIN*(bobtopmargin+150)) animated:NO];
 
                 }
                 [UIView commitAnimations];
@@ -2667,12 +3050,18 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_T0P_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2),0) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.85),0) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.85),BOB_T0P_MARGIN*bobtopmargin) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.85),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
                     
                 }else if (BOB_T0P_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.85),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
                 }else{
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 1.85),BOB_T0P_MARGIN*(bobtopmargin+150)) animated:NO];
 
                 }
                 [UIView commitAnimations];
@@ -2683,12 +3072,18 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_T0P_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.25),0) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.05),0) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.05),BOB_T0P_MARGIN*bobtopmargin) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.05),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
                     
                 }else if (BOB_T0P_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.25),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.05),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
                 }else{
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.25),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.05),BOB_T0P_MARGIN*(bobtopmargin+150)) animated:NO];
  
                 }
                 [UIView commitAnimations];
@@ -2699,13 +3094,19 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_T0P_MARGIN<0.60) {
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.50),0) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.30),0) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.30),BOB_T0P_MARGIN*bobtopmargin) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.30),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
                     
                 }else if (BOB_T0P_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.50),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.30),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
                 }
                 else{
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.50),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.30),BOB_T0P_MARGIN*(bobtopmargin+150)) animated:NO];
 
                 }
                 [UIView commitAnimations];
@@ -2717,10 +3118,16 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_T0P_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.75),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.75),BOB_T0P_MARGIN*bobtopmargin) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.75),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                    
                 }else if (BOB_T0P_MARGIN<2.60){
                 [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.75),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
                 }else{
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.75),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 2.75),BOB_T0P_MARGIN*(bobtopmargin+150)) animated:NO];
 
                 }
                 [UIView commitAnimations];
@@ -2732,10 +3139,16 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_T0P_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3),BOB_T0P_MARGIN*bobtopmargin) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                    
                 }else if (BOB_T0P_MARGIN<2.60){
                 [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
                 }else{
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3),BOB_T0P_MARGIN*(bobtopmargin+150)) animated:NO];
 
                 }
                 [UIView commitAnimations];
@@ -2747,10 +3160,16 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_T0P_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3.50),0) animated:NO];
                     
+                }else if (BOB_T0P_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3.50),BOB_T0P_MARGIN*bobtopmargin) animated:NO];
+                    
+                }else if (BOB_T0P_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3.50),BOB_T0P_MARGIN*(bobtopmargin+30)) animated:NO];
+                    
                 }else if (BOB_T0P_MARGIN<2.60){
                 [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3.50),BOB_T0P_MARGIN*(bobtopmargin+80)) animated:NO];
                 }else{
-                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3.50),BOB_T0P_MARGIN*(bobtopmargin+100)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake((screenRect.size.width * 3.50),BOB_T0P_MARGIN*(bobtopmargin+150)) animated:NO];
 
                 }
                 [UIView commitAnimations];
@@ -2759,7 +3178,7 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
 }
 -(void)MoveDOWNAnimation{
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    NSLog(@"MoveDOWNAnimation");
+    //NSLog(@"MoveDOWNAnimation");
 
             // -----------------scrolling animation
             if ((BOB_T0P_MARGIN * screenRect.size.height) > screenRect.size.height * 0.10
@@ -2769,8 +3188,15 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_LEFT_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(0,0) animated:NO];
                     
-                }else if (BOB_LEFT_MARGIN<2.60) {
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 0.10)) animated:NO];
+                }else if (BOB_LEFT_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 0.10)) animated:NO];
+
+                }else if (BOB_LEFT_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+30),(screenRect.size.height * 0.10)) animated:NO];
+                    
+                }
+                else if (BOB_LEFT_MARGIN<2.60) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+40),(screenRect.size.height * 0.10)) animated:NO];
                 }else{
                     [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 0.10)) animated:NO];
  
@@ -2784,38 +3210,77 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_LEFT_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(0,0) animated:NO];
                     
+                }else if (BOB_LEFT_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 0.25)) animated:NO];
+                    
+                }else if (BOB_LEFT_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+30),(screenRect.size.height * 0.25)) animated:NO];
+                    
                 } else if (BOB_LEFT_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 0.25)) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+40),(screenRect.size.height * 0.25)) animated:NO];
                 }else{
-                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 0.25)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 0.20)) animated:NO];
 
                 }
                 [UIView commitAnimations];
                 
             } else if ((BOB_T0P_MARGIN * screenRect.size.height) > screenRect.size.height * 0.70
-                       && (BOB_T0P_MARGIN * screenRect.size.height) < screenRect.size.height * 0.85) {
+                       && (BOB_T0P_MARGIN * screenRect.size.height) < screenRect.size.height * 0.75) {
+                [UIView beginAnimations:nil context:NULL];
+                [UIView setAnimationDuration:1.0];
+                if (BOB_LEFT_MARGIN<0.60) {
+                    [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 0.30)) animated:NO];
+                    
+                }else if (BOB_LEFT_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 0.30)) animated:NO];
+                    
+                }else if (BOB_LEFT_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+30),(screenRect.size.height * 0.30)) animated:NO];
+                    
+                } else if (BOB_LEFT_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+40),(screenRect.size.height * 0.30)) animated:NO];
+                }else{
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 0.30)) animated:NO];
+
+                }
+                [UIView commitAnimations];
+
+            }else if ((BOB_T0P_MARGIN * screenRect.size.height) > screenRect.size.height * 0.80
+                      && (BOB_T0P_MARGIN * screenRect.size.height) < screenRect.size.height * 0.95) {
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_LEFT_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 0.60)) animated:NO];
                     
+                }else if (BOB_LEFT_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 0.60)) animated:NO];
+                    
+                }else if (BOB_LEFT_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+30),(screenRect.size.height * 0.60)) animated:NO];
+                    
                 } else if (BOB_LEFT_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 0.60)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+40),(screenRect.size.height * 0.60)) animated:NO];
                 }else{
                     [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 0.60)) animated:NO];
-
+                    
                 }
                 [UIView commitAnimations];
-
-            } else if ((BOB_T0P_MARGIN * screenRect.size.height) > (screenRect.size.height * 1.15)
-                       && (BOB_T0P_MARGIN * screenRect.size.height) < screenRect.size.height * 1.16) {
+                
+            } else if ((BOB_T0P_MARGIN * screenRect.size.height) > (screenRect.size.height * 1.05)
+                       && (BOB_T0P_MARGIN * screenRect.size.height) < screenRect.size.height * 1.25) {
                 [UIView beginAnimations:nil context:NULL];
                 [UIView setAnimationDuration:1.0];
                 if (BOB_LEFT_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 0.85)) animated:NO];
                     
+                }else if (BOB_LEFT_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 0.85)) animated:NO];
+                    
+                }else if (BOB_LEFT_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+30),(screenRect.size.height * 0.85)) animated:NO];
+                    
                 } else if (BOB_LEFT_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 0.85)) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+40),(screenRect.size.height * 0.85)) animated:NO];
                 }else{
                     [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 0.85)) animated:NO];
 
@@ -2830,8 +3295,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_LEFT_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.10)) animated:NO];
                     
-                } else if (BOB_LEFT_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,screenRect.size.height*1.10) animated:NO];
+                }else if (BOB_LEFT_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 1.10)) animated:NO];
+                    
+                } else if (BOB_LEFT_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+30),(screenRect.size.height * 1.10)) animated:NO];
+                    
+                }else if (BOB_LEFT_MARGIN<2.60){
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+40),screenRect.size.height*1.10) animated:NO];
                 }else{
                     [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),screenRect.size.height*1.10) animated:NO];
  
@@ -2846,8 +3317,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_LEFT_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.25)) animated:NO];
                     
+                }else if (BOB_LEFT_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 1.25)) animated:NO];
+                    
+                }else if (BOB_LEFT_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+30),(screenRect.size.height * 1.25)) animated:NO];
+                    
                 } else if (BOB_LEFT_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobdownmarign,(screenRect.size.height * 1.25)) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+40),(screenRect.size.height * 1.25)) animated:NO];
                 
                 }else{
                     [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 1.25)) animated:NO];
@@ -2862,8 +3339,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_LEFT_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.50)) animated:NO];
                     
+                }else if (BOB_LEFT_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 1.50)) animated:NO];
+                    
+                }else if (BOB_LEFT_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+30),(screenRect.size.height * 1.50)) animated:NO];
+                    
                 } else if (BOB_LEFT_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 1.50)) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*((bobdownmarign+40)),(screenRect.size.height * 1.50)) animated:NO];
                 }else{
                     [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 1.50)) animated:NO];
 
@@ -2877,8 +3360,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_LEFT_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.80)) animated:NO];
                     
+                }else if (BOB_LEFT_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 1.80)) animated:NO];
+                    
+                }else if (BOB_LEFT_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+30),(screenRect.size.height * 1.80)) animated:NO];
+                    
                 } else if (BOB_LEFT_MARGIN<2.60){
-                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 1.80)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+40),(screenRect.size.height * 1.80)) animated:NO];
 
                 }else{
                     [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 1.80)) animated:NO];
@@ -2893,8 +3382,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_LEFT_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.95)) animated:NO];
                     
+                }else if (BOB_LEFT_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 1.95)) animated:NO];
+                    
+                }else if (BOB_LEFT_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+30),(screenRect.size.height * 1.95)) animated:NO];
+                    
                 } else if (BOB_LEFT_MARGIN<2.60){
-                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 1.95)) animated:NO];
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+40),(screenRect.size.height * 1.95)) animated:NO];
 
                 }else{
                     [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 1.95)) animated:NO];
@@ -2909,8 +3404,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_LEFT_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2.10)) animated:NO];
                     
+                }else if (BOB_LEFT_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 2.10)) animated:NO];
+                    
+                }else if (BOB_LEFT_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+30),(screenRect.size.height * 2.10)) animated:NO];
+                    
                 } else if (BOB_LEFT_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 2.10)) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+40),(screenRect.size.height * 2.10)) animated:NO];
                 }else{
                     [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 2.10)) animated:NO];
 
@@ -2926,8 +3427,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_LEFT_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2.35)) animated:NO];
                     
+                }else if (BOB_LEFT_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 2.35)) animated:NO];
+                    
+                }else if (BOB_LEFT_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+30),(screenRect.size.height * 2.35)) animated:NO];
+                    
                 } else if (BOB_LEFT_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 2.35)) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+40),(screenRect.size.height * 2.35)) animated:NO];
                 }else{
                     [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 2.35)) animated:NO];
 
@@ -2941,8 +3448,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_LEFT_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2.60)) animated:NO];
                     
+                }else if (BOB_LEFT_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 2.60)) animated:NO];
+                    
+                }else if (BOB_LEFT_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+30),(screenRect.size.height * 2.60)) animated:NO];
+                    
                 } else if (BOB_LEFT_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 2.60)) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+40),(screenRect.size.height * 2.60)) animated:NO];
                 }else{
                     [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 2.60)) animated:NO];
 
@@ -2956,8 +3469,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_LEFT_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2.85)) animated:NO];
                     
+                }else if (BOB_LEFT_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 2.85)) animated:NO];
+                    
+                }else if (BOB_LEFT_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+30),(screenRect.size.height * 2.85)) animated:NO];
+                    
                 } else if (BOB_LEFT_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 2.85)) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+40),(screenRect.size.height * 2.85)) animated:NO];
                 }else{
                     [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),(screenRect.size.height * 2.85)) animated:NO];
                     
@@ -2971,8 +3490,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_LEFT_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 3.10)) animated:NO];
                     
+                }else if (BOB_LEFT_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 3.10)) animated:NO];
+                    
+                }else if (BOB_LEFT_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+30),(screenRect.size.height * 3.10)) animated:NO];
+                    
                 } else if (BOB_LEFT_MARGIN<2.60){
-                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),screenRect.size.height * 3.10) animated:NO];
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+40),screenRect.size.height * 3.10) animated:NO];
                 }else{
                     [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+50),screenRect.size.height * 3.10) animated:NO];
 
@@ -2984,9 +3509,8 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
 -(void)MoveUpAnimation{
     CGRect screenRect = [[UIScreen mainScreen] bounds];
 
-    NSLog(@"MoveUpAnimation");
+    //NSLog(@"MoveUpAnimation");
 
-    
         // -----------------scrolling animation
     if ((BOB_T0P_MARGIN * screenRect.size.height) > screenRect.size.height * 0.05
         && (BOB_T0P_MARGIN * screenRect.size.height) < screenRect.size.height * 0.35) {
@@ -2995,12 +3519,18 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
         if (BOB_LEFT_MARGIN<0.60) {
             [mainscrollview setContentOffset:CGPointMake(0,0) animated:NO];
             
+        }else if (BOB_LEFT_MARGIN<1.50) {
+            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),0) animated:NO];
+            
+        }else if (BOB_LEFT_MARGIN<2) {
+            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+10),0) animated:NO];
+            
         }else if (BOB_LEFT_MARGIN<2.60){
-        [mainscrollview setContentOffset:CGPointMake((BOB_LEFT_MARGIN*bobleftmargin),
+        [mainscrollview setContentOffset:CGPointMake((BOB_LEFT_MARGIN*(bobleftmargin+50)),
                                                      (screenRect.size.height * 0.02)) animated:NO];
         }else{
             [mainscrollview setContentOffset:CGPointMake((BOB_LEFT_MARGIN*(bobleftmargin+50)),
-                                                         (screenRect.size.height * 0.02)) animated:NO];
+                                                         0) animated:NO];
 
         }
         
@@ -3013,12 +3543,18 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
         if (BOB_LEFT_MARGIN<0.60) {
             [mainscrollview setContentOffset:CGPointMake(0,0) animated:NO];
             
+        }else if (BOB_LEFT_MARGIN<1.50) {
+            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),0) animated:NO];
+            
+        }else if (BOB_LEFT_MARGIN<2) {
+            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+10),0) animated:NO];
+            
         }else if (BOB_LEFT_MARGIN<2.60){
-            [mainscrollview setContentOffset:CGPointMake((BOB_LEFT_MARGIN*bobleftmargin),
+            [mainscrollview setContentOffset:CGPointMake((BOB_LEFT_MARGIN*(bobleftmargin+50)),
                                                          0) animated:NO];
         }else{
             [mainscrollview setContentOffset:CGPointMake((BOB_LEFT_MARGIN*(bobleftmargin+50)),
-                                                         (screenRect.size.height * 0.02)) animated:NO];
+                                                         0) animated:NO];
             
         }
         
@@ -3031,8 +3567,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
         if (BOB_LEFT_MARGIN<0.60) {
             [mainscrollview setContentOffset:CGPointMake(0,0) animated:NO];
             
+        }else if (BOB_LEFT_MARGIN<1.50) {
+            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),0) animated:NO];
+            
+        }else if (BOB_LEFT_MARGIN<2) {
+            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+10),0) animated:NO];
+            
         }else if (BOB_LEFT_MARGIN<2.60){
-            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
+            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
              0) animated:NO];
         }else{
             [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
@@ -3048,8 +3590,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
                 if (BOB_LEFT_MARGIN<0.60) {
                     [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 0.25)) animated:NO];
                     
+                }else if (BOB_LEFT_MARGIN<1.50) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 0.25)) animated:NO];
+                    
+                }else if (BOB_LEFT_MARGIN<2) {
+                    [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+10),(screenRect.size.height * 0.25)) animated:NO];
+                    
                 }else if (BOB_LEFT_MARGIN<2.60){
-            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
+            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin)+50,
                                                           (screenRect.size.height * 0.25)) animated:NO];
                 }else{
                     [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
@@ -3064,8 +3612,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 0.50)) animated:NO];
                 
+            }else if (BOB_LEFT_MARGIN<1.50) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 0.50)) animated:NO];
+                
+            }else if (BOB_LEFT_MARGIN<2) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+10),(screenRect.size.height * 0.50)) animated:NO];
+                
             }else if (BOB_LEFT_MARGIN<2.60){
-            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
+            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
                                                          (screenRect.size.height * 0.50)) animated:NO];
             }else{
                 [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
@@ -3080,8 +3634,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 0.75)) animated:NO];
                 
+            }else if (BOB_LEFT_MARGIN<1.50) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 0.75)) animated:NO];
+                
+            }else if (BOB_LEFT_MARGIN<2) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+10),(screenRect.size.height * 0.75)) animated:NO];
+                
             }else if (BOB_LEFT_MARGIN<2.60){
-            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
+            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
                                                          (screenRect.size.height * 0.75)) animated:NO];
             }else{
                 [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
@@ -3096,8 +3656,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,screenRect.size.height ) animated:NO];
                 
+            }else if (BOB_LEFT_MARGIN<1.50) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height)) animated:NO];
+                
+            }else if (BOB_LEFT_MARGIN<2) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+10),(screenRect.size.height )) animated:NO];
+                
             }else if (BOB_LEFT_MARGIN<2.60){
-            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
+            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
                                                          (screenRect.size.height)) animated:NO];
             }else{
                 [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
@@ -3112,8 +3678,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.25)) animated:NO];
                 
+            }else if (BOB_LEFT_MARGIN<1.50) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 1.25)) animated:NO];
+                
+            }else if (BOB_LEFT_MARGIN<2) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+10),(screenRect.size.height * 1.25)) animated:NO];
+                
             }else if (BOB_LEFT_MARGIN<2.60){
-            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
+            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
                                                          (screenRect.size.height * 1.25)) animated:NO];
             }else{
                 [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
@@ -3128,8 +3700,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.50)) animated:NO];
                 
+            }else if (BOB_LEFT_MARGIN<1.50) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 1.50)) animated:NO];
+                
+            }else if (BOB_LEFT_MARGIN<2) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+10),(screenRect.size.height * 1.50)) animated:NO];
+                
             }else if (BOB_LEFT_MARGIN<2.60){
-            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
+            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
                                                          (screenRect.size.height * 1.50)) animated:NO];
             }else{
                 [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
@@ -3144,8 +3722,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 1.75)) animated:NO];
                 
+            }else if (BOB_LEFT_MARGIN<1.50) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 1.75)) animated:NO];
+                
+            }else if (BOB_LEFT_MARGIN<2) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+10),(screenRect.size.height * 1.75)) animated:NO];
+                
             }else if (BOB_LEFT_MARGIN<2.60){
-            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
+            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
                                                          (screenRect.size.height * 1.75)) animated:NO];
             }else{
                 [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
@@ -3161,8 +3745,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2)) animated:NO];
                 
+            }else if (BOB_LEFT_MARGIN<1.50) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 2)) animated:NO];
+                
+            }else if (BOB_LEFT_MARGIN<2) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+10),(screenRect.size.height * 2)) animated:NO];
+                
             }else if (BOB_LEFT_MARGIN<2.60){
-            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
+            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
                                                          (screenRect.size.height * 2)) animated:NO];
             }else{
                 [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
@@ -3177,8 +3767,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2.25)) animated:NO];
                 
+            }else if (BOB_LEFT_MARGIN<1.50) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 2.25)) animated:NO];
+                
+            }else if (BOB_LEFT_MARGIN<2) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+10),(screenRect.size.height * 2.25)) animated:NO];
+                
             }else if (BOB_LEFT_MARGIN<2.60){
-            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
+            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
                                                          (screenRect.size.height * 2.25)) animated:NO];
             }else{
                 [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
@@ -3194,8 +3790,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2.50)) animated:NO];
                 
+            }else if (BOB_LEFT_MARGIN<1.50) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 2.50)) animated:NO];
+                
+            }else if (BOB_LEFT_MARGIN<2) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+10),(screenRect.size.height * 2.50)) animated:NO];
+                
             }else if (BOB_LEFT_MARGIN<2.60) {
-            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
+            [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
                                                          (screenRect.size.height * 2.50)) animated:NO];
             }else{
                 [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
@@ -3210,8 +3812,14 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
             if (BOB_LEFT_MARGIN<0.60) {
                 [mainscrollview setContentOffset:CGPointMake(0,(screenRect.size.height * 2.75)) animated:NO];
                 
+            }else if (BOB_LEFT_MARGIN<1.50) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign-20),(screenRect.size.height * 2.75)) animated:NO];
+                
+            }else if (BOB_LEFT_MARGIN<2) {
+                [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobdownmarign+10),(screenRect.size.height * 2.75)) animated:NO];
+                
             }else if (BOB_LEFT_MARGIN<2.60) {
-                        [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*bobleftmargin,
+                        [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
                                                          (screenRect.size.height * 2.75)) animated:NO];
             }else{
                 [mainscrollview setContentOffset:CGPointMake(BOB_LEFT_MARGIN*(bobleftmargin+50),
@@ -3223,7 +3831,7 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
 }
 -(void)MoveRightDown_to_up:(CGFloat )leftmargin :(CGFloat)topmargin {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    NSLog(@"MoveRightDown_to_up");
+    //NSLog(@"MoveRightDown_to_up");
 
         if (isMaproad1_1) {
             if ((screenRect.size.width * BOB_LEFT_MARGIN) > (screenRect.size.width * 0.98)) {
@@ -3833,7 +4441,7 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
 -(void)MoveDownRight_to_Left:(CGFloat )leftmargin :(CGFloat)topmargin {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
 
-    NSLog(@"MoveDownRight_to_Left");
+    //NSLog(@"MoveDownRight_to_Left");
 
         if (isMaproad1_1) {
             if ((screenRect.size.height * BOB_T0P_MARGIN) > (screenRect.size.height * 0.95)) {
@@ -4385,7 +4993,7 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
 }
 -(void)MoveDown:(CGFloat )leftmargin :(CGFloat)topmargin {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    NSLog(@"MoveDown");
+    //NSLog(@"MoveDown");
 
    if (isMaproad1_1) {
        if ((screenRect.size.height * BOB_T0P_MARGIN) > (screenRect.size.height * 0.95)) {
@@ -4939,7 +5547,7 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
 }
 -(void)MoveRight:(CGFloat )leftmargin :(CGFloat)topmargin {
      CGRect screenRect = [[UIScreen mainScreen] bounds];
-    NSLog(@"MoveRight");
+    //NSLog(@"MoveRight");
 
    if (isMaproad1_1) {
        if ((screenRect.size.width * BOB_LEFT_MARGIN) > (screenRect.size.width * 0.98)) {
@@ -5556,7 +6164,7 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
 }
 -(void)MoveUp:(CGFloat )leftmargin :(CGFloat)topmargin {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    NSLog(@"MoveUp");
+    //NSLog(@"MoveUp");
 
     if (isMaproad1_1) {
         // -----ver 4
@@ -6096,7 +6704,7 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
 }
 
 -(void)MoveUP_Right_to_Left:(CGFloat )leftmargin :(CGFloat)topmargin{
-    NSLog(@"MoveUP_Right_to_Left");
+    //NSLog(@"MoveUP_Right_to_Left");
 
     CGRect screenRect = [[UIScreen mainScreen] bounds];
 
@@ -6646,7 +7254,7 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
 }
 -(void)MoveLeft:(CGFloat )leftmargin :(CGFloat)topmargin{
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    NSLog(@"MoveLeft");
+    //NSLog(@"MoveLeft");
 
         if (isMaproad1_1) {
             // -----hor 5
@@ -7253,7 +7861,7 @@ vibrateTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector
 }
 -(void)MoveLeftDown_to_up:(CGFloat )leftmargin :(CGFloat)topmargin{
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    NSLog(@"MoveLeftDown_to_up");
+    //NSLog(@"MoveLeftDown_to_up");
         if (isMaproad1_1) {
             // -----hor 5
             if ((topmargin > (screenRect.size.height * 0.465) && topmargin < (screenRect.size.height * 0.535))
